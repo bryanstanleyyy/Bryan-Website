@@ -130,6 +130,13 @@ section {
     width: 90%; /* Ensure content doesn't span full width on large screens */
 }
 
+/* Heading Styles - Green and Underlined */
+h1, h2, h3, h4, h5, h6 {
+    color: #4CAF50; /* Green color for headings */
+    text-decoration: underline; /* Underline the headings */
+    margin-bottom: 1rem; /* Add some spacing below the headings */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
