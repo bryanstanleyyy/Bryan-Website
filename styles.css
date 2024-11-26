@@ -112,7 +112,7 @@ footer {
 
 /* Centered Copyright Text */
 footer .copyright {
-    text-align: center;
+    font-weight: bold; /* Make copyright text bold */
     font-size: 1rem;
     margin-top: 20px;
 }
