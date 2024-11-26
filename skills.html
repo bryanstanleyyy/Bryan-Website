@@ -1,47 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills - Bryan Jones</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Bryan Jones - Skills</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="experience.html">Experience</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>Skills</h2>
-            <ul>
-                <li>Programming Languages: Python, Java, MySQL, R</li>
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color for readability */
+    line-height: 1.6;
+}
 
-                <li>Version Control: Git</li>
+/* Header Styles */
+header {
+    background: #4CAF50; /* Green header background */
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+}
 
-                <li>Problem Solving and Team Collaboration</li>
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
 
-                <li>Advanced Technology Skills</li>
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
 
-                <li>Basic Photoshop</li>
+nav ul li {
+    display: inline;
+}
 
-                <li>Languages: English, Malayalam, Hindi, French</li>
-                
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <div class="copyright">© 2024 Bryan Jones</div>
-    </footer>
-</body>
-</html>
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: white;
+    color: #4CAF50;
+    border-color: white;
+    border-radius: 5px;
+}
+
+/* Mobile-Friendly Navigation */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack links vertically */
+        gap: 0.5rem; /* Add space between links */
+    }
+
+    header h1 {
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+
+    nav ul li a {
+        padding: 1rem; /* Make the links bigger for better touchability */
+        font-size: 1.2rem; /* Increase font size for readability */
+    }
+}
+
+/* Main Content Styles */
+main {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+main h2 {
+    color: #4CAF50; /* Green color for headings */
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 0.5rem;
+}
+
+main p, main ul {
+    margin: 1rem 0;
+}
+
+main ul {
+    padding-left: 1.5rem;
+}
+
+main ul li {
+    margin: 0.5rem 0;
+}
+
+/* Profile Photo Styles */
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 20px 0;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #4CAF50; /* Green footer background */
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Links */
+a {
+    color: #4CAF50; /* Green links */
+}
+
+a:hover {
+    color: #e0e0e0; /* Light text on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
