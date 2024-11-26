@@ -24,6 +24,7 @@ header {
 header h1 {
     margin: 0;
     font-size: 2rem;
+    color: white; /* Ensure main heading is white */
 }
 
 nav ul {
@@ -96,7 +97,7 @@ main {
 p {
     font-size: 1rem; /* Regular font size for the other text */
     line-height: 1.6;
-    text-align: center; /* Optional: center the paragraph for a balanced look */
+    text-align: left; /* Align the paragraph text to the left */
 }
 
 /* Footer Styles */
@@ -130,10 +131,10 @@ section {
     width: 90%; /* Ensure content doesn't span full width on large screens */
 }
 
-/* Heading Styles - Green and Underlined */
-h1, h2, h3, h4, h5, h6 {
-    color: #4CAF50; /* Green color for headings */
-    text-decoration: underline; /* Underline the headings */
+/* Heading Styles - Green and Underlined for h2, h3, etc. */
+h2, h3, h4, h5, h6 {
+    color: #4CAF50; /* Green color for subheadings */
+    text-decoration: underline; /* Underline the subheadings */
     margin-bottom: 1rem; /* Add some spacing below the headings */
 }
 
