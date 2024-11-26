@@ -77,10 +77,11 @@ main {
 .profile-photo {
     width: 300px;  /* Adjusted width */
     height: 300px; /* Adjusted height */
-    border-radius: 30px;  /* Squircle: slightly rounded corners */
-    object-fit: cover;   /* Maintain the aspect ratio */
+    border-radius: 50px;  /* Squircle: slightly rounded corners */
+    object-fit: cover;   /* Ensure the image fits without stretching */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for effect */
-    margin-left: 10%;  /* Adjusted to ensure photo isn't centered exactly */
+    margin: 0 auto; /* Center the image */
+    display: block; /* Ensure it's treated as a block element */
 }
 
 /* Footer Styles */
