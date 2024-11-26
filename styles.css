@@ -58,19 +58,17 @@ nav ul li a:hover {
 /* Main Content Styles */
 main {
     flex: 1; /* Allow main to take up all the remaining space */
-    padding: 1rem 2rem; /* Reduce padding around the main content */
-    max-width: 800px;
-    margin: 0 auto;
+    padding: 2rem 5%; /* Add more padding on the sides of the main content */
+    max-width: 100%; /* Allow the content to use up more space */
 }
 
-/* Photo Container with Full Green Band */
+/* Remove the green banner behind the photo */
 .photo-container {
-    background-color: #4CAF50; /* Green background */
+    background-color: transparent; /* No background */
     text-align: center; /* Center the image */
-    padding: 30px 0; /* Reduce padding around the photo container */
-    margin: 0; /* Ensure no gaps around the green band */
-    width: 100%; /* Make sure the band spans across the full width */
-    box-sizing: border-box; /* Ensure padding does not cause overflow */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    width: 100%; /* Make sure it spans across the full width */
 }
 
 /* Profile Photo Styling */
