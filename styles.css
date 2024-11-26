@@ -24,7 +24,8 @@ header {
 header h1 {
     margin: 0;
     font-size: 2rem;
-    color: white; /* Ensure main heading is white */
+    color: white; /* Keep the main heading white */
+    text-shadow: 2px 2px 5px black; /* Black outline for the main heading */
 }
 
 nav ul {
@@ -88,7 +89,7 @@ main {
     font-size: 4rem;  /* Large size for 'Welcome!' */
     font-weight: bold;
     color: #4CAF50; /* Green color for the welcome text */
-    text-align: center;
+    text-align: left; /* Align to the left */
     margin-top: 20px; /* Add space above the welcome message */
     margin-bottom: 10px; /* Add some space below */
 }
@@ -136,6 +137,14 @@ h2, h3, h4, h5, h6 {
     color: #4CAF50; /* Green color for subheadings */
     text-decoration: underline; /* Underline the subheadings */
     margin-bottom: 1rem; /* Add some spacing below the headings */
+}
+
+/* Trademark Centering */
+.trademark {
+    text-align: center; /* Center the trademark */
+    font-size: 1.5rem; /* Adjust font size if needed */
+    font-weight: bold; /* Optional: make the trademark bold */
+    margin-top: 30px; /* Add spacing from the content */
 }
 
 /* Responsive Design */
