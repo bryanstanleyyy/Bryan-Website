@@ -67,8 +67,9 @@ main {
 .photo-container {
     background-color: #4CAF50; /* Green background */
     text-align: center; /* Center the image */
-    padding: 20px 0; /* Add vertical spacing */
+    padding: 40px 0; /* Add vertical spacing */
     margin: 0; /* Ensure no gaps around the green band */
+    width: 100%; /* Make sure the band spans across the full width */
 }
 
 /* Profile Photo Styling */
@@ -86,7 +87,7 @@ footer {
     padding: 1rem;
     background: #4CAF50; /* Green footer background */
     color: white;
-    width: 100%;
+    width: 100%; /* Make sure footer spans the full width */
 }
 
 /* Links */
