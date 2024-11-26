@@ -24,14 +24,10 @@ header {
 header h1 {
     margin: 0;
     font-size: 2rem;
-    color: white; /* Ensure main heading is white */
-    border: 4px solid black; /* Stronger black outline */
-    padding: 20px; /* Add more padding for a larger border */
-    display: inline-block; /* To apply border properly */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Stronger shadow for emphasis */
+    color: white; /* Ensure the main heading is white */
+    text-shadow: 4px 4px 6px black; /* Strong black shadow for the main heading */
 }
 
-/* Navigation Menu */
 nav ul {
     list-style: none;
     padding: 0;
@@ -114,11 +110,11 @@ footer {
     width: 100%; /* Make sure footer spans the full width */
 }
 
-/* Footer Copyright Text */
-footer p {
-    margin: 0;
+/* Centered Copyright Text */
+footer .copyright {
+    text-align: center;
     font-size: 1rem;
-    color: white;
+    margin-top: 20px;
 }
 
 /* Links */
