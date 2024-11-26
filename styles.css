@@ -6,6 +6,9 @@ body {
     background-color: #121212; /* Dark background */
     color: #e0e0e0; /* Light text color for readability */
     line-height: 1.6;
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Stack header, main, and footer vertically */
+    min-height: 100vh; /* Ensure body takes up the full viewport height */
 }
 
 /* Header Styles */
@@ -52,6 +55,7 @@ nav ul li a:hover {
 
 /* Main Content Styles */
 main {
+    flex: 1; /* Allow main to fill the remaining space between header and footer */
     padding: 2rem;
     max-width: 800px;
     margin: 0 auto;
@@ -77,13 +81,21 @@ main ul li {
     margin: 0.5rem 0;
 }
 
-/* Profile Photo Styles */
+/* Photo Container with Green Band */
+.photo-container {
+    background-color: #4CAF50; /* Green background */
+    text-align: center; /* Center the image */
+    padding: 20px 0; /* Add vertical spacing */
+    margin: 0; /* Ensure no gaps around the green band */
+}
+
+/* Profile Photo Styling */
 .profile-photo {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for effect */
 }
 
 /* Footer Styles */
@@ -92,8 +104,6 @@ footer {
     padding: 1rem;
     background: #4CAF50; /* Green footer background */
     color: white;
-    position: relative;
-    bottom: 0;
     width: 100%;
 }
 
