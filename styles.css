@@ -37,6 +37,7 @@ nav ul {
     gap: 1rem; /* Add space between the links */
 }
 
+/* Navigation Links */
 nav ul li {
     display: inline;
 }
