@@ -80,7 +80,7 @@ main {
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for effect */
-    margin-left: -10%; /* Move the photo slightly to the left */
+    margin-left: 10%; /* Adjusted to ensure photo isn't centered exactly */
 }
 
 /* Footer Styles */
@@ -130,5 +130,16 @@ section {
 
     section {
         padding-left: 0; /* Remove left padding on small screens */
+    }
+}
+
+/* Laptop and Larger Screen Adjustments */
+@media (min-width: 769px) {
+    .profile-photo {
+        margin-left: 0; /* Center the image again for larger screens */
+    }
+
+    section {
+        padding-left: 10%; /* Increase padding to give more space on larger screens */
     }
 }
