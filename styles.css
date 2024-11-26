@@ -38,6 +38,7 @@ nav ul {
     flex-wrap: wrap; /* Allow the links to wrap onto the next line if needed */
 }
 
+/* Navigation Links */
 nav ul li {
     display: inline;
 }
@@ -49,6 +50,7 @@ nav ul li a {
     padding: 0.5rem 1rem;
     border: 2px solid transparent;
     transition: all 0.3s ease;
+    font-size: 1rem; /* Default font size */
 }
 
 nav ul li a:hover {
@@ -144,12 +146,20 @@ h2, h3, h4, h5, h6 {
         font-size: 1.5rem;
     }
 
+    /* Ensure links stay in a row on mobile, wrap if necessary */
     nav ul {
-        flex-direction: row; /* Ensure links stay in a row on mobile */
+        flex-direction: row; /* Keep links in a row */
         justify-content: space-around; /* Distribute space evenly */
         gap: 1rem; /* Ensure proper spacing between links */
     }
 
+    /* Adjust font size for links on mobile */
+    nav ul li a {
+        font-size: 0.9rem; /* Slightly reduce font size on mobile */
+        padding: 0.4rem 0.8rem; /* Adjust padding to fit better */
+    }
+
+    /* Make sure content and other sections adjust for small screens */
     .profile-photo {
         margin-left: 0; /* Remove the left margin for smaller screens */
     }
