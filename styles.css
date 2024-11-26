@@ -35,9 +35,9 @@ nav ul {
     display: flex; /* Ensure the items are displayed in a row */
     justify-content: center; /* Center the links */
     gap: 1rem; /* Add space between the links */
+    flex-wrap: wrap; /* Allow the links to wrap onto the next line if needed */
 }
 
-/* Navigation Links */
 nav ul li {
     display: inline;
 }
@@ -63,15 +63,6 @@ main {
     flex: 1; /* Allow main to take up all the remaining space */
     padding: 2rem 5%; /* Add more padding on the sides of the main content */
     max-width: 100%; /* Allow the content to use up more space */
-}
-
-/* Photo Container */
-.photo-container {
-    background-color: transparent; /* No background */
-    text-align: center; /* Center the image */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
-    width: 100%; /* Make sure it spans across the full width */
 }
 
 /* Profile Photo Styling */
