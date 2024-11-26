@@ -63,13 +63,14 @@ main {
     margin: 0 auto;
 }
 
-/* Photo Container with Green Band */
+/* Photo Container with Full Green Band */
 .photo-container {
     background-color: #4CAF50; /* Green background */
     text-align: center; /* Center the image */
     padding: 40px 0; /* Add vertical spacing */
     margin: 0; /* Ensure no gaps around the green band */
     width: 100%; /* Make sure the band spans across the full width */
+    box-sizing: border-box; /* Ensure padding does not cause overflow */
 }
 
 /* Profile Photo Styling */
@@ -79,6 +80,7 @@ main {
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for effect */
+    margin-left: -10%; /* Move the photo slightly to the left */
 }
 
 /* Footer Styles */
@@ -105,6 +107,12 @@ img {
     height: auto;     /* Maintain aspect ratio */
 }
 
+/* Align content to the left slightly */
+section {
+    text-align: left; /* Align text to the left */
+    padding-left: 5%; /* Add padding to the left */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
@@ -114,5 +122,13 @@ img {
     nav ul {
         flex-direction: column;
         gap: 0.5rem;
+    }
+
+    .profile-photo {
+        margin-left: 0; /* Remove the left margin for smaller screens */
+    }
+
+    section {
+        padding-left: 0; /* Remove left padding on small screens */
     }
 }
