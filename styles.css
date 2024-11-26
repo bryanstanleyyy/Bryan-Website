@@ -32,9 +32,9 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 1rem 0 0;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+    display: flex; /* Ensure the items are displayed in a row */
+    justify-content: center; /* Center the links */
+    gap: 1rem; /* Add space between the links */
 }
 
 nav ul li {
@@ -153,8 +153,9 @@ h2, h3, h4, h5, h6 {
     }
 
     nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
+        flex-direction: row; /* Ensure links stay in a row on mobile */
+        justify-content: space-around; /* Distribute space evenly */
+        gap: 1rem; /* Ensure proper spacing between links */
     }
 
     .profile-photo {
