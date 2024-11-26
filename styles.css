@@ -62,7 +62,7 @@ main {
     max-width: 100%; /* Allow the content to use up more space */
 }
 
-/* Remove the green banner behind the photo */
+/* Photo Container */
 .photo-container {
     background-color: transparent; /* No background */
     text-align: center; /* Center the image */
@@ -80,6 +80,23 @@ main {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for effect */
     margin: 0 auto; /* Center the image */
     display: block; /* Ensure it's treated as a block element */
+}
+
+/* Welcome Message Styling */
+.welcome-message {
+    font-size: 4rem;  /* Large size for 'Welcome!' */
+    font-weight: bold;
+    color: #4CAF50; /* Green color for the welcome text */
+    text-align: center;
+    margin-top: 20px; /* Add space above the welcome message */
+    margin-bottom: 10px; /* Add some space below */
+}
+
+/* Paragraph Text Styling */
+p {
+    font-size: 1rem; /* Regular font size for the other text */
+    line-height: 1.6;
+    text-align: center; /* Optional: center the paragraph for a balanced look */
 }
 
 /* Footer Styles */
@@ -131,6 +148,10 @@ section {
     section {
         padding-left: 0; /* Remove left padding on small screens */
         width: 100%; /* Full width on mobile */
+    }
+
+    .welcome-message {
+        font-size: 2rem; /* Adjust welcome message size for smaller screens */
     }
 }
 
