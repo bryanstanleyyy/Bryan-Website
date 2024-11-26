@@ -1,14 +1,16 @@
 /* General Styles */
-body {
+html, body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #121212; /* Dark background */
     color: #e0e0e0; /* Light text color for readability */
     line-height: 1.6;
-    display: flex; /* Flexbox layout */
+    display: flex; /* Enable flexbox */
     flex-direction: column; /* Stack header, main, and footer vertically */
-    min-height: 100vh; /* Ensure body takes up the full viewport height */
+    min-height: 100vh; /* Ensure the body takes the full height of the viewport */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%;
 }
 
 /* Header Styles */
@@ -55,30 +57,10 @@ nav ul li a:hover {
 
 /* Main Content Styles */
 main {
-    flex: 1; /* Allow main to fill the remaining space between header and footer */
+    flex: 1; /* Allow main to take up all the remaining space */
     padding: 2rem;
     max-width: 800px;
     margin: 0 auto;
-}
-
-main h2 {
-    color: #4CAF50; /* Green color for headings */
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #4CAF50;
-    padding-bottom: 0.5rem;
-}
-
-main p, main ul {
-    margin: 1rem 0;
-}
-
-main ul {
-    padding-left: 1.5rem;
-}
-
-main ul li {
-    margin: 0.5rem 0;
 }
 
 /* Photo Container with Green Band */
@@ -114,6 +96,12 @@ a {
 
 a:hover {
     color: #e0e0e0; /* Light text on hover */
+}
+
+/* Prevent images from overflowing */
+img {
+    max-width: 100%;  /* Ensure images do not overflow */
+    height: auto;     /* Maintain aspect ratio */
 }
 
 /* Responsive Design */
