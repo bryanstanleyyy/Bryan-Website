@@ -111,6 +111,7 @@ img {
 section {
     text-align: left; /* Align text to the left */
     padding-left: 5%; /* Add padding to the left */
+    width: 90%; /* Ensure content doesn't span full width on large screens */
 }
 
 /* Responsive Design */
@@ -130,6 +131,7 @@ section {
 
     section {
         padding-left: 0; /* Remove left padding on small screens */
+        width: 100%; /* Full width on mobile */
     }
 }
 
@@ -141,5 +143,6 @@ section {
 
     section {
         padding-left: 10%; /* Increase padding to give more space on larger screens */
+        width: 80%; /* Adjust width for larger screens */
     }
 }
