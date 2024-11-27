@@ -25,7 +25,7 @@ header h1 {
     margin: 0;
     font-size: 2rem;
     color: rgb(0, 0, 0);
-    text-decoration: underline; 
+    text-decoration: underline;
     margin-bottom: 1rem;
 }
 
@@ -37,15 +37,15 @@ nav ul {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    flex-wrap: wrap; /* Allow wrapping to multiple rows */
+    flex-wrap: wrap; /* Allow wrapping of links */
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%; /* Ensure it takes full width */
 }
 
 nav ul li {
-    display: inline-block; /* Allow links to wrap into multiple rows */
-    width: 45%; /* Each link takes up 45% of the width, adjust as necessary */
+    display: block; /* Each link will be on its own row */
     text-align: center;
-    margin-bottom: 10px; /* Space between rows */
+    margin-bottom: 10px; /* Add space between rows */
 }
 
 nav ul li a {
@@ -57,6 +57,7 @@ nav ul li a {
     transition: all 0.3s ease;
     font-size: 1rem;
     display: block;
+    width: 100%; /* Ensure links take full width */
 }
 
 nav ul li a:hover {
@@ -87,7 +88,7 @@ main {
 /* Heading Styles */
 h2 {
     color: #4CAF50; /* Green color for headings */
-    text-decoration: underline; 
+    text-decoration: underline;
     margin-bottom: 1rem;
 }
 
@@ -148,15 +149,14 @@ section {
     }
 
     nav ul {
-        flex-direction: row; /* Ensure horizontal layout on mobile portrait */
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
         gap: 1rem;
-        flex-wrap: wrap; /* Allow links to wrap to 2 rows */
+        justify-items: center;
     }
 
     nav ul li {
-        width: 45%; /* Each link takes up 45% of the width on mobile */
-        text-align: center;
+        width: 100%; /* Ensure each item takes full width in each grid cell */
     }
 
     nav ul li a {
@@ -182,7 +182,8 @@ section {
 /* Landscape Mobile (or small tablets) */
 @media (max-width: 1024px) and (min-width: 769px) {
     nav ul {
-        flex-direction: row; /* Keep links in one row on landscape mode */
+        display: flex;
+        flex-direction: row;
         justify-content: center;
         gap: 1rem;
     }
@@ -216,8 +217,10 @@ section {
     }
 
     nav ul {
+        display: flex;
         flex-direction: row;
         justify-content: space-around;
+        gap: 1rem;
     }
 
     nav ul li a {
