@@ -138,7 +138,7 @@ section {
     width: 90%;
 }
 
-/* Mobile and Tablet Responsive Design (Portrait) */
+/* Mobile Portrait (up to 768px) */
 @media (max-width: 768px) {
     header h1 {
         font-size: 1.5rem;
@@ -146,20 +146,19 @@ section {
 
     /* Ensure links are in 2 rows for mobile portrait */
     nav ul {
-        flex-direction: row; /* Make sure items are horizontally laid out */
+        flex-direction: row; /* Horizontal layout */
         justify-content: center;
         gap: 0.5rem; /* Smaller gap between links */
     }
 
-    /* Each link takes up 45% width, ensuring 2 rows */
     nav ul li {
-        width: 45%;
+        width: 45%; /* Each link takes up 45% width */
         text-align: center;
     }
 
     nav ul li a {
-        font-size: 0.85rem; /* Reduced font size for smaller screens */
-        padding: 0.3rem 0.6rem; /* Smaller padding for compactness */
+        font-size: 0.85rem; /* Smaller font size */
+        padding: 0.3rem 0.6rem; /* Smaller padding */
     }
 
     /* Adjust for small screens */
@@ -177,20 +176,20 @@ section {
     }
 }
 
-/* Mobile Landscape, Tablets, and Larger Screens */
-@media (max-width: 1024px) and (min-width: 769px) {
+/* Mobile Landscape, Tablets, and Larger Screens (769px and above) */
+@media (min-width: 769px) {
     nav ul {
-        flex-direction: row; /* Keep links in 1 row */
+        flex-direction: row; /* Ensure links are in 1 row */
         justify-content: center;
         gap: 0.5rem; /* Smaller gap between links */
     }
 
     nav ul li {
-        width: auto; /* Ensure items stay in 1 row */
+        width: auto; /* Links in 1 row */
     }
 
     nav ul li a {
-        font-size: 0.85rem; /* Smaller font size */
+        font-size: 0.85rem; /* Smaller font size for laptop and tablet */
         padding: 0.3rem 0.6rem; /* Smaller padding */
     }
 
@@ -205,8 +204,22 @@ section {
     }
 }
 
-/* Larger Screen (Laptop & Desktop) */
+/* Larger Screen (Laptop & Desktop, min-width: 1025px) */
 @media (min-width: 1025px) {
+    nav ul {
+        flex-direction: row;
+        justify-content: space-around; /* Distribute links evenly */
+    }
+
+    nav ul li {
+        width: auto; /* Auto width for each link */
+    }
+
+    nav ul li a {
+        font-size: 1rem; /* Slightly larger font size on larger screens */
+        padding: 0.4rem 0.8rem;
+    }
+
     .profile-photo {
         width: 400px;
         height: 400px;
@@ -215,15 +228,5 @@ section {
     section {
         padding-left: 10%;
         width: 80%;
-    }
-
-    nav ul {
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    nav ul li a {
-        font-size: 1rem; /* Slightly larger font size on larger screens */
-        padding: 0.4rem 0.8rem;
     }
 }
