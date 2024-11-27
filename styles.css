@@ -65,7 +65,7 @@ nav ul li a:hover {
 /* Main Content Styles */
 main {
     flex: 1; /* Allow main to take up all the remaining space */
-    padding: 2rem 5%; /* Add padding for text, use 5% margins for balance */
+    padding: 2rem 10%; /* Add padding for text, use 10% margins for balance */
     max-width: 100%; /* Allow the content to use up more space */
     margin: 0 auto; /* Center content horizontally */
 }
@@ -98,8 +98,6 @@ p {
     line-height: 1.6;
     text-align: justify; /* Ensure text is evenly aligned */
     margin: 1rem 0; /* Add consistent spacing between paragraphs */
-    padding-left: 10%; /* Align starting from 1/4th of the page */
-    padding-right: 10%; /* Ensure content doesn't touch the right edge */
 }
 
 /* Footer Styles */
