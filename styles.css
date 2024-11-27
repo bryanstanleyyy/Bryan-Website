@@ -14,7 +14,7 @@ html, body {
 
 /* Layout Adjustments */
 main, section {
-    padding: 2rem 10%; /* Increased space for left and right text */
+    padding: 2rem 8%; /* Consistent padding */
     max-width: 1200px;
     margin: 0 auto;
     text-align: left;
@@ -22,7 +22,7 @@ main, section {
 
 @media (max-width: 768px) {
     main, section {
-        padding: 1.5rem 8%; /* Adjust for smaller screens */
+        padding: 1.5rem 5%; /* Adjust for smaller screens */
     }
 }
 
@@ -59,7 +59,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: black;
+    color: #004d00; /* Darker green for better aesthetics */
     font-weight: bold;
     padding: 0.5rem 1rem;
     border: 2px solid #00FF00;
@@ -72,7 +72,7 @@ nav ul li a {
 
 nav ul li a:hover {
     background-color: black;
-    color: #00FF00; /* Fixed hover text color for visibility */
+    color: #00FF00; /* Contrast color for hover */
     border-color: #00FF00;
 }
 
@@ -88,9 +88,9 @@ nav ul li a:hover {
 
 /* Profile Photo */
 .profile-photo {
-    width: 200px; /* Increased size for bigger images */
+    width: 200px; /* Larger image size */
     height: 200px;
-    border-radius: 50%; /* Start with circular shape */
+    border-radius: 50%; /* Circular shape */
     clip-path: path(
         "M 100 0 
         C 140 0 200 60 200 100 
@@ -108,7 +108,7 @@ nav ul li a:hover {
 h2 {
     font-size: 2rem;
     font-weight: bold;
-    color: black; /* Main headings in black */
+    color: #00FF00; /* Green color for subheadings */
     margin-bottom: 1rem;
 }
 
@@ -137,10 +137,11 @@ footer {
     padding: 1.5rem 0;
     box-shadow: 0 -4px 8px rgba(0, 255, 0, 0.2);
     width: 100%; /* Full-width footer */
-    position: absolute;
+    position: relative;
     bottom: 0; /* Sticks footer to the bottom */
 }
 
+/* Footer Copyright */
 footer .copyright {
     font-size: 1rem;
     font-weight: bold; /* Bold copyright text */
@@ -149,13 +150,15 @@ footer .copyright {
 /* Contact Links */
 .contact-links a {
     text-decoration: none;
-    color: #00FF00; /* Bright green links */
+    color: #008000; /* Eye-friendly green */
     font-weight: bold;
-    transition: color 0.3s;
+    transition: color 0.3s, border-color 0.3s;
+    border-bottom: 2px solid transparent; /* Add border for hover effect */
 }
 
 .contact-links a:hover {
-    color: #00A000; /* Slightly darker green for hover effect */
+    color: #00FF00; /* Bright green for hover */
+    border-bottom: 2px solid #00FF00; /* Green underline */
 }
 
 /* Responsive Design */
@@ -183,5 +186,9 @@ footer .copyright {
 
     nav ul li {
         flex: 1 1 50%; /* Ensure links stack into two rows */
+    }
+
+    footer {
+        position: static; /* Footer stays at the bottom of content */
     }
 }
