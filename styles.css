@@ -9,8 +9,8 @@ html, body {
     display: flex; /* Enable flexbox */
     flex-direction: column; /* Stack header, main, and footer vertically */
     min-height: 100vh; /* Ensure the body takes the full height of the viewport */
-    width: 100%;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%;
 }
 
 /* Header Styles */
@@ -24,8 +24,8 @@ header {
 header h1 {
     margin: 0;
     font-size: 2rem;
-    color: black;
-    text-shadow: none;
+    color: white;
+    text-shadow: 4px 4px 6px black; /* Strong black shadow for the main heading */
 }
 
 /* Navigation Styles */
@@ -53,12 +53,6 @@ nav ul li a {
     font-size: 1rem;
 }
 
-/* Links Visibility */
-nav ul li a {
-    color: white;
-}
-
-/* Navigation Links Hover Effect */
 nav ul li a:hover {
     background-color: white;
     color: #4CAF50;
@@ -73,40 +67,29 @@ main {
     max-width: 100%;
 }
 
-/* Contact Section */
-section {
-    padding: 20px;
-    text-align: left;
-    width: 90%;
+/* Squircle Photo Styling */
+.profile-photo {
+    width: 300px;
+    height: 300px;
+    border-radius: 25%; /* Squircle effect */
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     margin: 0 auto;
+    display: block;
 }
 
-h2 {
-    color: #4CAF50;
-    text-decoration: underline;
+/* Heading Styles */
+h2, h3 {
+    color: #4CAF50; /* Green color for headings */
+    text-decoration: none; /* No underline */
     margin-bottom: 1rem;
 }
 
-/* Contact Links */
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    font-size: 1.2rem;
-    margin: 0.5rem 0;
-}
-
-ul li a {
-    color: #4CAF50;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Change link color on hover */
-ul li a:hover {
-    color: #ffffff; /* White text on hover */
+/* Paragraph Text Styling */
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: left;
 }
 
 /* Footer Styles */
@@ -116,95 +99,111 @@ footer {
     background: #4CAF50;
     color: white;
     width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
 }
 
 footer .copyright {
     font-weight: bold;
     font-size: 1rem;
-    color: black; /* Change copyright to black */
+    margin-top: 20px;
 }
 
-/* Responsive Design */
+/* Links Styling */
+a {
+    color: #4CAF50;
+}
+
+a:hover {
+    color: #e0e0e0;
+}
+
+/* Prevent images from overflowing */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Section Styling */
+section {
+    text-align: left;
+    padding-left: 5%;
+    width: 90%;
+}
+
+/* Mobile and Tablet Responsive Design */
 @media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
     nav ul {
-        flex-direction: column;
-        justify-content: space-around;
+        flex-direction: column; /* Stack links vertically */
+        justify-content: center;
         gap: 1rem;
     }
 
     nav ul li a {
         font-size: 1rem;
-        padding: 0.5rem 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    /* Make sure content and sections adjust for small screens */
+    .profile-photo {
+        margin-left: 0;
+    }
+
+    section {
+        padding-left: 0;
+        width: 100%;
+    }
+
+    .welcome-message {
+        font-size: 2rem;
+    }
+}
+
+/* Landscape Mobile (or small tablets) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    nav ul {
+        flex-direction: row; /* Keep links in one row on landscape mode */
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    /* Ensure larger photo on mobile */
+    .profile-photo {
+        width: 350px;
+        height: 350px;
     }
 
     section {
         width: 100%;
-        padding: 10px;
-    }
-
-    ul li {
-        font-size: 1rem;
-    }
-
-    footer {
-        position: relative;
-    }
-
-    h2 {
-        font-size: 1.5rem;
     }
 }
 
-@media (max-width: 480px) {
-    nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
+/* Larger Screen (Laptop & Desktop) */
+@media (min-width: 1025px) {
+    .profile-photo {
+        width: 400px;
+        height: 400px;
     }
 
     section {
-        padding: 10px;
+        padding-left: 10%;
+        width: 80%;
     }
 
-    ul li {
-        font-size: 1rem;
+    nav ul {
+        flex-direction: row;
+        justify-content: space-around;
     }
 
-    h2 {
-        font-size: 1.3rem;
+    nav ul li a {
+        font-size: 1.2rem;
+        padding: 0.6rem 1.2rem;
     }
-
-    footer {
-        position: relative;
-    }
-}
-
-/* Squircle Photo */
-.profile-photo {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    margin: 0 auto;
-    display: block;
-}
-
-/* Footer fix */
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    padding: 1rem;
-    background-color: #4CAF50;
-}
-
-/* Fix Footer issue on smaller screens */
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
 }
