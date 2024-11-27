@@ -161,6 +161,7 @@ footer .copyright {
     display: flex;
     align-items: center;
     gap: 10px;
+    justify-content: flex-start;
 }
 
 .contact-info label {
@@ -170,6 +171,12 @@ footer .copyright {
 
 .contact-info .email {
     color: #00FF00; /* Green color for email ID */
+}
+
+/* Ensure Footer is Not Hovering on Mobile */
+footer {
+    position: static; /* Footer stays within content flow */
+    margin-top: auto;
 }
 
 /* Responsive Design */
@@ -202,5 +209,12 @@ footer .copyright {
 
     footer {
         position: static; /* Ensure footer stays at the bottom on mobile */
+    }
+
+    /* Contact Me Links on Mobile */
+    .contact-links a {
+        display: inline-block;
+        width: 45%; /* Allow contact links to sit in 2-3 columns */
+        text-align: center;
     }
 }
