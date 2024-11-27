@@ -49,7 +49,7 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 1rem;
     flex-wrap: wrap; /* Allow wrapping for mobile layout */
 }
 
@@ -88,15 +88,15 @@ nav ul li a:hover {
 
 /* Profile Photo */
 .profile-photo {
-    width: 200px; /* Larger image size */
-    height: 200px;
+    width: 250px; /* Larger image size */
+    height: 250px;
     border-radius: 50%; /* Circular shape */
     clip-path: path(
-        "M 100 0 
-        C 140 0 200 60 200 100 
-        C 200 140 140 200 100 200 
-        C 60 200 0 140 0 100 
-        C 0 60 60 0 100 0"
+        "M 125 0 
+        C 175 0 250 75 250 125 
+        C 250 175 175 250 125 250 
+        C 75 250 0 175 0 125 
+        C 0 75 75 0 125 0"
     ); /* Squircle shape */
     object-fit: cover;
     box-shadow: 0 4px 8px rgba(0, 255, 0, 0.3);
@@ -129,6 +129,41 @@ p {
     margin-bottom: 1.5rem;
 }
 
+/* Contact Links */
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: start;
+}
+
+/* Contact Links */
+.contact-links a {
+    text-decoration: none;
+    color: #00FF00; /* Green color for contact links */
+    font-weight: bold;
+    transition: color 0.3s, border-color 0.3s;
+    border-bottom: 2px solid transparent; /* Add border for hover effect */
+}
+
+.contact-links a:hover {
+    color: #008000; /* Darker green for hover */
+    border-bottom: 2px solid #00FF00; /* Green underline */
+}
+
+/* Contact Information */
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.contact-info .label {
+    font-weight: bold;
+    color: #00FF00;
+    white-space: nowrap; /* Prevent wrapping */
+}
+
 /* Footer */
 footer {
     background: #00A000; /* Matches header for consistency */
@@ -137,7 +172,7 @@ footer {
     padding: 1.5rem 0;
     box-shadow: 0 -4px 8px rgba(0, 255, 0, 0.2);
     width: 100%; /* Full-width footer */
-    position: relative;
+    position: absolute;
     bottom: 0; /* Sticks footer to the bottom */
 }
 
@@ -147,20 +182,6 @@ footer .copyright {
     font-weight: bold; /* Bold copyright text */
 }
 
-/* Contact Links */
-.contact-links a {
-    text-decoration: none;
-    color: #008000; /* Eye-friendly green */
-    font-weight: bold;
-    transition: color 0.3s, border-color 0.3s;
-    border-bottom: 2px solid transparent; /* Add border for hover effect */
-}
-
-.contact-links a:hover {
-    color: #00FF00; /* Bright green for hover */
-    border-bottom: 2px solid #00FF00; /* Green underline */
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
@@ -168,8 +189,8 @@ footer .copyright {
     }
 
     .profile-photo {
-        width: 150px; /* Smaller images for mobile */
-        height: 150px;
+        width: 200px; /* Slightly smaller images for mobile */
+        height: 200px;
     }
 
     .welcome-message {
@@ -184,11 +205,20 @@ footer .copyright {
         padding: 1rem 2%;
     }
 
+    nav ul {
+        flex-wrap: wrap; /* Allow wrapping for mobile links */
+    }
+
     nav ul li {
-        flex: 1 1 50%; /* Ensure links stack into two rows */
+        flex: 1 1 48%; /* Ensure links are stacked with 2-3 per row */
     }
 
     footer {
-        position: static; /* Footer stays at the bottom of content */
+        position: relative; /* Footer stays at the bottom of content */
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: flex-start; /* Aligns contact details nicely */
     }
 }
