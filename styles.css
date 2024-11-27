@@ -25,7 +25,7 @@ header h1 {
     margin: 0;
     font-size: 2rem;
     color: rgb(0, 0, 0);
-    text-shadow: 4px 4px 6px black; /* Strong black shadow for the main heading */
+    text-shadow: 4px 4px 6px #4CAF50; /* Strong black shadow for the main heading */
 }
 
 /* Navigation Styles */
@@ -73,7 +73,7 @@ main {
     height: 300px;
     border-radius: 25%; /* Squircle effect */
     object-fit: cover;
-    box-shadow: #4CAF50;
+    box-shadow: 4px 4px 6px #4CAF50;
     margin: 0 auto;
     display: block;
 }
@@ -145,6 +145,12 @@ section {
         flex-direction: column; /* Stack links vertically */
         justify-content: center;
         gap: 1rem;
+    }
+
+    /* Ensure the main links are arranged in two rows on mobile portrait */
+    nav ul li {
+        flex: 1 1 45%; /* Allow links to occupy 45% of the width, making 2 rows */
+        text-align: center;
     }
 
     nav ul li a {
