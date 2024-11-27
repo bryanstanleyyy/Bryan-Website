@@ -35,10 +35,9 @@ nav ul {
     padding: 0;
     margin: 1rem 0 0;
     display: flex; /* Display links in a row */
-    justify-content: flex-start; /* Align links to the left */
+    justify-content: center; /* Center the links */
     flex-wrap: wrap; /* Allow the links to wrap into multiple rows */
     gap: 1rem; /* Add space between the links */
-    padding-left: 25%; /* Align links starting from 1/4th of the page */
 }
 
 nav ul li {
@@ -65,9 +64,10 @@ nav ul li a:hover {
 /* Main Content Styles */
 main {
     flex: 1; /* Allow main to take up all the remaining space */
-    padding: 2rem 5%; /* Add more padding on the sides of the main content */
+    padding: 2rem 10%; /* Add padding for text, use 10% margins for balance */
     max-width: 1200px; /* Limit maximum width for better readability */
     margin: 0 auto; /* Center content horizontally */
+    text-align: left; /* Align text slightly left */
 }
 
 /* Profile Photo Styling */
@@ -86,20 +86,18 @@ main {
     font-size: 3rem; /* Adjust welcome message size */
     font-weight: bold;
     color: #4CAF50; /* Green color for the welcome text */
-    text-align: left; /* Align welcome message from 1/4th */
+    text-align: left; /* Keep welcome message aligned slightly left */
     margin-top: 20px; /* Add space above the welcome message */
     margin-bottom: 10px; /* Add some space below */
-    padding-left: 25%; /* Align starting from 1/4th of the page */
+    padding-left: 10%; /* Slightly align from the left */
 }
 
 /* Paragraph Text Styling */
 p {
     font-size: 1rem; /* Regular font size for the other text */
     line-height: 1.6;
-    text-align: left; /* Align text to the left */
+    text-align: justify; /* Ensure text is evenly aligned */
     margin: 1rem 0; /* Add consistent spacing between paragraphs */
-    padding-left: 25%; /* Align starting from 1/4th of the page */
-    padding-right: 10%; /* Add some spacing on the right */
 }
 
 /* Footer Styles */
@@ -135,11 +133,10 @@ img {
 
 /* Section Alignment */
 section {
-    padding: 2rem 5%; /* Consistent padding */
+    padding: 2rem 10%; /* Add padding for text to align slightly left */
     max-width: 90%; /* Limit width for larger screens */
     margin: 0 auto; /* Center the content horizontally */
-    text-align: left; /* Align text to the left */
-    padding-left: 25%; /* Align starting from 1/4th of the page */
+    text-align: left; /* Align text slightly left */
 }
 
 /* Heading Styles - Green and Underlined for h2, h3, etc. */
@@ -147,8 +144,7 @@ h2, h3, h4, h5, h6 {
     color: #4CAF50; /* Green color for subheadings */
     text-decoration: underline; /* Underline the subheadings */
     margin-bottom: 1rem; /* Add some spacing below the headings */
-    text-align: left; /* Align subheadings from 1/4th */
-    padding-left: 25%; /* Align starting from 1/4th of the page */
+    text-align: left; /* Align subheadings slightly left */
 }
 
 /* Responsive Design */
@@ -160,8 +156,7 @@ h2, h3, h4, h5, h6 {
     /* Links adjustments for mobile */
     nav ul {
         gap: 0.5rem; /* Reduce gap between links */
-        justify-content: flex-start; /* Keep links aligned to the left */
-        padding-left: 10%; /* Reduce padding for mobile */
+        justify-content: center; /* Center links within each row */
     }
 
     nav ul li a {
@@ -175,8 +170,8 @@ h2, h3, h4, h5, h6 {
     }
 
     section, .welcome-message, p {
-        padding-left: 10%; /* Reduce padding for mobile screens */
-        padding-right: 5%; /* Reduce right padding for mobile */
+        padding-left: 5%; /* Reduce padding for mobile screens */
+        padding-right: 5%; /* Add balanced padding */
     }
 
     .welcome-message {
@@ -188,6 +183,6 @@ h2, h3, h4, h5, h6 {
 @media (min-width: 769px) {
     section {
         max-width: 80%; /* Adjust width for larger screens */
-        padding: 2rem 5%; /* Maintain padding */
+        padding: 2rem 10%; /* Maintain padding */
     }
 }
