@@ -25,7 +25,7 @@ header h1 {
     margin: 0;
     font-size: 2rem;
     color: rgb(0, 0, 0);
-    box-shadow: 2px 2px 4px #000000;
+    text-shadow: 2px 2px 4px #000000;
 }
 
 /* Navigation Styles */
@@ -41,7 +41,7 @@ nav ul {
 
 nav ul li {
     display: inline-block; /* Allow the items to wrap in multiple rows */
-    width: 45%; /* Each link takes up about 45% of the width on mobile portrait */
+    width: 45%; /* Each link takes up 45% of the width */
     text-align: center;
 }
 
@@ -138,21 +138,22 @@ section {
     width: 90%;
 }
 
-/* Mobile and Tablet Responsive Design */
+/* Mobile and Tablet Responsive Design (Portrait) */
 @media (max-width: 768px) {
     header h1 {
         font-size: 1.5rem;
     }
 
+    /* Ensure links are in 2 rows for mobile portrait */
     nav ul {
-        flex-direction: row; /* Ensure horizontal layout on mobile portrait */
+        flex-direction: row; /* Make sure items are horizontally laid out */
         justify-content: center;
         gap: 1rem;
     }
 
-    /* Ensure two rows on mobile portrait */
+    /* Each link takes up 45% width, ensuring 2 rows */
     nav ul li {
-        width: 45%; /* Each link takes up 45% of the width */
+        width: 45%;
         text-align: center;
     }
 
@@ -176,12 +177,16 @@ section {
     }
 }
 
-/* Mobile Landscape and Larger Tablets */
+/* Mobile Landscape, Tablets, and Larger Screens */
 @media (max-width: 1024px) and (min-width: 769px) {
     nav ul {
-        flex-direction: row; /* Keep links in one row on landscape mode */
+        flex-direction: row; /* Keep links in 1 row */
         justify-content: center;
         gap: 1rem;
+    }
+
+    nav ul li {
+        width: auto; /* Ensure items stay in 1 row */
     }
 
     nav ul li a {
