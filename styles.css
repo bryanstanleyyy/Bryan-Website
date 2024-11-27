@@ -13,6 +13,13 @@ html, body {
     width: 100%;
 }
 
+/* Consistent alignment and padding for all sections */
+section, main {
+    padding: 2rem 5%; /* Consistent padding around all content */
+    max-width: 100%; /* Ensure content spans full width */
+    margin: 0 auto; /* Center content horizontally */
+}
+
 /* Header Styles */
 header {
     background: #4CAF50; /* Green header background */
@@ -28,6 +35,7 @@ header h1 {
     text-shadow: 4px 4px 6px black; /* Strong black shadow for the main heading */
 }
 
+/* Navigation Links */
 nav ul {
     list-style: none;
     padding: 0;
@@ -38,7 +46,6 @@ nav ul {
     flex-wrap: wrap; /* Allow the links to wrap onto the next line if needed */
 }
 
-/* Navigation Links */
 nav ul li {
     display: inline;
 }
@@ -50,7 +57,6 @@ nav ul li a {
     padding: 0.5rem 1rem;
     border: 2px solid transparent;
     transition: all 0.3s ease;
-    font-size: 1rem; /* Default font size */
 }
 
 nav ul li a:hover {
@@ -58,13 +64,6 @@ nav ul li a:hover {
     color: #4CAF50;
     border-color: white;
     border-radius: 5px;
-}
-
-/* Main Content Styles */
-main {
-    flex: 1; /* Allow main to take up all the remaining space */
-    padding: 2rem 5%; /* Add more padding on the sides of the main content */
-    max-width: 100%; /* Allow the content to use up more space */
 }
 
 /* Profile Photo Styling */
@@ -140,6 +139,18 @@ h2, h3, h4, h5, h6 {
     margin-bottom: 1rem; /* Add some spacing below the headings */
 }
 
+/* Ensure All Pages are Aligned Consistently */
+h1, h2, h3, h4, h5, h6 {
+    text-align: left; /* Left align all headings */
+    margin-bottom: 1rem; /* Consistent space below all headings */
+}
+
+/* Consistent alignment and spacing for all paragraphs */
+p {
+    text-align: left; /* Align paragraph text to the left */
+    margin-bottom: 1.5rem; /* Space below each paragraph */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
@@ -149,8 +160,9 @@ h2, h3, h4, h5, h6 {
     /* Ensure links stay in a row on mobile, wrap if necessary */
     nav ul {
         flex-direction: row; /* Keep links in a row */
-        justify-content: space-around; /* Distribute space evenly */
+        justify-content: space-between; /* Evenly distribute space between links */
         gap: 1rem; /* Ensure proper spacing between links */
+        flex-wrap: nowrap; /* Prevent wrapping */
     }
 
     /* Adjust font size for links on mobile */
