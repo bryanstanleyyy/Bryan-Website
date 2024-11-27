@@ -23,7 +23,7 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 1.8rem; /* Reduce font size for a more balanced look */
+    font-size: 2rem; /* Adjust font size */
     color: white; /* Ensure the main heading is white */
     text-shadow: 2px 2px 4px black; /* Subtle black shadow for the main heading */
     line-height: 1.2; /* Adjust line height for better spacing */
@@ -35,10 +35,9 @@ nav ul {
     padding: 0;
     margin: 1rem 0 0;
     display: flex; /* Display links in a row */
-    justify-content: flex-start; /* Align links to the left */
+    justify-content: center; /* Center the links */
     flex-wrap: wrap; /* Allow the links to wrap into multiple rows */
     gap: 1rem; /* Add space between the links */
-    padding-left: 25%; /* Align links starting from 1/4th of the page */
 }
 
 nav ul li {
@@ -65,9 +64,10 @@ nav ul li a:hover {
 /* Main Content Styles */
 main {
     flex: 1; /* Allow main to take up all the remaining space */
-    padding: 2rem 10%; /* Add padding for text, use 10% margins for balance */
-    max-width: 100%; /* Allow the content to use up more space */
+    padding: 2rem 8%; /* Use 8% padding for better alignment */
+    max-width: 100%; /* Allow content to use full width */
     margin: 0 auto; /* Center content horizontally */
+    text-align: left; /* Ensure text aligns left */
 }
 
 /* Profile Photo Styling */
@@ -89,7 +89,6 @@ main {
     text-align: left; /* Keep welcome message aligned slightly left */
     margin-top: 20px; /* Add space above the welcome message */
     margin-bottom: 10px; /* Add some space below */
-    padding-left: 10%; /* Slightly align from the left */
 }
 
 /* Paragraph Text Styling */
@@ -133,7 +132,7 @@ img {
 
 /* Section Alignment */
 section {
-    padding: 2rem 10%; /* Add padding for text to align slightly left */
+    padding: 2rem 8%; /* Add padding for text to align */
     max-width: 80%; /* Limit width for larger screens */
     margin: 0 auto; /* Center the content horizontally */
     text-align: left; /* Align text slightly left */
@@ -145,7 +144,6 @@ h2, h3, h4, h5, h6 {
     text-decoration: underline; /* Underline the subheadings */
     margin-bottom: 1rem; /* Add some spacing below the headings */
     text-align: left; /* Align subheadings slightly left */
-    padding-left: 10%; /* Align starting from 1/4th of the page */
 }
 
 /* Responsive Design */
@@ -157,8 +155,7 @@ h2, h3, h4, h5, h6 {
     /* Links adjustments for mobile */
     nav ul {
         gap: 0.5rem; /* Reduce gap between links */
-        justify-content: flex-start; /* Keep links aligned to the left */
-        padding-left: 10%; /* Reduce padding for mobile */
+        justify-content: center; /* Center links within each row */
     }
 
     nav ul li a {
@@ -185,6 +182,6 @@ h2, h3, h4, h5, h6 {
 @media (min-width: 769px) {
     section {
         max-width: 80%; /* Adjust width for larger screens */
-        padding: 2rem 10%; /* Maintain padding */
+        padding: 2rem 8%; /* Maintain padding */
     }
 }
