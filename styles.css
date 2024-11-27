@@ -25,8 +25,7 @@ header h1 {
     margin: 0;
     font-size: 2rem;
     color: rgb(0, 0, 0);
-    text-decoration: underline; 
-    margin-bottom: 1rem;
+    box-shadow: 2px 2px 4px #000000;
 }
 
 /* Navigation Styles */
@@ -37,12 +36,12 @@ nav ul {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    flex-wrap: wrap; /* Ensure links can wrap to the next row */
+    flex-wrap: wrap; /* Allow links to wrap into multiple rows if needed */
 }
 
 nav ul li {
     display: inline-block; /* Allow the items to wrap in multiple rows */
-    width: 45%; /* Each link takes up about 45% of the width, adjust as necessary */
+    width: 45%; /* Each link takes up about 45% of the width on mobile portrait */
     text-align: center;
 }
 
@@ -151,8 +150,9 @@ section {
         gap: 1rem;
     }
 
+    /* Ensure two rows on mobile portrait */
     nav ul li {
-        width: 45%; /* Each link takes up 45% of the width on mobile */
+        width: 45%; /* Each link takes up 45% of the width */
         text-align: center;
     }
 
@@ -161,7 +161,7 @@ section {
         padding: 0.4rem 0.8rem;
     }
 
-    /* Make sure content and sections adjust for small screens */
+    /* Adjust for small screens */
     .profile-photo {
         margin-left: 0;
     }
@@ -176,7 +176,7 @@ section {
     }
 }
 
-/* Landscape Mobile (or small tablets) */
+/* Mobile Landscape and Larger Tablets */
 @media (max-width: 1024px) and (min-width: 769px) {
     nav ul {
         flex-direction: row; /* Keep links in one row on landscape mode */
