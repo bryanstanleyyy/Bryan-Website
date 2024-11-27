@@ -9,8 +9,8 @@ html, body {
     display: flex; /* Enable flexbox */
     flex-direction: column; /* Stack header, main, and footer vertically */
     min-height: 100vh; /* Ensure the body takes the full height of the viewport */
-    width: 100%;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%;
 }
 
 /* Header Styles */
@@ -33,10 +33,10 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 1rem 0;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+    display: flex; /* Ensure the items are displayed in a row */
+    justify-content: center; /* Center the links */
+    gap: 1rem; /* Add space between the links */
+    flex-wrap: wrap; /* Allow the links to wrap onto the next line if needed */
 }
 
 nav ul li {
@@ -50,7 +50,7 @@ nav ul li a {
     padding: 0.5rem 1rem;
     border: 2px solid transparent;
     transition: all 0.3s ease;
-    font-size: 1rem;
+    font-size: 1rem; /* Default font size */
 }
 
 nav ul li a:hover {
@@ -63,10 +63,10 @@ nav ul li a:hover {
 /* Main Content Styles */
 main {
     flex: 1;
-    padding: 2rem 8%;
-    text-align: left; /* Consistent left alignment for all text */
-    max-width: 100%;
+    padding: 2rem 10%; /* Increased padding for better alignment on larger screens */
     margin: 0 auto;
+    max-width: 100%;
+    text-align: left; /* Align text to the left */
 }
 
 /* Profile Photo Styling */
@@ -95,7 +95,7 @@ p {
     font-size: 1rem;
     line-height: 1.6;
     margin: 1rem 0;
-    text-align: left;
+    text-align: left; /* Align paragraph text to the left */
 }
 
 /* Footer Styles */
@@ -120,7 +120,7 @@ a {
 }
 
 a:hover {
-    color: #e0e0e0;
+    color: #e0e0e0; /* Light text on hover */
 }
 
 /* Prevent images from overflowing */
@@ -132,15 +132,15 @@ img {
 /* Section Alignment */
 section {
     text-align: left;
-    padding-left: 5%;
-    width: 80%;
-    margin: 0 auto;
+    padding: 2rem 10%; /* Adjust padding to use more space */
+    width: 80%; /* Ensure content doesn't stretch too much on larger screens */
+    margin: 0 auto; /* Center the content horizontally */
 }
 
 /* Heading Styles - Green and Underlined for h2, h3, etc. */
 h2, h3, h4, h5, h6 {
-    color: #4CAF50;
-    text-decoration: underline;
+    color: #4CAF50; /* Green color for subheadings */
+    text-decoration: underline; /* Underline the subheadings */
     margin-bottom: 1rem;
     text-align: left;
 }
@@ -151,10 +151,10 @@ h2, h3, h4, h5, h6 {
         font-size: 1.5rem;
     }
 
-    /* Links adjustments for mobile */
+    /* Ensure links stay in a row on mobile, wrap if necessary */
     nav ul {
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-around;
         gap: 1rem;
     }
 
@@ -171,6 +171,7 @@ h2, h3, h4, h5, h6 {
 
     section {
         padding-left: 5%;
+        padding-right: 5%;
         width: 100%; /* Full width on mobile */
     }
 
@@ -179,14 +180,15 @@ h2, h3, h4, h5, h6 {
     }
 }
 
-/* Larger Screens (Laptop/Desktop) */
+/* Laptop and Larger Screen Adjustments */
 @media (min-width: 769px) {
     section {
-        width: 80%; /* Ensure text doesn't stretch too much */
-        padding-left: 10%; /* Balance padding */
+        width: 80%; /* Adjust width for larger screens */
+        padding: 2rem 10%; /* Maintain padding */
     }
 
-    header h1 {
-        font-size: 2rem;
+    /* Maintain consistent alignment on laptop and desktop */
+    main {
+        padding: 2rem 10%;
     }
 }
