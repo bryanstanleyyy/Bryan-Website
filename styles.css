@@ -64,7 +64,7 @@ nav ul li a:hover {
 /* Main Content Styles */
 main {
     flex: 1; /* Allow main to take up all the remaining space */
-    padding: 2rem 8%; /* Adjust padding to create balance */
+    padding: 2rem 10%; /* Increase padding for larger screens */
     max-width: 100%; /* Allow the content to use up more space */
     margin: 0 auto; /* Center content horizontally */
     text-align: left; /* Align text to the left */
@@ -83,7 +83,7 @@ main {
 
 /* Welcome Message Styling */
 .welcome-message {
-    font-size: 3rem;  /* Large size for 'Welcome!' */
+    font-size: 4rem;  /* Large size for 'Welcome!' */
     font-weight: bold;
     color: #4CAF50; /* Green color for the welcome text */
     text-align: left; /* Align welcome message to the left */
@@ -133,8 +133,8 @@ img {
 /* Section Alignment */
 section {
     text-align: left; /* Align text to the left */
-    padding: 2rem 8%; /* Add padding for text to align */
-    width: 85%; /* Ensure content doesn't span full width on large screens */
+    padding-left: 10%; /* Add padding to the left */
+    width: 80%; /* Use 80% of the width for larger screens */
     margin: 0 auto; /* Center the content horizontally */
 }
 
@@ -144,6 +144,7 @@ h2, h3, h4, h5, h6 {
     text-decoration: underline; /* Underline the subheadings */
     margin-bottom: 1rem; /* Add some spacing below the headings */
     text-align: left; /* Align subheadings slightly left */
+    padding-left: 0; /* Remove extra padding for subheadings */
 }
 
 /* Responsive Design */
@@ -172,7 +173,6 @@ h2, h3, h4, h5, h6 {
 
     section {
         padding-left: 5%; /* Reduce left padding on small screens */
-        padding-right: 5%; /* Add some right padding */
         width: 100%; /* Full width on mobile */
     }
 
