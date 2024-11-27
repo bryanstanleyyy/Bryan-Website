@@ -15,10 +15,10 @@ html, body {
 
 /* Header Styles */
 header {
-    background: #4CAF50; /* Green header background */
+    background: #4CAF50; /* Green background */
     color: white;
     text-align: center;
-    padding: 2rem 0; /* Add more space at the top */
+    padding: 2rem 0;
 }
 
 header h1 {
@@ -36,7 +36,7 @@ nav ul {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    flex-wrap: wrap; /* Allow the links to wrap onto the next line if needed */
+    flex-wrap: wrap; /* Allow the links to wrap */
 }
 
 nav ul li {
@@ -66,7 +66,10 @@ main {
     padding: 2rem 8%; /* Uniform padding on all sides */
     margin: 0 auto;
     max-width: 100%;
-    text-align: left; /* All text aligned to the left */
+    text-align: left; /* Left-align text */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align all elements to the start (left) */
 }
 
 /* Profile Photo Styling */
@@ -76,7 +79,7 @@ main {
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    margin: 2rem auto;
+    margin: 2rem 0; /* Ensure consistent spacing above and below */
     display: block;
 }
 
@@ -95,7 +98,7 @@ p {
     font-size: 1rem;
     line-height: 1.6;
     margin: 1rem 0;
-    text-align: left; /* Uniform left-alignment */
+    text-align: left; /* Left-align paragraph text */
 }
 
 /* Footer Styles */
@@ -135,6 +138,9 @@ section {
     padding-left: 5%; /* Slight padding on the left */
     width: 85%; /* Use 85% width for sections to prevent stretching */
     margin: 0 auto; /* Center the content horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Ensures left-alignment for all text and images */
 }
 
 /* Heading Styles - Green and Underlined for h2, h3, etc. */
@@ -202,3 +208,4 @@ h2, h3, h4, h5, h6 {
         padding: 2rem 8%;
     }
 }
+
