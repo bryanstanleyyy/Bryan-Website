@@ -36,7 +36,7 @@ nav ul {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allow the links to wrap onto the next line if needed */
 }
 
 nav ul li {
@@ -161,9 +161,13 @@ h2, h3, h4, h5, h6 {
 
     /* Navigation Links Adjustments */
     nav ul {
-        flex-direction: column;
+        flex-direction: column; /* Stack links vertically on small screens */
         justify-content: center;
-        gap: 0.5rem;
+        gap: 1rem;
+    }
+
+    nav ul li {
+        width: 45%; /* Allow links to be smaller and wrap into two rows */
     }
 
     nav ul li a {
