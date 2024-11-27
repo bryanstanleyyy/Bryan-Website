@@ -6,11 +6,11 @@ html, body {
     background-color: #121212; /* Dark background */
     color: #e0e0e0; /* Light text color for readability */
     line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Stack header, main, and footer vertically */
+    min-height: 100vh; /* Ensure the body takes the full height of the viewport */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
     width: 100%;
-    overflow-x: hidden;
 }
 
 /* Header Styles */
@@ -18,27 +18,27 @@ header {
     background: #4CAF50; /* Green header background */
     color: white;
     text-align: center;
-    padding: 2rem 0; /* Add more space at the top */
+    padding: 1.5rem 0;
 }
 
 header h1 {
     margin: 0;
     font-size: 2rem;
-    color: white;
-    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
+    color: white; /* Ensure the main heading is white */
+    text-shadow: 4px 4px 6px black; /* Strong black shadow for the main heading */
 }
 
-/* Navigation Links */
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 1rem 0;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+    margin: 1rem 0 0;
+    display: flex; /* Ensure the items are displayed in a row */
+    justify-content: center; /* Center the links */
+    gap: 1rem; /* Add space between the links */
+    flex-wrap: wrap; /* Allow the links to wrap onto the next line if needed */
 }
 
+/* Navigation Links */
 nav ul li {
     display: inline;
 }
@@ -50,7 +50,7 @@ nav ul li a {
     padding: 0.5rem 1rem;
     border: 2px solid transparent;
     transition: all 0.3s ease;
-    font-size: 1rem;
+    font-size: 1rem; /* Default font size */
 }
 
 nav ul li a:hover {
@@ -62,61 +62,58 @@ nav ul li a:hover {
 
 /* Main Content Styles */
 main {
-    flex: 1;
-    padding: 2rem 8%; /* Uniform padding on all sides */
-    margin: 0 auto;
-    max-width: 100%;
-    text-align: left; /* Left-aligned text for uniformity */
+    flex: 1; /* Allow main to take up all the remaining space */
+    padding: 2rem 5%; /* Add more padding on the sides of the main content */
+    max-width: 100%; /* Allow the content to use up more space */
 }
 
 /* Profile Photo Styling */
 .profile-photo {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    margin: 2rem auto;
-    display: block;
+    width: 300px;  /* Adjusted width */
+    height: 300px; /* Adjusted height */
+    border-radius: 50px;  /* Squircle: slightly rounded corners */
+    object-fit: cover;   /* Ensure the image fits without stretching */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for effect */
+    margin: 0 auto; /* Center the image */
+    display: block; /* Ensure it's treated as a block element */
 }
 
 /* Welcome Message Styling */
 .welcome-message {
-    font-size: 3rem;
+    font-size: 4rem;  /* Large size for 'Welcome!' */
     font-weight: bold;
-    color: #4CAF50;
-    text-align: left;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    color: #4CAF50; /* Green color for the welcome text */
+    text-align: left; /* Align welcome message to the left */
+    margin-top: 20px; /* Add space above the welcome message */
+    margin-bottom: 10px; /* Add some space below */
 }
 
 /* Paragraph Text Styling */
 p {
-    font-size: 1rem;
+    font-size: 1rem; /* Regular font size for the other text */
     line-height: 1.6;
-    margin: 1rem 0;
-    text-align: left; /* Uniform left-alignment */
+    text-align: left; /* Align the paragraph text to the left */
 }
 
 /* Footer Styles */
 footer {
     text-align: center;
     padding: 1rem;
-    background: #4CAF50;
+    background: #4CAF50; /* Green footer background */
     color: white;
-    width: 100%;
+    width: 100%; /* Make sure footer spans the full width */
 }
 
 /* Centered Copyright Text */
 footer .copyright {
-    font-weight: bold;
+    font-weight: bold; /* Make copyright text bold */
     font-size: 1rem;
     margin-top: 20px;
 }
 
 /* Links */
 a {
-    color: #4CAF50;
+    color: #4CAF50; /* Green links */
 }
 
 a:hover {
@@ -125,69 +122,66 @@ a:hover {
 
 /* Prevent images from overflowing */
 img {
-    max-width: 100%;
-    height: auto;
+    max-width: 100%;  /* Ensure images do not overflow */
+    height: auto;     /* Maintain aspect ratio */
 }
 
-/* Section Alignment */
+/* Align content to the left slightly */
 section {
-    text-align: left; /* Left-align all sections */
-    padding-left: 5%; /* Slight padding on the left */
-    width: 85%; /* Use 85% width for sections to prevent stretching */
-    margin: 0 auto; /* Center all content */
+    text-align: left; /* Align text to the left */
+    padding-left: 5%; /* Add padding to the left */
+    width: 90%; /* Ensure content doesn't span full width on large screens */
 }
 
 /* Heading Styles - Green and Underlined for h2, h3, etc. */
 h2, h3, h4, h5, h6 {
-    color: #4CAF50;
-    text-decoration: underline;
-    margin-bottom: 1rem;
-    text-align: left; /* All subheadings are aligned to the left */
-    padding-left: 5%; /* Slight padding for subheadings */
+    color: #4CAF50; /* Green color for subheadings */
+    text-decoration: underline; /* Underline the subheadings */
+    margin-bottom: 1rem; /* Add some spacing below the headings */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 1.5rem; /* Adjust for smaller screens */
+        font-size: 1.5rem;
     }
 
-    /* Navigation Links Adjustments */
+    /* Ensure links stay in a row on mobile, wrap if necessary */
     nav ul {
-        flex-direction: column;
-        justify-content: center;
-        gap: 0.5rem;
+        flex-direction: row; /* Keep links in a row */
+        justify-content: space-around; /* Distribute space evenly */
+        gap: 1rem; /* Ensure proper spacing between links */
     }
 
+    /* Adjust font size for links on mobile */
     nav ul li a {
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
+        font-size: 0.9rem; /* Slightly reduce font size on mobile */
+        padding: 0.4rem 0.8rem; /* Adjust padding to fit better */
     }
 
-    /* Adjust content layout for mobile */
+    /* Make sure content and other sections adjust for small screens */
     .profile-photo {
-        width: 250px;
-        height: 250px;
+        margin-left: 0; /* Remove the left margin for smaller screens */
     }
 
     section {
-        padding-left: 5%; /* Consistent left padding on mobile */
+        padding-left: 0; /* Remove left padding on small screens */
         width: 100%; /* Full width on mobile */
     }
 
     .welcome-message {
-        font-size: 2.5rem;
+        font-size: 2rem; /* Adjust welcome message size for smaller screens */
     }
 }
 
 /* Laptop and Larger Screen Adjustments */
 @media (min-width: 769px) {
-    section {
-        width: 80%; /* Adjust width for larger screens */
-        padding: 2rem 8%; /* Maintain padding for larger screens */
+    .profile-photo {
+        margin-left: 0; /* Center the image again for larger screens */
     }
 
-    main {
-        padding: 2rem 8%;
+    section {
+        padding-left: 10%; /* Increase padding to give more space on larger screens */
+        width: 80%; /* Adjust width for larger screens */
     }
 }
