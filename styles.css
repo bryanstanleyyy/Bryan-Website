@@ -24,7 +24,7 @@ header {
 header h1 {
     margin: 0;
     font-size: 2rem;
-    color: white;
+    color: rgb(0, 0, 0);
     text-shadow: 4px 4px 6px black; /* Strong black shadow for the main heading */
 }
 
@@ -45,7 +45,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: white;
+    color: rgb(0, 0, 0);
     font-weight: bold;
     padding: 0.5rem 1rem;
     border: 2px solid transparent;
@@ -54,9 +54,9 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     color: #4CAF50;
-    border-color: white;
+    border-color: #4CAF50;
     border-radius: 5px;
 }
 
@@ -73,13 +73,19 @@ main {
     height: 300px;
     border-radius: 25%; /* Squircle effect */
     object-fit: cover;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: #4CAF50;
     margin: 0 auto;
     display: block;
 }
 
 /* Heading Styles */
-h2, h3 {
+h2 {
+    color: #4CAF50; /* Green color for headings */
+    text-decoration: underline; 
+    margin-bottom: 1rem;
+}
+
+h3 {
     color: #4CAF50; /* Green color for headings */
     text-decoration: none; /* No underline */
     margin-bottom: 1rem;
@@ -97,7 +103,7 @@ footer {
     text-align: center;
     padding: 1rem;
     background: #4CAF50;
-    color: white;
+    color: rgb(0, 0, 0);
     width: 100%;
 }
 
