@@ -25,7 +25,7 @@ header h1 {
     margin: 0;
     font-size: 2rem;
     color: rgb(0, 0, 0);
-    text-shadow: 2px 2px 4px #000000;
+    text-shadow: 1px 1px 1px #000000;
 }
 
 /* Navigation Styles */
@@ -35,7 +35,7 @@ nav ul {
     margin: 1rem 0 0;
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 0.5rem; /* Smaller gap between links */
     flex-wrap: wrap; /* Allow links to wrap into multiple rows if needed */
 }
 
@@ -49,10 +49,10 @@ nav ul li a {
     text-decoration: none;
     color: rgb(0, 0, 0);
     font-weight: bold;
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 0.6rem; /* Smaller padding for compactness */
     border: 2px solid transparent;
     transition: all 0.3s ease;
-    font-size: 1rem;
+    font-size: 0.85rem; /* Reduced font size */
     display: block;
 }
 
@@ -148,7 +148,7 @@ section {
     nav ul {
         flex-direction: row; /* Make sure items are horizontally laid out */
         justify-content: center;
-        gap: 1rem;
+        gap: 0.5rem; /* Smaller gap between links */
     }
 
     /* Each link takes up 45% width, ensuring 2 rows */
@@ -158,8 +158,8 @@ section {
     }
 
     nav ul li a {
-        font-size: 1rem;
-        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem; /* Reduced font size for smaller screens */
+        padding: 0.3rem 0.6rem; /* Smaller padding for compactness */
     }
 
     /* Adjust for small screens */
@@ -182,7 +182,7 @@ section {
     nav ul {
         flex-direction: row; /* Keep links in 1 row */
         justify-content: center;
-        gap: 1rem;
+        gap: 0.5rem; /* Smaller gap between links */
     }
 
     nav ul li {
@@ -190,8 +190,8 @@ section {
     }
 
     nav ul li a {
-        font-size: 1rem;
-        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem; /* Smaller font size */
+        padding: 0.3rem 0.6rem; /* Smaller padding */
     }
 
     /* Ensure larger photo on mobile */
@@ -223,7 +223,7 @@ section {
     }
 
     nav ul li a {
-        font-size: 1.2rem;
-        padding: 0.6rem 1.2rem;
+        font-size: 1rem; /* Slightly larger font size on larger screens */
+        padding: 0.4rem 0.8rem;
     }
 }
