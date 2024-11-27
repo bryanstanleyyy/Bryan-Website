@@ -33,7 +33,7 @@ nav ul {
     padding: 0;
     margin: 1rem 0 0;
     display: flex;
-    flex-wrap: wrap; /* Allow the links to wrap on smaller screens */
+    flex-wrap: wrap; /* Allow links to wrap on smaller screens */
     justify-content: center; /* Center links */
 }
 
@@ -41,6 +41,7 @@ nav ul li {
     display: inline-block; /* Allow links to wrap in multiple rows */
     width: 45%; /* Links take up 45% of width on smaller screens */
     text-align: center;
+    margin-bottom: 1rem; /* Ensure space between links */
 }
 
 nav ul li a {
@@ -133,12 +134,14 @@ section {
 /* Mobile and Tablet Responsive Design (Portrait Mode) */
 @media (max-width: 768px) {
     nav ul {
-        flex-direction: column; /* Stack links vertically on small screens */
-        gap: 1rem;
+        flex-direction: row; /* Change to row to fit links in two rows */
+        justify-content: space-evenly; /* Distribute links evenly */
+        gap: 1rem; /* Space between links */
     }
 
     nav ul li {
-        width: 100%; /* Each link takes full width */
+        width: 48%; /* Adjust to fit two items per row */
+        margin-bottom: 1rem; /* Add space between rows */
         text-align: center;
     }
 
