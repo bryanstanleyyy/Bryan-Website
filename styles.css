@@ -33,10 +33,10 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 1rem 0;
-    display: flex; /* Ensure the items are displayed in a row */
-    justify-content: center; /* Center the links */
-    gap: 1rem; /* Add space between the links */
-    flex-wrap: wrap; /* Allow the links to wrap onto the next line if needed */
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -50,7 +50,7 @@ nav ul li a {
     padding: 0.5rem 1rem;
     border: 2px solid transparent;
     transition: all 0.3s ease;
-    font-size: 1rem; /* Default font size */
+    font-size: 1rem;
 }
 
 nav ul li a:hover {
@@ -63,10 +63,10 @@ nav ul li a:hover {
 /* Main Content Styles */
 main {
     flex: 1;
-    padding: 2rem 8%;
+    padding: 2rem 8%; /* Ensure sufficient padding to the left */
     margin: 0 auto;
     max-width: 100%;
-    text-align: left;
+    text-align: left; /* Align text to the left */
 }
 
 /* Profile Photo Styling */
@@ -95,8 +95,8 @@ p {
     font-size: 1rem;
     line-height: 1.6;
     margin: 1rem 0;
-    text-align: left; /* Align the paragraph text slightly left */
-    padding-left: 5%; /* Slight left padding */
+    text-align: left; /* Align the paragraph text to the left */
+    padding-left: 5%; /* Slight left padding for consistency */
 }
 
 /* Footer Styles */
@@ -132,19 +132,18 @@ img {
 
 /* Section Alignment */
 section {
-    text-align: left;
-    padding: 2rem 8%;
-    width: 80%;
-    margin: 0 auto;
+    text-align: left; /* Align text to the left */
+    padding-left: 5%; /* Slight left padding for all sections */
+    width: 80%; /* Use 80% of the page width on large screens */
+    margin: 0 auto; /* Center the content horizontally */
 }
 
 /* Heading Styles - Green and Underlined for h2, h3, etc. */
 h2, h3, h4, h5, h6 {
-    color: #4CAF50;
-    text-decoration: underline;
+    color: #4CAF50; /* Green color for subheadings */
+    text-decoration: underline; /* Underline the subheadings */
     margin-bottom: 1rem;
-    text-align: left;
-    padding-left: 5%; /* Slight left padding for subheadings */
+    text-align: left; /* Left align all subheadings */
 }
 
 /* Responsive Design */
@@ -172,8 +171,7 @@ h2, h3, h4, h5, h6 {
     }
 
     section {
-        padding-left: 5%;
-        padding-right: 5%;
+        padding-left: 5%; /* Consistent left padding on mobile */
         width: 100%; /* Full width on mobile */
     }
 
