@@ -6,9 +6,10 @@ html, body {
     background-color: #121212; /* Dark background */
     color: #e0e0e0; /* Light text color for readability */
     line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Stack header, main, and footer vertically */
+    min-height: 100vh; /* Ensure the body takes the full height of the viewport */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
     width: 100%;
 }
 
@@ -24,7 +25,8 @@ header h1 {
     margin: 0;
     font-size: 2rem;
     color: rgb(0, 0, 0);
-    text-shadow: 1px 1px 1px #000000;
+    text-decoration: underline; 
+    margin-bottom: 1rem;
 }
 
 /* Navigation Styles */
@@ -33,15 +35,17 @@ nav ul {
     padding: 0;
     margin: 1rem 0 0;
     display: flex;
-    flex-wrap: wrap; /* Allow links to wrap on smaller screens */
-    justify-content: center; /* Center links */
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap; /* Allow wrapping to multiple rows */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 nav ul li {
-    display: inline-block; /* Allow links to wrap in multiple rows */
-    width: 45%; /* Links take up 45% of width on smaller screens */
+    display: inline-block; /* Allow links to wrap into multiple rows */
+    width: 45%; /* Each link takes up 45% of the width, adjust as necessary */
     text-align: center;
-    margin-bottom: 1rem; /* Ensure space between links */
+    margin-bottom: 10px; /* Space between rows */
 }
 
 nav ul li a {
@@ -81,7 +85,13 @@ main {
 }
 
 /* Heading Styles */
-h2, h3 {
+h2 {
+    color: #4CAF50; /* Green color for headings */
+    text-decoration: underline; 
+    margin-bottom: 1rem;
+}
+
+h3 {
     color: #4CAF50; /* Green color for headings */
     text-decoration: none; /* No underline */
     margin-bottom: 1rem;
@@ -131,81 +141,87 @@ section {
     width: 90%;
 }
 
-/* Mobile and Tablet Responsive Design (Portrait Mode) */
+/* Mobile and Tablet Responsive Design */
 @media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
     nav ul {
-        flex-direction: row; /* Change to row to fit links in two rows */
-        justify-content: space-evenly; /* Distribute links evenly */
-        gap: 1rem; /* Space between links */
+        flex-direction: row; /* Ensure horizontal layout on mobile portrait */
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap; /* Allow links to wrap to 2 rows */
     }
 
     nav ul li {
-        width: 48%; /* Adjust to fit two items per row */
-        margin-bottom: 1rem; /* Add space between rows */
+        width: 45%; /* Each link takes up 45% of the width on mobile */
         text-align: center;
     }
 
     nav ul li a {
         font-size: 1rem;
-        padding: 0.5rem;
+        padding: 0.4rem 0.8rem;
     }
 
+    /* Make sure content and sections adjust for small screens */
     .profile-photo {
-        width: 250px;
-        height: 250px;
+        margin-left: 0;
     }
 
     section {
         padding-left: 0;
         width: 100%;
     }
+
+    .welcome-message {
+        font-size: 2rem;
+    }
 }
 
-/* Mobile Landscape and Tablets */
+/* Landscape Mobile (or small tablets) */
 @media (max-width: 1024px) and (min-width: 769px) {
     nav ul {
-        flex-direction: row; /* 1 row on larger mobile devices */
+        flex-direction: row; /* Keep links in one row on landscape mode */
         justify-content: center;
-    }
-
-    nav ul li {
-        width: auto; /* No fixed width */
+        gap: 1rem;
     }
 
     nav ul li a {
         font-size: 1rem;
-        padding: 0.5rem 1rem;
+        padding: 0.4rem 0.8rem;
     }
 
-    .profile-photo {
-        width: 300px;
-        height: 300px;
-    }
-}
-
-/* Larger Screen (Laptop & Desktop) */
-@media (min-width: 1025px) {
-    nav ul {
-        flex-direction: row; /* 1 row on large screens */
-        justify-content: space-evenly;
-    }
-
-    nav ul li {
-        width: auto; /* Links will adjust based on content */
-    }
-
-    nav ul li a {
-        font-size: 1.2rem;
-        padding: 0.6rem 1.2rem;
-    }
-
+    /* Ensure larger photo on mobile */
     .profile-photo {
         width: 350px;
         height: 350px;
     }
 
     section {
-        width: 80%; /* Adjust content width for large screens */
+        width: 100%;
+    }
+}
+
+/* Larger Screen (Laptop & Desktop) */
+@media (min-width: 1025px) {
+    .profile-photo {
+        width: 400px;
+        height: 400px;
+    }
+
+    section {
         padding-left: 10%;
+        width: 80%;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    nav ul li a {
+        font-size: 1.2rem;
+        padding: 0.6rem 1.2rem;
     }
 }
