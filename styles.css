@@ -6,37 +6,36 @@ html, body {
     background-color: #121212; /* Dark background */
     color: #e0e0e0; /* Light text color for readability */
     line-height: 1.6;
-    display: flex; /* Enable flexbox */
-    flex-direction: column; /* Stack header, main, and footer vertically */
-    min-height: 100vh; /* Ensure the body takes the full height of the viewport */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
     width: 100%;
 }
 
 /* Header Styles */
 header {
-    background: #4CAF50; /* Green header background */
+    background: #4CAF50; /* Green background */
     color: white;
     text-align: center;
-    padding: 1.5rem 0;
+    padding: 2rem 0; /* Padding for header */
 }
 
 header h1 {
     margin: 0;
     font-size: 2rem;
     color: white;
-    text-shadow: 4px 4px 6px black; /* Strong black shadow for the main heading */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
 }
 
-/* Navigation Links */
+/* Navigation Styles */
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 1rem 0;
+    margin: 0;
     display: flex;
     justify-content: center;
     gap: 1rem;
-    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -63,20 +62,19 @@ nav ul li a:hover {
 /* Main Content Styles */
 main {
     flex: 1;
-    padding: 2rem 8%; /* Ensure sufficient padding to the left */
+    padding: 2rem 8%; /* Use padding to balance content spacing */
     margin: 0 auto;
     max-width: 100%;
-    text-align: left; /* Align text to the left */
+    text-align: left; /* Uniform left-aligned text */
 }
 
 /* Profile Photo Styling */
 .profile-photo {
-    width: 300px;
-    height: 300px;
-    border-radius: 50px;
+    width: 250px;  /* Adjusted size */
+    height: 250px; /* Adjusted size */
+    border-radius: 50%; /* Circle photo */
     object-fit: cover;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    margin: 0 auto;
+    margin: 2rem auto;
     display: block;
 }
 
@@ -95,8 +93,7 @@ p {
     font-size: 1rem;
     line-height: 1.6;
     margin: 1rem 0;
-    text-align: left; /* Align the paragraph text to the left */
-    padding-left: 5%; /* Slight left padding for consistency */
+    text-align: left;
 }
 
 /* Footer Styles */
@@ -132,51 +129,50 @@ img {
 
 /* Section Alignment */
 section {
-    text-align: left; /* Align text to the left */
-    padding-left: 5%; /* Slight left padding for all sections */
-    width: 80%; /* Use 80% of the page width on large screens */
-    margin: 0 auto; /* Center the content horizontally */
+    text-align: left;
+    padding-left: 5%; /* Add padding to the left for slight left alignment */
+    width: 80%; /* Take up most of the page width */
+    margin: 0 auto; /* Center the content */
 }
 
 /* Heading Styles - Green and Underlined for h2, h3, etc. */
 h2, h3, h4, h5, h6 {
-    color: #4CAF50; /* Green color for subheadings */
-    text-decoration: underline; /* Underline the subheadings */
+    color: #4CAF50;
+    text-decoration: underline;
     margin-bottom: 1rem;
-    text-align: left; /* Left align all subheadings */
+    text-align: left;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 1.5rem;
+        font-size: 1.5rem; /* Adjust for smaller screens */
     }
 
-    /* Ensure links stay in a row on mobile, wrap if necessary */
+    /* Navigation Links Adjustments */
     nav ul {
-        flex-direction: row;
-        justify-content: space-around;
-        gap: 1rem;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.5rem;
     }
 
     nav ul li a {
-        font-size: 0.9rem;
-        padding: 0.4rem 0.8rem;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
     }
 
-    /* Make sure content and other sections adjust for small screens */
     .profile-photo {
-        width: 250px;
-        height: 250px;
+        width: 200px; /* Adjust photo size for mobile */
+        height: 200px;
     }
 
     section {
-        padding-left: 5%; /* Consistent left padding on mobile */
-        width: 100%; /* Full width on mobile */
+        padding-left: 5%;
+        width: 100%; /* Use full width on mobile */
     }
 
     .welcome-message {
-        font-size: 2.5rem;
+        font-size: 2rem; /* Adjust message size for mobile */
     }
 }
 
@@ -184,11 +180,6 @@ h2, h3, h4, h5, h6 {
 @media (min-width: 769px) {
     section {
         width: 80%; /* Adjust width for larger screens */
-        padding: 2rem 8%; /* Maintain padding */
-    }
-
-    /* Maintain consistent alignment on laptop and desktop */
-    main {
-        padding: 2rem 8%;
+        padding: 2rem 8%; /* Maintain consistent padding */
     }
 }
