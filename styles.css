@@ -28,6 +28,7 @@ header h1 {
     text-shadow: 4px 4px 6px black; /* Strong black shadow for the main heading */
 }
 
+/* Navigation Links */
 nav ul {
     list-style: none;
     padding: 0;
@@ -35,10 +36,10 @@ nav ul {
     display: flex; /* Ensure the items are displayed in a row */
     justify-content: center; /* Center the links */
     gap: 1rem; /* Add space between the links */
-    flex-wrap: wrap; /* Allow the links to wrap onto the next line if needed */
+    flex-wrap: nowrap; /* Prevent wrapping onto multiple rows */
+    width: 100%; /* Make sure the links take up the full width */
 }
 
-/* Navigation Links */
 nav ul li {
     display: inline;
 }
@@ -51,6 +52,9 @@ nav ul li a {
     border: 2px solid transparent;
     transition: all 0.3s ease;
     font-size: 1rem; /* Default font size */
+    display: block; /* Make links block-level to control width */
+    min-width: 100px; /* Ensure each link has a minimum width */
+    text-align: center;
 }
 
 nav ul li a:hover {
@@ -140,17 +144,31 @@ h2, h3, h4, h5, h6 {
     margin-bottom: 1rem; /* Add some spacing below the headings */
 }
 
+/* Ensure All Pages are Aligned Consistently */
+h1, h2, h3, h4, h5, h6 {
+    text-align: left; /* Left align all headings */
+    margin-bottom: 1rem; /* Consistent space below all headings */
+}
+
+/* Consistent alignment and spacing for all paragraphs */
+p {
+    text-align: left; /* Align paragraph text to the left */
+    margin-bottom: 1.5rem; /* Space below each paragraph */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
         font-size: 1.5rem;
     }
 
-    /* Ensure links stay in a row on mobile, wrap if necessary */
+    /* Ensure links stay in a row on mobile, with no wrapping */
     nav ul {
         flex-direction: row; /* Keep links in a row */
-        justify-content: space-around; /* Distribute space evenly */
+        justify-content: space-evenly; /* Evenly distribute space between links */
         gap: 1rem; /* Ensure proper spacing between links */
+        flex-wrap: nowrap; /* Prevent wrapping */
+        width: 100%; /* Ensure the nav takes full width */
     }
 
     /* Adjust font size for links on mobile */
