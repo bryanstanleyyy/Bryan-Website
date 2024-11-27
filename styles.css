@@ -3,7 +3,7 @@ html, body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #121212; /* Dark background for the whole page */
+    background-color: #121212; /* Dark background */
     color: #e0e0e0; /* Light text color for readability */
     line-height: 1.6; /* Better line spacing for text */
     display: flex; /* Flexbox layout */
@@ -15,10 +15,10 @@ html, body {
 
 /* Header Styles */
 header {
-    background: #4CAF50; /* Green background for header */
+    background: #4CAF50; /* Green header background */
     color: white;
     text-align: center;
-    padding: 2rem 0; /* Add padding for header */
+    padding: 2rem 0; /* Add more space at the top */
 }
 
 header h1 {
@@ -63,7 +63,7 @@ nav ul li a:hover {
 /* Main Content Styles */
 main {
     flex: 1;
-    padding: 2rem 8%; /* Padding on both sides of content */
+    padding: 2rem 8%; /* Uniform padding on all sides */
     margin: 0 auto;
     max-width: 100%;
     text-align: left; /* All text aligned to the left */
@@ -73,9 +73,9 @@ main {
 .profile-photo {
     width: 300px;
     height: 300px;
-    border-radius: 50%; /* Circle shape */
+    border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow for photo */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     margin: 2rem auto;
     display: block;
 }
@@ -85,7 +85,7 @@ main {
     font-size: 3rem;
     font-weight: bold;
     color: #4CAF50;
-    text-align: left; /* Align to the left */
+    text-align: left;
     margin-top: 20px;
     margin-bottom: 10px;
 }
@@ -95,7 +95,7 @@ p {
     font-size: 1rem;
     line-height: 1.6;
     margin: 1rem 0;
-    text-align: left; /* All paragraph text aligned to the left */
+    text-align: left; /* Uniform left-alignment */
 }
 
 /* Footer Styles */
@@ -131,10 +131,10 @@ img {
 
 /* Section Alignment */
 section {
-    text-align: left; /* All content aligned left */
-    padding-left: 5%; /* Slight left padding for content */
-    width: 85%; /* Ensure content doesn't stretch too much */
-    margin: 0 auto; /* Center content horizontally */
+    text-align: left; /* Left-align all content */
+    padding-left: 5%; /* Slight padding on the left */
+    width: 85%; /* Use 85% width for sections to prevent stretching */
+    margin: 0 auto; /* Center the content horizontally */
 }
 
 /* Heading Styles - Green and Underlined for h2, h3, etc. */
@@ -143,15 +143,23 @@ h2, h3, h4, h5, h6 {
     text-decoration: underline;
     margin-bottom: 1rem;
     text-align: left; /* Left-align headings */
+    padding-left: 5%; /* Align subheadings with slight left padding */
+}
+
+/* Contact, Education, and Skills Sections - Left Alignment */
+.contact, .education, .skills {
+    padding-left: 5%; /* Slight padding to align text to the left */
+    width: 85%; /* Ensure no content stretches too much */
+    margin: 0 auto; /* Center the content horizontally */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 1.5rem; /* Smaller font size on mobile */
+        font-size: 1.5rem; /* Adjust for smaller screens */
     }
 
-    /* Adjust navigation links for mobile */
+    /* Navigation Links Adjustments */
     nav ul {
         flex-direction: column;
         justify-content: center;
@@ -163,14 +171,14 @@ h2, h3, h4, h5, h6 {
         padding: 0.5rem 1rem;
     }
 
-    /* Adjust content layout for mobile */
+    /* Make sure content and other sections adjust for small screens */
     .profile-photo {
         width: 250px;
         height: 250px;
     }
 
     section {
-        padding-left: 5%; /* Consistent padding on mobile */
+        padding-left: 5%; /* Consistent left padding on mobile */
         width: 100%; /* Full width on mobile */
     }
 
@@ -187,6 +195,6 @@ h2, h3, h4, h5, h6 {
     }
 
     main {
-        padding: 2rem 8%; /* Ensure consistent padding on larger screens */
+        padding: 2rem 8%;
     }
 }
