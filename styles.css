@@ -6,10 +6,9 @@ html, body {
     background-color: #121212; /* Dark background */
     color: #e0e0e0; /* Light text color for readability */
     line-height: 1.6;
-    display: flex; /* Enable flexbox */
-    flex-direction: column; /* Stack header, main, and footer vertically */
-    min-height: 100vh; /* Ensure the body takes the full height of the viewport */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     width: 100%;
 }
 
@@ -34,14 +33,13 @@ nav ul {
     padding: 0;
     margin: 1rem 0 0;
     display: flex;
-    justify-content: center;
-    gap: 0.5rem; /* Smaller gap between links */
-    flex-wrap: wrap; /* Allow links to wrap into multiple rows if needed */
+    flex-wrap: wrap; /* Allow the links to wrap on smaller screens */
+    justify-content: center; /* Center links */
 }
 
 nav ul li {
-    display: inline-block; /* Allow the items to wrap in multiple rows */
-    width: 45%; /* Each link takes up 45% of the width */
+    display: inline-block; /* Allow links to wrap in multiple rows */
+    width: 45%; /* Links take up 45% of width on smaller screens */
     text-align: center;
 }
 
@@ -49,10 +47,10 @@ nav ul li a {
     text-decoration: none;
     color: rgb(0, 0, 0);
     font-weight: bold;
-    padding: 0.3rem 0.6rem; /* Smaller padding for compactness */
+    padding: 0.5rem 1rem;
     border: 2px solid transparent;
     transition: all 0.3s ease;
-    font-size: 0.85rem; /* Reduced font size */
+    font-size: 1rem;
     display: block;
 }
 
@@ -82,13 +80,7 @@ main {
 }
 
 /* Heading Styles */
-h2 {
-    color: #4CAF50; /* Green color for headings */
-    text-decoration: underline; 
-    margin-bottom: 1rem;
-}
-
-h3 {
+h2, h3 {
     color: #4CAF50; /* Green color for headings */
     text-decoration: none; /* No underline */
     margin-bottom: 1rem;
@@ -138,95 +130,79 @@ section {
     width: 90%;
 }
 
-/* Mobile Portrait (up to 768px) */
+/* Mobile and Tablet Responsive Design (Portrait Mode) */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    /* Ensure links are in 2 rows for mobile portrait */
     nav ul {
-        flex-direction: row; /* Horizontal layout */
-        justify-content: center;
-        gap: 0.5rem; /* Smaller gap between links */
+        flex-direction: column; /* Stack links vertically on small screens */
+        gap: 1rem;
     }
 
     nav ul li {
-        width: 45%; /* Each link takes up 45% width */
+        width: 100%; /* Each link takes full width */
         text-align: center;
     }
 
     nav ul li a {
-        font-size: 0.85rem; /* Smaller font size */
-        padding: 0.3rem 0.6rem; /* Smaller padding */
+        font-size: 1rem;
+        padding: 0.5rem;
     }
 
-    /* Adjust for small screens */
     .profile-photo {
-        margin-left: 0;
+        width: 250px;
+        height: 250px;
     }
 
     section {
         padding-left: 0;
         width: 100%;
     }
-
-    .welcome-message {
-        font-size: 2rem;
-    }
 }
 
-/* Mobile Landscape, Tablets, and Larger Screens (769px and above) */
-@media (min-width: 769px) {
+/* Mobile Landscape and Tablets */
+@media (max-width: 1024px) and (min-width: 769px) {
     nav ul {
-        flex-direction: row; /* Ensure links are in 1 row */
+        flex-direction: row; /* 1 row on larger mobile devices */
         justify-content: center;
-        gap: 0.5rem; /* Smaller gap between links */
     }
 
     nav ul li {
-        width: auto; /* Links in 1 row */
+        width: auto; /* No fixed width */
     }
 
     nav ul li a {
-        font-size: 0.85rem; /* Smaller font size for laptop and tablet */
-        padding: 0.3rem 0.6rem; /* Smaller padding */
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
     }
 
-    /* Ensure larger photo on mobile */
+    .profile-photo {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* Larger Screen (Laptop & Desktop) */
+@media (min-width: 1025px) {
+    nav ul {
+        flex-direction: row; /* 1 row on large screens */
+        justify-content: space-evenly;
+    }
+
+    nav ul li {
+        width: auto; /* Links will adjust based on content */
+    }
+
+    nav ul li a {
+        font-size: 1.2rem;
+        padding: 0.6rem 1.2rem;
+    }
+
     .profile-photo {
         width: 350px;
         height: 350px;
     }
 
     section {
-        width: 100%;
-    }
-}
-
-/* Larger Screen (Laptop & Desktop, min-width: 1025px) */
-@media (min-width: 1025px) {
-    nav ul {
-        flex-direction: row;
-        justify-content: space-around; /* Distribute links evenly */
-    }
-
-    nav ul li {
-        width: auto; /* Auto width for each link */
-    }
-
-    nav ul li a {
-        font-size: 1rem; /* Slightly larger font size on larger screens */
-        padding: 0.4rem 0.8rem;
-    }
-
-    .profile-photo {
-        width: 400px;
-        height: 400px;
-    }
-
-    section {
+        width: 80%; /* Adjust content width for large screens */
         padding-left: 10%;
-        width: 80%;
     }
 }
