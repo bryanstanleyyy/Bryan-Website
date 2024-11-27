@@ -90,8 +90,8 @@ nav ul li a:hover {
 
 /* Profile Photo - Squircle Shape */
 .profile-photo {
-    width: 250px; /* Larger image size */
-    height: 250px;
+    width: 300px; /* Increased image size */
+    height: 300px;
     border-radius: 20%; /* Squircle shape */
     object-fit: cover;
     box-shadow: 0 4px 8px rgba(0, 255, 0, 0.3);
@@ -156,7 +156,6 @@ footer .copyright {
     border-bottom: 2px solid black; /* Black underline on hover */
 }
 
-/* Contact Information: Email: and Email ID on the same line */
 .contact-info {
     display: flex;
     align-items: center;
@@ -173,6 +172,15 @@ footer .copyright {
     color: #00FF00; /* Green color for email ID */
 }
 
+/* Green Links After Colons */
+.contact-info span {
+    color: #00FF00; /* Green links after colons */
+}
+
+.contact-info label, .contact-info .email {
+    color: #00FF00; /* Ensure labels are green */
+}
+
 /* Ensure Footer is Not Hovering on Mobile */
 footer {
     position: static; /* Footer stays within content flow */
@@ -186,8 +194,8 @@ footer {
     }
 
     .profile-photo {
-        width: 200px; /* Slightly smaller image for mobile */
-        height: 200px;
+        width: 250px; /* Slightly smaller image for mobile */
+        height: 250px;
     }
 
     .welcome-message {
