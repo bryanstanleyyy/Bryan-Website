@@ -3,21 +3,22 @@ html, body {
     font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #000000; /* Pure black background */
+    background-color: #000000; /* Black background */
     color: #00FF00; /* Bright green text */
     line-height: 1.8;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100vh; /* Ensure body takes the full height of the viewport */
     overflow-x: hidden;
 }
 
 /* Layout Adjustments */
 main, section {
-    padding: 2rem 8%; /* Consistent padding */
+    padding: 2rem 8%; /* Consistent padding for content */
     max-width: 1200px;
     margin: 0 auto;
     text-align: left;
+    flex-grow: 1; /* Allow main content to take remaining space */
 }
 
 @media (max-width: 768px) {
@@ -28,7 +29,7 @@ main, section {
 
 /* Header Styles */
 header {
-    background: #00A000; /* Darker green for contrast */
+    background: #00A000; /* Dark green header */
     color: black;
     text-align: center;
     padding: 1.5rem 1rem;
@@ -49,17 +50,18 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap; /* Allow wrapping for mobile layout */
+    gap: 0.5rem;
+    flex-wrap: wrap; /* Allow links to wrap on small screens */
 }
 
 nav ul li {
-    flex: 1 1 45%; /* Links occupy 45% width on smaller screens */
+    flex: 1 1 30%; /* 3 links per row on mobile */
+    min-width: 120px; /* Ensure links have a minimum width */
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #004d00; /* Darker green for better aesthetics */
+    color: #004d00; /* Darker green */
     font-weight: bold;
     padding: 0.5rem 1rem;
     border: 2px solid #00FF00;
@@ -72,7 +74,7 @@ nav ul li a {
 
 nav ul li a:hover {
     background-color: black;
-    color: #00FF00; /* Contrast color for hover */
+    color: #00FF00; /* Contrast hover effect */
     border-color: #00FF00;
 }
 
@@ -86,18 +88,11 @@ nav ul li a:hover {
     }
 }
 
-/* Profile Photo */
+/* Profile Photo - Squircle Shape */
 .profile-photo {
     width: 250px; /* Larger image size */
     height: 250px;
-    border-radius: 50%; /* Circular shape */
-    clip-path: path(
-        "M 125 0 
-        C 175 0 250 75 250 125 
-        C 250 175 175 250 125 250 
-        C 75 250 0 175 0 125 
-        C 0 75 75 0 125 0"
-    ); /* Squircle shape */
+    border-radius: 20%; /* Squircle shape */
     object-fit: cover;
     box-shadow: 0 4px 8px rgba(0, 255, 0, 0.3);
     margin: 2rem auto;
@@ -108,7 +103,7 @@ nav ul li a:hover {
 h2 {
     font-size: 2rem;
     font-weight: bold;
-    color: #00FF00; /* Green color for subheadings */
+    color: #00FF00; /* Green subheadings */
     margin-bottom: 1rem;
 }
 
@@ -129,57 +124,52 @@ p {
     margin-bottom: 1.5rem;
 }
 
-/* Contact Links */
-.contact-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: start;
-}
-
-/* Contact Links */
-.contact-links a {
-    text-decoration: none;
-    color: #00FF00; /* Green color for contact links */
-    font-weight: bold;
-    transition: color 0.3s, border-color 0.3s;
-    border-bottom: 2px solid transparent; /* Add border for hover effect */
-}
-
-.contact-links a:hover {
-    color: #008000; /* Darker green for hover */
-    border-bottom: 2px solid #00FF00; /* Green underline */
-}
-
-/* Contact Information */
-.contact-info {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.contact-info .label {
-    font-weight: bold;
-    color: #00FF00;
-    white-space: nowrap; /* Prevent wrapping */
-}
-
-/* Footer */
+/* Footer - Sticks to bottom of page */
 footer {
-    background: #00A000; /* Matches header for consistency */
+    background: #00A000; /* Matches header */
     color: black;
     text-align: center;
     padding: 1.5rem 0;
     box-shadow: 0 -4px 8px rgba(0, 255, 0, 0.2);
-    width: 100%; /* Full-width footer */
-    position: absolute;
-    bottom: 0; /* Sticks footer to the bottom */
+    width: 100%;
+    position: relative;
+    margin-top: auto; /* Footer stays at the bottom */
 }
 
 /* Footer Copyright */
 footer .copyright {
     font-size: 1rem;
     font-weight: bold; /* Bold copyright text */
+}
+
+/* Contact Links */
+.contact-links a {
+    text-decoration: none;
+    color: #00FF00; /* Green links */
+    font-weight: bold;
+    transition: color 0.3s, border-color 0.3s;
+    border-bottom: 2px solid transparent; /* Add border for hover effect */
+}
+
+.contact-links a:hover {
+    color: black; /* Change color on hover */
+    border-bottom: 2px solid black; /* Black underline on hover */
+}
+
+/* Contact Information: Email: and Email ID on the same line */
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-info label {
+    font-weight: bold;
+    color: #00FF00; /* Green for label */
+}
+
+.contact-info .email {
+    color: #00FF00; /* Green color for email ID */
 }
 
 /* Responsive Design */
@@ -189,7 +179,7 @@ footer .copyright {
     }
 
     .profile-photo {
-        width: 200px; /* Slightly smaller images for mobile */
+        width: 200px; /* Slightly smaller image for mobile */
         height: 200px;
     }
 
@@ -205,20 +195,12 @@ footer .copyright {
         padding: 1rem 2%;
     }
 
-    nav ul {
-        flex-wrap: wrap; /* Allow wrapping for mobile links */
-    }
-
+    /* Adjust navigation links for mobile */
     nav ul li {
-        flex: 1 1 48%; /* Ensure links are stacked with 2-3 per row */
+        flex: 1 1 45%; /* 2 links per row on smaller screens */
     }
 
     footer {
-        position: relative; /* Footer stays at the bottom of content */
-    }
-
-    .contact-info {
-        flex-direction: column;
-        align-items: flex-start; /* Aligns contact details nicely */
+        position: static; /* Ensure footer stays at the bottom on mobile */
     }
 }
