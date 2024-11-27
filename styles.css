@@ -9,33 +9,34 @@ html, body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    overflow-x: hidden;
     width: 100%;
+    overflow-x: hidden;
 }
 
 /* Header Styles */
 header {
-    background: #4CAF50; /* Green background */
+    background: #4CAF50; /* Green header background */
     color: white;
     text-align: center;
-    padding: 2rem 0; /* Padding for header */
+    padding: 2rem 0; /* Add more space at the top */
 }
 
 header h1 {
     margin: 0;
     font-size: 2rem;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
 }
 
-/* Navigation Styles */
+/* Navigation Links */
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 1rem 0;
     display: flex;
     justify-content: center;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -62,18 +63,19 @@ nav ul li a:hover {
 /* Main Content Styles */
 main {
     flex: 1;
-    padding: 2rem 8%; /* Use padding to balance content spacing */
+    padding: 2rem 8%; /* Uniform padding on all sides */
     margin: 0 auto;
     max-width: 100%;
-    text-align: left; /* Uniform left-aligned text */
+    text-align: left; /* Left-aligned text for uniformity */
 }
 
 /* Profile Photo Styling */
 .profile-photo {
-    width: 250px;  /* Adjusted size */
-    height: 250px; /* Adjusted size */
-    border-radius: 50%; /* Circle photo */
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
     object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     margin: 2rem auto;
     display: block;
 }
@@ -93,7 +95,7 @@ p {
     font-size: 1rem;
     line-height: 1.6;
     margin: 1rem 0;
-    text-align: left;
+    text-align: left; /* Uniform left-alignment */
 }
 
 /* Footer Styles */
@@ -129,10 +131,10 @@ img {
 
 /* Section Alignment */
 section {
-    text-align: left;
-    padding-left: 5%; /* Add padding to the left for slight left alignment */
-    width: 80%; /* Take up most of the page width */
-    margin: 0 auto; /* Center the content */
+    text-align: left; /* Left-align all sections */
+    padding-left: 5%; /* Slight padding on the left */
+    width: 85%; /* Use 85% width for sections to prevent stretching */
+    margin: 0 auto; /* Center all content */
 }
 
 /* Heading Styles - Green and Underlined for h2, h3, etc. */
@@ -140,7 +142,8 @@ h2, h3, h4, h5, h6 {
     color: #4CAF50;
     text-decoration: underline;
     margin-bottom: 1rem;
-    text-align: left;
+    text-align: left; /* All subheadings are aligned to the left */
+    padding-left: 5%; /* Slight padding for subheadings */
 }
 
 /* Responsive Design */
@@ -161,18 +164,19 @@ h2, h3, h4, h5, h6 {
         padding: 0.5rem 1rem;
     }
 
+    /* Adjust content layout for mobile */
     .profile-photo {
-        width: 200px; /* Adjust photo size for mobile */
-        height: 200px;
+        width: 250px;
+        height: 250px;
     }
 
     section {
-        padding-left: 5%;
-        width: 100%; /* Use full width on mobile */
+        padding-left: 5%; /* Consistent left padding on mobile */
+        width: 100%; /* Full width on mobile */
     }
 
     .welcome-message {
-        font-size: 2rem; /* Adjust message size for mobile */
+        font-size: 2.5rem;
     }
 }
 
@@ -180,6 +184,10 @@ h2, h3, h4, h5, h6 {
 @media (min-width: 769px) {
     section {
         width: 80%; /* Adjust width for larger screens */
-        padding: 2rem 8%; /* Maintain consistent padding */
+        padding: 2rem 8%; /* Maintain padding for larger screens */
+    }
+
+    main {
+        padding: 2rem 8%;
     }
 }
