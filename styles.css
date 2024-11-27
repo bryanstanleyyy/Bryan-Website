@@ -35,9 +35,10 @@ nav ul {
     padding: 0;
     margin: 1rem 0 0;
     display: flex; /* Display links in a row */
-    justify-content: center; /* Center the links */
-    gap: 1rem; /* Add space between the links */
+    justify-content: flex-start; /* Align links to the left */
     flex-wrap: wrap; /* Allow the links to wrap into multiple rows */
+    gap: 1rem; /* Add space between the links */
+    padding-left: 25%; /* Align links starting from 1/4th of the page */
 }
 
 nav ul li {
@@ -85,17 +86,20 @@ main {
     font-size: 3rem; /* Adjust welcome message size */
     font-weight: bold;
     color: #4CAF50; /* Green color for the welcome text */
-    text-align: center; /* Center welcome message */
+    text-align: left; /* Align welcome message from 1/4th */
     margin-top: 20px; /* Add space above the welcome message */
     margin-bottom: 10px; /* Add some space below */
+    padding-left: 25%; /* Align starting from 1/4th of the page */
 }
 
 /* Paragraph Text Styling */
 p {
     font-size: 1rem; /* Regular font size for the other text */
     line-height: 1.6;
-    text-align: justify; /* Ensure text is evenly aligned on both sides */
+    text-align: left; /* Align text to the left */
     margin: 1rem 0; /* Add consistent spacing between paragraphs */
+    padding-left: 25%; /* Align starting from 1/4th of the page */
+    padding-right: 10%; /* Add some spacing on the right */
 }
 
 /* Footer Styles */
@@ -134,6 +138,8 @@ section {
     padding: 2rem 5%; /* Consistent padding */
     max-width: 90%; /* Limit width for larger screens */
     margin: 0 auto; /* Center the content horizontally */
+    text-align: left; /* Align text to the left */
+    padding-left: 25%; /* Align starting from 1/4th of the page */
 }
 
 /* Heading Styles - Green and Underlined for h2, h3, etc. */
@@ -141,7 +147,8 @@ h2, h3, h4, h5, h6 {
     color: #4CAF50; /* Green color for subheadings */
     text-decoration: underline; /* Underline the subheadings */
     margin-bottom: 1rem; /* Add some spacing below the headings */
-    text-align: center; /* Center subheadings */
+    text-align: left; /* Align subheadings from 1/4th */
+    padding-left: 25%; /* Align starting from 1/4th of the page */
 }
 
 /* Responsive Design */
@@ -153,7 +160,8 @@ h2, h3, h4, h5, h6 {
     /* Links adjustments for mobile */
     nav ul {
         gap: 0.5rem; /* Reduce gap between links */
-        justify-content: center; /* Center links within each row */
+        justify-content: flex-start; /* Keep links aligned to the left */
+        padding-left: 10%; /* Reduce padding for mobile */
     }
 
     nav ul li a {
@@ -166,9 +174,9 @@ h2, h3, h4, h5, h6 {
         height: 250px;
     }
 
-    section {
-        padding: 1rem 3%; /* Reduce padding for smaller screens */
-        max-width: 100%; /* Use full width on mobile */
+    section, .welcome-message, p {
+        padding-left: 10%; /* Reduce padding for mobile screens */
+        padding-right: 5%; /* Reduce right padding for mobile */
     }
 
     .welcome-message {
