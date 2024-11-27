@@ -1,228 +1,208 @@
 /* General Styles */
 html, body {
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #000000; /* Black background */
-    color: #00FF00; /* Bright green text */
-    line-height: 1.8;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Ensure body takes the full height of the viewport */
-    overflow-x: hidden;
-}
-
-/* Layout Adjustments */
-main, section {
-    padding: 2rem 8%; /* Consistent padding for content */
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: left;
-    flex-grow: 1; /* Allow main content to take remaining space */
-}
-
-@media (max-width: 768px) {
-    main, section {
-        padding: 1.5rem 5%; /* Adjust for smaller screens */
-    }
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color for readability */
+    line-height: 1.6;
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Stack header, main, and footer vertically */
+    min-height: 100vh; /* Ensure the body takes the full height of the viewport */
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Header Styles */
 header {
-    background: #00A000; /* Dark green header */
-    color: black;
+    background: #4CAF50; /* Green header background */
+    color: white;
     text-align: center;
-    padding: 1.5rem 1rem;
-    box-shadow: 0 4px 8px rgba(0, 255, 0, 0.2); /* Greenish shadow */
+    padding: 1.5rem 0;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5rem;
-    color: black; /* Black headings */
+    font-size: 2rem;
+    color: black;
     text-shadow: none;
 }
 
 /* Navigation Styles */
 nav ul {
     list-style: none;
-    margin: 1rem 0;
     padding: 0;
+    margin: 1rem 0 0;
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
-    flex-wrap: wrap; /* Allow links to wrap on small screens */
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    flex: 1 1 30%; /* 3 links per row on mobile */
-    min-width: 120px; /* Ensure links have a minimum width */
+    display: inline;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #004d00; /* Darker green */
+    color: white;
     font-weight: bold;
     padding: 0.5rem 1rem;
-    border: 2px solid #00FF00;
-    border-radius: 25px;
-    background-color: #00FF00;
-    transition: all 0.3s ease-in-out;
-    text-align: center;
-    display: block;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    font-size: 1rem;
 }
 
 nav ul li a:hover {
-    background-color: black;
-    color: #00FF00; /* Contrast hover effect */
-    border-color: #00FF00;
+    background-color: white;
+    color: #4CAF50;
+    border-color: white;
+    border-radius: 5px;
 }
 
-@media (min-width: 769px) {
-    nav ul {
-        flex-wrap: nowrap; /* Single line for laptops */
-    }
-
-    nav ul li {
-        flex: 0; /* Normal link sizing on larger screens */
-    }
+/* Main Content Styles */
+main {
+    flex: 1;
+    padding: 2rem 5%;
+    max-width: 100%;
 }
 
-/* Profile Photo - Squircle Shape */
-.profile-photo {
-    width: 300px; /* Increased image size */
-    height: 300px;
-    border-radius: 20%; /* Squircle shape */
-    object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 255, 0, 0.3);
-    margin: 2rem auto;
-    display: block;
+/* Contact Section */
+section {
+    padding: 20px;
+    text-align: left;
+    width: 90%;
+    margin: 0 auto;
 }
 
-/* Section Headings */
 h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #00FF00; /* Green subheadings */
+    color: #4CAF50;
+    text-decoration: underline;
     margin-bottom: 1rem;
 }
 
-/* Welcome Message */
-.welcome-message {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #00FF00;
-    text-align: left; /* Left-align message */
-    margin: 1.5rem 0;
-}
-
-/* Paragraph Text */
-p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    text-align: justify;
-    margin-bottom: 1.5rem;
-}
-
-/* Footer - Sticks to bottom of page */
-footer {
-    background: #00A000; /* Matches header */
-    color: black;
-    text-align: center;
-    padding: 1.5rem 0;
-    box-shadow: 0 -4px 8px rgba(0, 255, 0, 0.2);
-    width: 100%;
-    position: relative;
-    margin-top: auto; /* Footer stays at the bottom */
-}
-
-/* Footer Copyright */
-footer .copyright {
-    font-size: 1rem;
-    font-weight: bold; /* Bold copyright text */
-}
-
 /* Contact Links */
-.contact-links a {
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+ul li a {
+    color: #4CAF50;
     text-decoration: none;
-    color: #00FF00; /* Green links */
     font-weight: bold;
-    transition: color 0.3s, border-color 0.3s;
-    border-bottom: 2px solid transparent; /* Add border for hover effect */
 }
 
-.contact-links a:hover {
-    color: black; /* Change color on hover */
-    border-bottom: 2px solid black; /* Black underline on hover */
+ul li a:hover {
+    color: #e0e0e0; /* Light text on hover */
 }
 
-.contact-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    justify-content: flex-start;
+/* Contact Links on Hover */
+ul li a:visited {
+    color: #4CAF50; /* Green after visit */
 }
 
-.contact-info label {
-    font-weight: bold;
-    color: #00FF00; /* Green for label */
-}
-
-.contact-info .email {
-    color: #00FF00; /* Green color for email ID */
-}
-
-/* Green Links After Colons */
-.contact-info span {
-    color: #00FF00; /* Green links after colons */
-}
-
-.contact-info label, .contact-info .email {
-    color: #00FF00; /* Ensure labels are green */
-}
-
-/* Ensure Footer is Not Hovering on Mobile */
+/* Footer Styles */
 footer {
-    position: static; /* Footer stays within content flow */
-    margin-top: auto;
+    text-align: center;
+    padding: 1rem;
+    background: #4CAF50;
+    color: white;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+footer .copyright {
+    font-weight: bold;
+    font-size: 1rem;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
+    nav ul {
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 1rem;
     }
 
-    .profile-photo {
-        width: 250px; /* Slightly smaller image for mobile */
-        height: 250px;
-    }
-
-    .welcome-message {
-        font-size: 2rem;
-    }
-
-    p {
+    nav ul li a {
         font-size: 1rem;
+        padding: 0.5rem 1rem;
     }
 
     section {
-        padding: 1rem 2%;
+        width: 100%;
+        padding: 10px;
     }
 
-    /* Adjust navigation links for mobile */
-    nav ul li {
-        flex: 1 1 45%; /* 2 links per row on smaller screens */
+    ul li {
+        font-size: 1rem;
+    }
+
+    /* Footer alignment */
+    footer {
+        position: relative;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    section {
+        padding: 10px;
+    }
+
+    ul li {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
     }
 
     footer {
-        position: static; /* Ensure footer stays at the bottom on mobile */
+        position: relative;
     }
+}
 
-    /* Contact Me Links on Mobile */
-    .contact-links a {
-        display: inline-block;
-        width: 45%; /* Allow contact links to sit in 2-3 columns */
-        text-align: center;
-    }
+/* Squircle Photo */
+.profile-photo {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+    display: block;
+}
+
+/* Make Footer Stick to the Bottom */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    background-color: #4CAF50;
+}
+
+/* Fix Footer issue on smaller screens */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
