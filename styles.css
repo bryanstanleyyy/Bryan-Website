@@ -13,32 +13,6 @@ html, body {
     width: 100%;
 }
 
-/* Always Visible Scrollbar (Overlapping Content) */
-html {
-    overflow-y: overlay; /* Ensure scrollbar overlaps the content without affecting layout */
-    height: 100%; /* Make sure the HTML element covers full height */
-}
-
-/* Custom Scrollbar Style */
-::-webkit-scrollbar {
-    width: 8px; /* Thin scrollbar width */
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #4CAF50; /* Green thumb color */
-    border-radius: 10px; /* Rounded scrollbar thumb */
-}
-
-::-webkit-scrollbar-track {
-    background-color: #121212; /* Dark track background */
-}
-
-/* For Firefox */
-body {
-    scrollbar-width: thin; /* Thin scrollbar width */
-    scrollbar-color: #4CAF50 #121212; /* Green thumb with dark track */
-}
-
 /* Header Styles */
 header {
     background: #4CAF50; /* Green header background */
