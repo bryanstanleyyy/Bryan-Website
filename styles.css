@@ -23,11 +23,13 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.8rem; /* Reduce font size for a more balanced look */
     color: white; /* Ensure the main heading is white */
-    text-shadow: 4px 4px 6px black; /* Strong black shadow for the main heading */
+    text-shadow: 2px 2px 4px black; /* Subtle black shadow for the main heading */
+    line-height: 1.2; /* Adjust line height for better spacing */
 }
 
+/* Navigation Links */
 nav ul {
     list-style: none;
     padding: 0;
@@ -35,9 +37,7 @@ nav ul {
     display: flex; /* Display links in a row */
     justify-content: center; /* Center the links */
     gap: 1rem; /* Add space between the links */
-    flex-wrap: nowrap; /* Prevent wrapping to a new line */
-    overflow-x: auto; /* Allow horizontal scrolling if links exceed screen width */
-    white-space: nowrap; /* Ensure links stay in one line */
+    flex-wrap: wrap; /* Allow the links to wrap into multiple rows */
 }
 
 nav ul li {
@@ -52,7 +52,6 @@ nav ul li a {
     border: 2px solid transparent;
     transition: all 0.3s ease;
     font-size: 1rem; /* Default font size */
-    display: inline-block; /* Ensure links behave like blocks for consistent sizing */
 }
 
 nav ul li a:hover {
@@ -83,7 +82,7 @@ main {
 
 /* Welcome Message Styling */
 .welcome-message {
-    font-size: 4rem; /* Large size for 'Welcome!' */
+    font-size: 3rem; /* Adjust welcome message size */
     font-weight: bold;
     color: #4CAF50; /* Green color for the welcome text */
     text-align: center; /* Center welcome message */
@@ -148,12 +147,13 @@ h2, h3, h4, h5, h6 {
 /* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 1.5rem;
+        font-size: 1.5rem; /* Reduce font size of main heading on smaller screens */
     }
 
     /* Links adjustments for mobile */
     nav ul {
         gap: 0.5rem; /* Reduce gap between links */
+        justify-content: center; /* Center links within each row */
     }
 
     nav ul li a {
