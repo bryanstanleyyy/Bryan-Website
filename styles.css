@@ -28,6 +28,7 @@ header h1 {
     text-shadow: 4px 4px 6px black; /* Strong black shadow for the main heading */
 }
 
+/* Navigation Links */
 nav ul {
     list-style: none;
     padding: 0;
@@ -63,8 +64,10 @@ nav ul li a:hover {
 /* Main Content Styles */
 main {
     flex: 1; /* Allow main to take up all the remaining space */
-    padding: 2rem 5%; /* Add more padding on the sides of the main content */
+    padding: 2rem 8%; /* Adjust padding to create balance */
     max-width: 100%; /* Allow the content to use up more space */
+    margin: 0 auto; /* Center content horizontally */
+    text-align: left; /* Align text to the left */
 }
 
 /* Profile Photo Styling */
@@ -80,7 +83,7 @@ main {
 
 /* Welcome Message Styling */
 .welcome-message {
-    font-size: 4rem;  /* Large size for 'Welcome!' */
+    font-size: 3rem;  /* Large size for 'Welcome!' */
     font-weight: bold;
     color: #4CAF50; /* Green color for the welcome text */
     text-align: left; /* Align welcome message to the left */
@@ -93,6 +96,7 @@ p {
     font-size: 1rem; /* Regular font size for the other text */
     line-height: 1.6;
     text-align: left; /* Align the paragraph text to the left */
+    margin: 1rem 0; /* Add consistent spacing between paragraphs */
 }
 
 /* Footer Styles */
@@ -126,11 +130,12 @@ img {
     height: auto;     /* Maintain aspect ratio */
 }
 
-/* Align content to the left slightly */
+/* Section Alignment */
 section {
     text-align: left; /* Align text to the left */
-    padding-left: 5%; /* Add padding to the left */
-    width: 90%; /* Ensure content doesn't span full width on large screens */
+    padding: 2rem 8%; /* Add padding for text to align */
+    width: 85%; /* Ensure content doesn't span full width on large screens */
+    margin: 0 auto; /* Center the content horizontally */
 }
 
 /* Heading Styles - Green and Underlined for h2, h3, etc. */
@@ -138,12 +143,13 @@ h2, h3, h4, h5, h6 {
     color: #4CAF50; /* Green color for subheadings */
     text-decoration: underline; /* Underline the subheadings */
     margin-bottom: 1rem; /* Add some spacing below the headings */
+    text-align: left; /* Align subheadings slightly left */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 1.5rem;
+        font-size: 1.5rem; /* Reduce font size of main heading on smaller screens */
     }
 
     /* Ensure links stay in a row on mobile, wrap if necessary */
@@ -165,7 +171,8 @@ h2, h3, h4, h5, h6 {
     }
 
     section {
-        padding-left: 0; /* Remove left padding on small screens */
+        padding-left: 5%; /* Reduce left padding on small screens */
+        padding-right: 5%; /* Add some right padding */
         width: 100%; /* Full width on mobile */
     }
 
@@ -176,12 +183,8 @@ h2, h3, h4, h5, h6 {
 
 /* Laptop and Larger Screen Adjustments */
 @media (min-width: 769px) {
-    .profile-photo {
-        margin-left: 0; /* Center the image again for larger screens */
-    }
-
     section {
-        padding-left: 10%; /* Increase padding to give more space on larger screens */
-        width: 80%; /* Adjust width for larger screens */
+        max-width: 80%; /* Adjust width for larger screens */
+        padding: 2rem 8%; /* Maintain padding */
     }
 }
