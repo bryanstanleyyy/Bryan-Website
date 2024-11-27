@@ -53,6 +53,12 @@ nav ul li a {
     font-size: 1rem;
 }
 
+/* Links Visibility */
+nav ul li a {
+    color: white;
+}
+
+/* Navigation Links Hover Effect */
 nav ul li a:hover {
     background-color: white;
     color: #4CAF50;
@@ -98,13 +104,9 @@ ul li a {
     font-weight: bold;
 }
 
+/* Change link color on hover */
 ul li a:hover {
-    color: #e0e0e0; /* Light text on hover */
-}
-
-/* Contact Links on Hover */
-ul li a:visited {
-    color: #4CAF50; /* Green after visit */
+    color: #ffffff; /* White text on hover */
 }
 
 /* Footer Styles */
@@ -114,7 +116,7 @@ footer {
     background: #4CAF50;
     color: white;
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
 }
@@ -122,6 +124,7 @@ footer {
 footer .copyright {
     font-weight: bold;
     font-size: 1rem;
+    color: black; /* Change copyright to black */
 }
 
 /* Responsive Design */
@@ -146,7 +149,6 @@ footer .copyright {
         font-size: 1rem;
     }
 
-    /* Footer alignment */
     footer {
         position: relative;
     }
@@ -190,7 +192,7 @@ footer .copyright {
     display: block;
 }
 
-/* Make Footer Stick to the Bottom */
+/* Footer fix */
 footer {
     position: fixed;
     bottom: 0;
