@@ -2,7 +2,7 @@
 html, body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 0; /* Remove all padding */
     background-color: #121212; /* Dark background */
     color: #e0e0e0; /* Light text color for readability */
     line-height: 1.6; /* Better line spacing for text */
@@ -18,7 +18,7 @@ header {
     background: #4CAF50; /* Green background */
     color: white;
     text-align: center;
-    padding: 2rem 0;
+    padding: 0; /* Remove padding from header */
 }
 
 header h1 {
@@ -31,8 +31,8 @@ header h1 {
 /* Navigation Links */
 nav ul {
     list-style: none;
-    padding: 0;
-    margin: 1rem 0;
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
     display: flex;
     justify-content: center;
     gap: 1rem;
@@ -47,7 +47,7 @@ nav ul li a {
     text-decoration: none;
     color: white;
     font-weight: bold;
-    padding: 0.5rem 1rem;
+    padding: 0; /* Remove padding */
     border: 2px solid transparent;
     transition: all 0.3s ease;
     font-size: 1rem;
@@ -63,13 +63,10 @@ nav ul li a:hover {
 /* Main Content Styles */
 main {
     flex: 1;
-    padding: 2rem 8%; /* Uniform padding on all sides */
+    padding: 0; /* Remove all padding */
     margin: 0 auto;
     max-width: 100%;
     text-align: left; /* Left-align text */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Align all elements to the start (left) */
 }
 
 /* Profile Photo Styling */
@@ -79,7 +76,7 @@ main {
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    margin: 2rem 0; /* Ensure consistent spacing above and below */
+    margin: 0 auto; /* Remove margin around the photo */
     display: block;
 }
 
@@ -89,22 +86,22 @@ main {
     font-weight: bold;
     color: #4CAF50;
     text-align: left;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: 0; /* Remove margin */
+    margin-bottom: 0; /* Remove margin */
 }
 
 /* Paragraph Text Styling */
 p {
     font-size: 1rem;
     line-height: 1.6;
-    margin: 1rem 0;
+    margin: 0; /* Remove margin */
     text-align: left; /* Left-align paragraph text */
 }
 
 /* Footer Styles */
 footer {
     text-align: center;
-    padding: 1rem;
+    padding: 0; /* Remove padding from footer */
     background: #4CAF50;
     color: white;
     width: 100%;
@@ -114,7 +111,7 @@ footer {
 footer .copyright {
     font-weight: bold;
     font-size: 1rem;
-    margin-top: 20px;
+    margin-top: 0; /* Remove margin */
 }
 
 /* Links */
@@ -135,12 +132,12 @@ img {
 /* Section Alignment */
 section {
     text-align: left; /* Left-align all content */
-    padding-left: 5%; /* Slight padding on the left */
-    width: 85%; /* Use 85% width for sections to prevent stretching */
+    padding: 0; /* Remove padding */
+    width: 100%; /* Ensure it takes the full width */
     margin: 0 auto; /* Center the content horizontally */
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Ensures left-alignment for all text and images */
+    align-items: flex-start; /* Align all elements to the left */
 }
 
 /* Heading Styles - Green and Underlined for h2, h3, etc. */
@@ -149,13 +146,12 @@ h2, h3, h4, h5, h6 {
     text-decoration: underline;
     margin-bottom: 1rem;
     text-align: left; /* Left-align headings */
-    padding-left: 5%; /* Align subheadings with slight left padding */
 }
 
 /* Contact, Education, and Skills Sections - Left Alignment */
 .contact, .education, .skills {
-    padding-left: 5%; /* Slight padding to align text to the left */
-    width: 85%; /* Ensure no content stretches too much */
+    padding: 0; /* Remove padding */
+    width: 100%; /* Full width */
     margin: 0 auto; /* Center the content horizontally */
 }
 
@@ -178,7 +174,7 @@ h2, h3, h4, h5, h6 {
 
     nav ul li a {
         font-size: 1rem;
-        padding: 0.5rem 1rem;
+        padding: 0; /* Remove padding */
     }
 
     /* Make sure content and other sections adjust for small screens */
@@ -188,7 +184,7 @@ h2, h3, h4, h5, h6 {
     }
 
     section {
-        padding-left: 5%; /* Consistent left padding on mobile */
+        padding: 0; /* Remove padding */
         width: 100%; /* Full width on mobile */
     }
 
@@ -201,11 +197,9 @@ h2, h3, h4, h5, h6 {
 @media (min-width: 769px) {
     section {
         width: 80%; /* Content takes up 80% of the screen on larger devices */
-        padding: 2rem 8%; /* Maintain consistent padding */
     }
 
     main {
-        padding: 2rem 8%;
+        padding: 0; /* Remove padding */
     }
 }
-
