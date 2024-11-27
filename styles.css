@@ -3,8 +3,8 @@ html, body {
     font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #000000; /* Pure black background for dark mode */
-    color: #00FF00; /* Bright green text for dark mode */
+    background-color: #000000; /* Pure black background */
+    color: #00FF00; /* Bright green text */
     line-height: 1.8;
     display: flex;
     flex-direction: column;
@@ -14,7 +14,7 @@ html, body {
 
 /* Layout Adjustments */
 main, section {
-    padding: 2rem 15%; /* More left-oriented layout */
+    padding: 2rem 10%; /* Increased space for left and right text */
     max-width: 1200px;
     margin: 0 auto;
     text-align: left;
@@ -22,7 +22,7 @@ main, section {
 
 @media (max-width: 768px) {
     main, section {
-        padding: 1.5rem 10%; /* Adjust for smaller screens */
+        padding: 1.5rem 8%; /* Adjust for smaller screens */
     }
 }
 
@@ -38,8 +38,8 @@ header {
 header h1 {
     margin: 0;
     font-size: 2.5rem;
-    color: #00FF00;
-    text-shadow: 3px 3px 8px rgba(0, 255, 0, 0.5);
+    color: black; /* Black headings */
+    text-shadow: none;
 }
 
 /* Navigation Styles */
@@ -72,8 +72,8 @@ nav ul li a {
 
 nav ul li a:hover {
     background-color: black;
-    color: #00FF00;
-    border-color: black;
+    color: #00FF00; /* Fixed hover text color for visibility */
+    border-color: #00FF00;
 }
 
 @media (min-width: 769px) {
@@ -88,20 +88,28 @@ nav ul li a:hover {
 
 /* Profile Photo */
 .profile-photo {
-    width: 150px;
-    height: 150px;
+    width: 200px; /* Increased size for bigger images */
+    height: 200px;
     border-radius: 50%; /* Start with circular shape */
     clip-path: path(
-        "M 75 0 
-        C 110 0 150 40 150 75 
-        C 150 110 110 150 75 150 
-        C 40 150 0 110 0 75 
-        C 0 40 40 0 75 0"
+        "M 100 0 
+        C 140 0 200 60 200 100 
+        C 200 140 140 200 100 200 
+        C 60 200 0 140 0 100 
+        C 0 60 60 0 100 0"
     ); /* Squircle shape */
     object-fit: cover;
     box-shadow: 0 4px 8px rgba(0, 255, 0, 0.3);
-    margin: 1.5rem auto;
+    margin: 2rem auto;
     display: block;
+}
+
+/* Section Headings */
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: black; /* Main headings in black */
+    margin-bottom: 1rem;
 }
 
 /* Welcome Message */
@@ -123,28 +131,31 @@ p {
 
 /* Footer */
 footer {
-    background: #00A000;
+    background: #00A000; /* Matches header for consistency */
     color: black;
     text-align: center;
     padding: 1.5rem 0;
     box-shadow: 0 -4px 8px rgba(0, 255, 0, 0.2);
+    width: 100%; /* Full-width footer */
+    position: absolute;
+    bottom: 0; /* Sticks footer to the bottom */
 }
 
 footer .copyright {
     font-size: 1rem;
-    margin-top: 1rem;
-    font-weight: 500;
+    font-weight: bold; /* Bold copyright text */
 }
 
-/* Links */
-a {
-    color: #00FF00;
+/* Contact Links */
+.contact-links a {
     text-decoration: none;
+    color: #00FF00; /* Bright green links */
+    font-weight: bold;
     transition: color 0.3s;
 }
 
-a:hover {
-    color: black;
+.contact-links a:hover {
+    color: #00A000; /* Slightly darker green for hover effect */
 }
 
 /* Responsive Design */
@@ -154,8 +165,8 @@ a:hover {
     }
 
     .profile-photo {
-        width: 120px;
-        height: 120px;
+        width: 150px; /* Smaller images for mobile */
+        height: 150px;
     }
 
     .welcome-message {
@@ -168,5 +179,9 @@ a:hover {
 
     section {
         padding: 1rem 2%;
+    }
+
+    nav ul li {
+        flex: 1 1 50%; /* Ensure links stack into two rows */
     }
 }
