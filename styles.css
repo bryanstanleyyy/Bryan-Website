@@ -28,16 +28,16 @@ header h1 {
     text-shadow: 4px 4px 6px black; /* Strong black shadow for the main heading */
 }
 
-/* Navigation Links */
 nav ul {
     list-style: none;
     padding: 0;
     margin: 1rem 0 0;
-    display: flex; /* Ensure the items are displayed in a row */
+    display: flex; /* Display links in a row */
     justify-content: center; /* Center the links */
     gap: 1rem; /* Add space between the links */
-    flex-wrap: nowrap; /* Prevent wrapping onto multiple rows */
-    width: 100%; /* Make sure the links take up the full width */
+    flex-wrap: nowrap; /* Prevent wrapping to a new line */
+    overflow-x: auto; /* Allow horizontal scrolling if links exceed screen width */
+    white-space: nowrap; /* Ensure links stay in one line */
 }
 
 nav ul li {
@@ -52,9 +52,7 @@ nav ul li a {
     border: 2px solid transparent;
     transition: all 0.3s ease;
     font-size: 1rem; /* Default font size */
-    display: block; /* Make links block-level to control width */
-    min-width: 100px; /* Ensure each link has a minimum width */
-    text-align: center;
+    display: inline-block; /* Ensure links behave like blocks for consistent sizing */
 }
 
 nav ul li a:hover {
@@ -68,26 +66,27 @@ nav ul li a:hover {
 main {
     flex: 1; /* Allow main to take up all the remaining space */
     padding: 2rem 5%; /* Add more padding on the sides of the main content */
-    max-width: 100%; /* Allow the content to use up more space */
+    max-width: 1200px; /* Limit maximum width for better readability */
+    margin: 0 auto; /* Center content horizontally */
 }
 
 /* Profile Photo Styling */
 .profile-photo {
-    width: 300px;  /* Adjusted width */
+    width: 300px; /* Adjusted width */
     height: 300px; /* Adjusted height */
-    border-radius: 50px;  /* Squircle: slightly rounded corners */
-    object-fit: cover;   /* Ensure the image fits without stretching */
+    border-radius: 50px; /* Squircle: slightly rounded corners */
+    object-fit: cover; /* Ensure the image fits without stretching */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for effect */
-    margin: 0 auto; /* Center the image */
+    margin: 2rem auto; /* Center the image and add space around it */
     display: block; /* Ensure it's treated as a block element */
 }
 
 /* Welcome Message Styling */
 .welcome-message {
-    font-size: 4rem;  /* Large size for 'Welcome!' */
+    font-size: 4rem; /* Large size for 'Welcome!' */
     font-weight: bold;
     color: #4CAF50; /* Green color for the welcome text */
-    text-align: left; /* Align welcome message to the left */
+    text-align: center; /* Center welcome message */
     margin-top: 20px; /* Add space above the welcome message */
     margin-bottom: 10px; /* Add some space below */
 }
@@ -96,7 +95,8 @@ main {
 p {
     font-size: 1rem; /* Regular font size for the other text */
     line-height: 1.6;
-    text-align: left; /* Align the paragraph text to the left */
+    text-align: justify; /* Ensure text is evenly aligned on both sides */
+    margin: 1rem 0; /* Add consistent spacing between paragraphs */
 }
 
 /* Footer Styles */
@@ -126,15 +126,15 @@ a:hover {
 
 /* Prevent images from overflowing */
 img {
-    max-width: 100%;  /* Ensure images do not overflow */
-    height: auto;     /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure images do not overflow */
+    height: auto; /* Maintain aspect ratio */
 }
 
-/* Align content to the left slightly */
+/* Section Alignment */
 section {
-    text-align: left; /* Align text to the left */
-    padding-left: 5%; /* Add padding to the left */
-    width: 90%; /* Ensure content doesn't span full width on large screens */
+    padding: 2rem 5%; /* Consistent padding */
+    max-width: 90%; /* Limit width for larger screens */
+    margin: 0 auto; /* Center the content horizontally */
 }
 
 /* Heading Styles - Green and Underlined for h2, h3, etc. */
@@ -142,18 +142,7 @@ h2, h3, h4, h5, h6 {
     color: #4CAF50; /* Green color for subheadings */
     text-decoration: underline; /* Underline the subheadings */
     margin-bottom: 1rem; /* Add some spacing below the headings */
-}
-
-/* Ensure All Pages are Aligned Consistently */
-h1, h2, h3, h4, h5, h6 {
-    text-align: left; /* Left align all headings */
-    margin-bottom: 1rem; /* Consistent space below all headings */
-}
-
-/* Consistent alignment and spacing for all paragraphs */
-p {
-    text-align: left; /* Align paragraph text to the left */
-    margin-bottom: 1.5rem; /* Space below each paragraph */
+    text-align: center; /* Center subheadings */
 }
 
 /* Responsive Design */
@@ -162,44 +151,35 @@ p {
         font-size: 1.5rem;
     }
 
-    /* Ensure links stay in a row on mobile, with no wrapping */
+    /* Links adjustments for mobile */
     nav ul {
-        flex-direction: row; /* Keep links in a row */
-        justify-content: space-evenly; /* Evenly distribute space between links */
-        gap: 1rem; /* Ensure proper spacing between links */
-        flex-wrap: nowrap; /* Prevent wrapping */
-        width: 100%; /* Ensure the nav takes full width */
+        gap: 0.5rem; /* Reduce gap between links */
     }
 
-    /* Adjust font size for links on mobile */
     nav ul li a {
-        font-size: 0.9rem; /* Slightly reduce font size on mobile */
-        padding: 0.4rem 0.8rem; /* Adjust padding to fit better */
+        font-size: 0.85rem; /* Slightly smaller font size for mobile */
+        padding: 0.4rem 0.6rem; /* Reduce padding for links */
     }
 
-    /* Make sure content and other sections adjust for small screens */
     .profile-photo {
-        margin-left: 0; /* Remove the left margin for smaller screens */
+        width: 250px; /* Reduce photo size for smaller screens */
+        height: 250px;
     }
 
     section {
-        padding-left: 0; /* Remove left padding on small screens */
-        width: 100%; /* Full width on mobile */
+        padding: 1rem 3%; /* Reduce padding for smaller screens */
+        max-width: 100%; /* Use full width on mobile */
     }
 
     .welcome-message {
-        font-size: 2rem; /* Adjust welcome message size for smaller screens */
+        font-size: 2.5rem; /* Adjust welcome message size for mobile */
     }
 }
 
 /* Laptop and Larger Screen Adjustments */
 @media (min-width: 769px) {
-    .profile-photo {
-        margin-left: 0; /* Center the image again for larger screens */
-    }
-
     section {
-        padding-left: 10%; /* Increase padding to give more space on larger screens */
-        width: 80%; /* Adjust width for larger screens */
+        max-width: 80%; /* Adjust width for larger screens */
+        padding: 2rem 5%; /* Maintain padding */
     }
 }
