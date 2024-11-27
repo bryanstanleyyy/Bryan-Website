@@ -25,7 +25,7 @@ header h1 {
     margin: 0;
     font-size: 2rem;
     color: rgb(0, 0, 0);
-    text-shadow: 4px 4px 6px #4CAF50; /* Strong black shadow for the main heading */
+    text-shadow: 2px 2px 2px #000000; /* Strong black shadow for the main heading */
 }
 
 /* Navigation Styles */
@@ -36,11 +36,13 @@ nav ul {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allow wrapping of items */
 }
 
 nav ul li {
-    display: inline;
+    display: inline-block;
+    width: 45%; /* Force each item to take up 45% of the space, making room for 2 rows */
+    text-align: center;
 }
 
 nav ul li a {
@@ -51,6 +53,7 @@ nav ul li a {
     border: 2px solid transparent;
     transition: all 0.3s ease;
     font-size: 1rem;
+    display: block; /* Ensure links take up full width of their container */
 }
 
 nav ul li a:hover {
@@ -142,15 +145,12 @@ section {
     }
 
     nav ul {
-        flex-direction: column; /* Stack links vertically */
-        justify-content: center;
-        gap: 1rem;
+        flex-direction: row; /* Ensure that the navigation items are aligned horizontally */
+        justify-content: space-between; /* Adjust to fit in two rows */
     }
 
-    /* Ensure the main links are arranged in two rows on mobile portrait */
     nav ul li {
-        flex: 1 1 45%; /* Allow links to occupy 45% of the width, making 2 rows */
-        text-align: center;
+        width: 45%; /* Set each link item to 45% width, ensuring 2 items per row */
     }
 
     nav ul li a {
@@ -158,7 +158,7 @@ section {
         padding: 0.4rem 0.8rem;
     }
 
-    /* Make sure content and sections adjust for small screens */
+    /* Ensure the photo is still properly sized */
     .profile-photo {
         margin-left: 0;
     }
