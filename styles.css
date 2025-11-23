@@ -116,14 +116,6 @@ nav ul li a:focus {
     box-shadow: 0 4px 16px rgba(76, 175, 80, 0.4), 0 0 20px rgba(129, 199, 132, 0.2);
 }
 
-nav ul li a[aria-current="page"] {
-    background: linear-gradient(135deg, #4CAF50, #66BB6A);
-    border-color: #81C784;
-    color: #ffffff;
-    box-shadow: 0 0 15px rgba(76, 175, 80, 0.6), inset 0 1px 2px rgba(255, 255, 255, 0.2);
-    font-weight: 700;
-}
-
 /* Main Content */
 main {
     flex: 1;
