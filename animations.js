@@ -371,10 +371,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize typewriter effect on welcome message
     const welcomeElement = document.querySelector('.welcome-message');
-    if (welcomeElement && window.location.pathname.includes('index.html') || window.location.pathname === '/') {
+    if (welcomeElement && (window.location.pathname.includes('index.html') || window.location.pathname === '/')) {
         const originalText = welcomeElement.textContent;
         welcomeElement.style.minHeight = '80px';
-        new TypeWriter(welcomeElement, [originalText, 'Software Engineer', 'AI Enthusiast', 'Cybersecurity Specialist', originalText]);
+        new TypeWriter(welcomeElement, [originalText, 'Software Engineer', 'AI Enthusiast', 'Full Stack Developer', 'Tech Lover', 'Problem Solver', originalText]);
     }
 
     // Initialize scroll animations

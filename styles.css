@@ -929,13 +929,7 @@ header::before {
     100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
 }
 
-/* Navigation Icons */
-nav ul li a::before {
-    content: attr(data-icon);
-    margin-right: 0.5rem;
-    font-size: 1.1rem;
-}
-
+/* Navigation Effects */
 nav ul li a {
     position: relative;
     overflow: hidden;
