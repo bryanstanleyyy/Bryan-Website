@@ -403,11 +403,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize card tilt effect
     new CardTilt();
-
-    // Add animate-on-scroll class to all major sections
-    const animateElements = document.querySelectorAll('section, .profile-card, .education-card, .experience-card, .project-card, .cert-card, .contact-card, .skill-category');
-    animateElements.forEach((element, index) => {
-        element.classList.add('animate-on-scroll');
-        element.style.animationDelay = `${index * 0.1}s`;
-    });
 });
