@@ -55,9 +55,26 @@ header {
 header h1 {
     font-size: clamp(1.8rem, 4vw, 3rem);
     font-weight: 700;
-    color: var(--text-accent);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    background: linear-gradient(90deg, #ffffff, #81C784, #4CAF50, #ffffff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
     margin-bottom: 1.5rem;
+    animation: headerGradient 3s linear infinite;
+    transition: transform 0.3s ease;
+    cursor: default;
+}
+
+header h1:hover {
+    transform: scale(1.05);
+    animation-play-state: paused;
+}
+
+@keyframes headerGradient {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
 }
 
 /* Navigation Styles */
@@ -1072,7 +1089,7 @@ footer::before {
 /* Back to Top Button */
 #back-to-top {
     position: fixed;
-    bottom: 30px;
+    bottom: 85px;
     right: 30px;
     width: 50px;
     height: 50px;
