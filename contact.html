@@ -7,18 +7,24 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Page Loader -->
+    <div id="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+
     <header>
         <h1>Bryan Jones - Contact</h1>
-        <nav>
+        <nav role="navigation" aria-label="Main navigation">
+            <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="experience.html">Experience</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="certifications.html">Certifications</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" data-icon="🏠">Home</a></li>
+                <li><a href="profile.html" data-icon="👤">Profile</a></li>
+                <li><a href="skills.html" data-icon="⚡">Skills</a></li>
+                <li><a href="education.html" data-icon="🎓">Education</a></li>
+                <li><a href="experience.html" data-icon="💼">Experience</a></li>
+                <li><a href="projects.html" data-icon="🚀">Projects</a></li>
+                <li><a href="certifications.html" data-icon="🏆">Certifications</a></li>
+                <li><a href="contact.html" aria-current="page" data-icon="📧">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -85,7 +91,20 @@
         </section>
     </main>
     <footer>
-        <div class="copyright">© 2025 Bryan Jones</div>
+        <div class="footer-content">
+            <div class="copyright">© 2025 Bryan Jones</div>
+            <div class="social-links">
+                <a href="https://github.com/bryanstanleyyy" class="social-link" aria-label="GitHub" title="GitHub" target="_blank">💻</a>
+                <a href="https://www.linkedin.com/in/bryan-stanley-jones-b6b181243/" class="social-link" aria-label="LinkedIn" title="LinkedIn" target="_blank">💼</a>
+                <a href="mailto:bryansjones04@gmail.com" class="social-link" aria-label="Email" title="Email">📧</a>
+            </div>
+        </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top"></button>
+
+    <!-- Scripts -->
+    <script src="animations.js"></script>
 </body>
 </html>
