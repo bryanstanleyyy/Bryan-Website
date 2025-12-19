@@ -48,7 +48,7 @@ class ParticleBackground {
 
     getParticleColor(opacity) {
         if (this.theme === 'light') {
-            return `rgba(56, 142, 60, ${opacity})`; // Darker green for light mode
+            return `rgba(45, 122, 62, ${opacity})`; // Rich green for warm cream theme
         }
         return `rgba(76, 175, 80, ${opacity})`; // Original green for dark mode
     }

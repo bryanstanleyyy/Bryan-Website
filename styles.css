@@ -15,19 +15,19 @@
     --border-radius: 12px;
 }
 
-/* Light Mode Variables */
+/* Light Mode Variables - Warm Cream Theme */
 [data-theme="light"] {
-    --primary-green: #388E3C;
-    --dark-green: #2E7D32;
-    --light-green: #66BB6A;
-    --dark-bg: #FFFFFF;
-    --card-bg: #F5F5F5;
-    --text-primary: #212121;
-    --text-secondary: #616161;
-    --text-accent: #212121;
-    --border-color: #E0E0E0;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.15);
+    --primary-green: #2D7A3E;
+    --dark-green: #256A33;
+    --light-green: #4A9D5F;
+    --dark-bg: #FAF9F6;
+    --card-bg: #F0EDE6;
+    --text-primary: #2C2C2C;
+    --text-secondary: #5A5A5A;
+    --text-accent: #1A1A1A;
+    --border-color: #D4D0C8;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.12);
 }
 
 /* Reset and Base Styles */
@@ -56,9 +56,9 @@ body {
     position: relative;
 }
 
-/* Light mode body gradient */
+/* Light mode body gradient - Warm Cream */
 [data-theme="light"] body {
-    background: linear-gradient(135deg, #E8F5E9 0%, #F1F8F4 25%, #FFFFFF 50%, #F1F8F4 75%, #E8F5E9 100%);
+    background: linear-gradient(135deg, #F5F3EE 0%, #FAF9F6 25%, #FBF9F5 50%, #FAF9F6 75%, #F5F3EE 100%);
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
 }
