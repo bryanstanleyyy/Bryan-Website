@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting - Bryan Jones</title>
+    <link rel="stylesheet" href="/Bryan-Website/styles.css">
+    <style>
+        .redirect-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 2rem;
+        }
+        .redirect-message {
+            max-width: 600px;
+        }
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #4CAF50;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 2rem auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <script>
+        (function() {
+            const path = window.location.pathname;
+
+            // Map of old .html paths to new directory paths
+            const redirectMap = {
+                '/Bryan-Website/profile.html': '/Bryan-Website/profile/',
+                '/Bryan-Website/skills.html': '/Bryan-Website/skills/',
+                '/Bryan-Website/education.html': '/Bryan-Website/education/',
+                '/Bryan-Website/experience.html': '/Bryan-Website/experience/',
+                '/Bryan-Website/projects.html': '/Bryan-Website/projects/',
+                '/Bryan-Website/certifications.html': '/Bryan-Website/certifications/',
+                '/Bryan-Website/contact.html': '/Bryan-Website/contact/'
+            };
+
+            // Check if this is a known .html redirect
+            if (redirectMap[path]) {
+                window.location.replace(redirectMap[path]);
+            }
+        })();
+    </script>
+</head>
+<body>
+    <div class="redirect-container">
+        <div class="redirect-message">
+            <h1>Page Not Found</h1>
+            <div class="loader-spinner"></div>
+            <p>If you're not redirected automatically, please visit the <a href="/Bryan-Website/">homepage</a>.</p>
+        </div>
+    </div>
+</body>
+</html>
