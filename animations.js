@@ -164,6 +164,7 @@ class MobileMenu {
     constructor() {
         this.menuBtn = document.querySelector('.mobile-menu-btn');
         this.nav = document.querySelector('nav ul');
+        this.themeToggle = document.querySelector('.theme-toggle-btn');
 
         if (this.menuBtn) {
             this.menuBtn.addEventListener('click', () => this.toggle());
@@ -173,6 +174,15 @@ class MobileMenu {
     toggle() {
         this.nav.classList.toggle('active');
         this.menuBtn.classList.toggle('active');
+
+        // Hide theme toggle button when mobile menu is open
+        if (this.themeToggle) {
+            if (this.nav.classList.contains('active')) {
+                this.themeToggle.style.display = 'none';
+            } else {
+                this.themeToggle.style.display = 'flex';
+            }
+        }
     }
 }
 
