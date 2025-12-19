@@ -5,6 +5,7 @@ class ParticleBackground {
         this.ctx = this.canvas.getContext('2d');
         this.particles = [];
         this.particleCount = 80;
+        this.theme = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
         this.init();
     }
 
@@ -45,6 +46,17 @@ class ParticleBackground {
         }
     }
 
+    getParticleColor(opacity) {
+        if (this.theme === 'light') {
+            return `rgba(56, 142, 60, ${opacity})`;
+        }
+        return `rgba(76, 175, 80, ${opacity})`;
+    }
+
+    updateTheme(theme) {
+        this.theme = theme;
+    }
+
     animate() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
@@ -57,7 +69,7 @@ class ParticleBackground {
 
             this.ctx.beginPath();
             this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-            this.ctx.fillStyle = `rgba(76, 175, 80, ${particle.opacity})`;
+            this.ctx.fillStyle = this.getParticleColor(particle.opacity);
             this.ctx.fill();
 
             // Draw connections
@@ -68,7 +80,7 @@ class ParticleBackground {
 
                 if (distance < 120) {
                     this.ctx.beginPath();
-                    this.ctx.strokeStyle = `rgba(76, 175, 80, ${0.1 * (1 - distance / 120)})`;
+                    this.ctx.strokeStyle = this.getParticleColor(0.1 * (1 - distance / 120));
                     this.ctx.lineWidth = 0.5;
                     this.ctx.moveTo(particle.x, particle.y);
                     this.ctx.lineTo(otherParticle.x, otherParticle.y);
@@ -364,10 +376,66 @@ class CardTilt {
     }
 }
 
+// Theme Manager
+class ThemeManager {
+    constructor() {
+        this.themeToggleBtn = document.getElementById('theme-toggle');
+        this.currentTheme = this.getStoredTheme() || this.getSystemPreference();
+        this.init();
+    }
+
+    init() {
+        this.applyTheme(this.currentTheme);
+
+        if (this.themeToggleBtn) {
+            this.themeToggleBtn.addEventListener('click', () => this.toggleTheme());
+        }
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!this.getStoredTheme()) {
+                this.applyTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+    }
+
+    getSystemPreference() {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    getStoredTheme() {
+        return localStorage.getItem('theme');
+    }
+
+    applyTheme(theme) {
+        this.currentTheme = theme;
+
+        if (theme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+        }
+
+        if (window.particleBackground) {
+            window.particleBackground.updateTheme(theme);
+        }
+
+        localStorage.setItem('theme', theme);
+    }
+
+    toggleTheme() {
+        const newTheme = this.currentTheme === 'dark' ? 'light' : 'dark';
+        this.applyTheme(newTheme);
+    }
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize particle background
-    new ParticleBackground();
+    // Initialize theme manager FIRST
+    const themeManager = new ThemeManager();
+
+    // Initialize particle background and make globally accessible
+    const particleBackground = new ParticleBackground();
+    window.particleBackground = particleBackground;
 
     // Initialize typewriter effect on welcome message
     const welcomeElement = document.querySelector('.welcome-message');

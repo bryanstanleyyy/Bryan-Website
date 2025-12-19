@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certifications - Bryan Jones</title>
+    <script>
+    (function() {
+        const theme = localStorage.getItem('theme') ||
+                      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (theme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    })();
+    </script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,6 +25,10 @@
         <h1>Bryan Jones - Certifications</h1>
         <nav role="navigation" aria-label="Main navigation">
             <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                <span class="theme-icon sun-icon">☀</span>
+                <span class="theme-icon moon-icon">🌙</span>
+            </button>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="profile.html">Profile</a></li>
