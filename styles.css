@@ -15,6 +15,21 @@
     --border-radius: 12px;
 }
 
+/* Light Mode Variables */
+[data-theme="light"] {
+    --primary-green: #388E3C;
+    --dark-green: #2E7D32;
+    --light-green: #66BB6A;
+    --dark-bg: #FFFFFF;
+    --card-bg: #F5F5F5;
+    --text-primary: #212121;
+    --text-secondary: #616161;
+    --text-accent: #212121;
+    --border-color: #E0E0E0;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -39,6 +54,13 @@ body {
     flex-direction: column;
     overflow-x: hidden;
     position: relative;
+}
+
+/* Light mode body gradient */
+[data-theme="light"] body {
+    background: linear-gradient(135deg, #E8F5E9 0%, #F1F8F4 25%, #FFFFFF 50%, #F1F8F4 75%, #E8F5E9 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
 }
 
 /* Header Styles */
@@ -920,6 +942,68 @@ img {
     background: rgba(255, 255, 255, 0.3);
 }
 
+/* Theme Toggle Button */
+.theme-toggle-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: var(--transition);
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 101;
+}
+
+.theme-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.theme-toggle-btn:focus {
+    outline: 2px solid var(--light-green);
+    outline-offset: 2px;
+}
+
+.theme-icon {
+    line-height: 1;
+    display: none;
+}
+
+/* Dark mode: show sun (switch to light) */
+.theme-toggle-btn .sun-icon {
+    display: inline;
+}
+
+.theme-toggle-btn .moon-icon {
+    display: none;
+}
+
+/* Light mode: show moon (switch to dark) */
+[data-theme="light"] .theme-toggle-btn .sun-icon {
+    display: none;
+}
+
+[data-theme="light"] .theme-toggle-btn .moon-icon {
+    display: inline;
+}
+
+@media (max-width: 768px) {
+    .theme-toggle-btn {
+        right: 4rem; /* Left of mobile menu */
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
 /* Header Animation */
 header {
     position: relative;
@@ -1120,6 +1204,15 @@ footer::before {
 
 #back-to-top::before {
     content: '↑';
+}
+
+/* Smooth Theme Transitions */
+body, header, footer,
+.profile-card, .education-card, .experience-card,
+.project-card, .cert-card, .contact-card,
+.skill-category, .stat-item {
+    transition: background 0.3s ease, color 0.3s ease,
+                border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Card Hover Effects */

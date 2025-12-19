@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting - Bryan Jones</title>
+    <script>
+        // Prevent flash of wrong theme
+        (function() {
+            const theme = localStorage.getItem('theme') ||
+                          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
     <link rel="stylesheet" href="/Bryan-Website/styles.css">
     <style>
         .redirect-container {
