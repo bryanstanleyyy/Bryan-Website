@@ -1099,6 +1099,10 @@ nav ul li a::after {
     transform: translateX(-50%);
 }
 
+[data-theme="light"] nav ul li a::after {
+    background: #ffffff;
+}
+
 nav ul li a:hover::after {
     width: 80%;
 }
