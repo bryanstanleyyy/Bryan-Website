@@ -1041,7 +1041,8 @@ img {
 @media (max-width: 768px) {
     .theme-toggle-btn {
         right: 1rem;
-        top: 5.5rem;
+        top: 50%;
+        transform: translateY(-50%);
         width: 40px;
         height: 40px;
         font-size: 1.2rem;
