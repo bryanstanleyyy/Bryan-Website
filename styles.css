@@ -95,6 +95,14 @@ body {
     color: #ffffff !important;
 }
 
+/* Light Mode Buttons with Green Backgrounds - White Text */
+[data-theme="light"] .cta-button.primary,
+[data-theme="light"] .cta-button.secondary:hover,
+[data-theme="light"] #back-to-top,
+[data-theme="light"] #back-to-top::before {
+    color: #ffffff !important;
+}
+
 /* Header Styles */
 header {
     background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
