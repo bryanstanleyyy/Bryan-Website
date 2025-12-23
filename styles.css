@@ -67,6 +67,7 @@ body {
 [data-theme="light"] header,
 [data-theme="light"] header h1,
 [data-theme="light"] header nav a,
+[data-theme="light"] .mobile-menu-btn,
 [data-theme="light"] footer,
 [data-theme="light"] footer p,
 [data-theme="light"] footer a {
@@ -1016,6 +1017,7 @@ img {
 .theme-icon {
     line-height: 1;
     display: none;
+    filter: grayscale(100%) brightness(1000%) contrast(1000%);
 }
 
 /* Dark mode: show sun (switch to light) */
@@ -1039,7 +1041,7 @@ img {
 @media (max-width: 768px) {
     .theme-toggle-btn {
         right: 1rem;
-        top: 1rem;
+        top: 5.5rem;
         width: 40px;
         height: 40px;
         font-size: 1.2rem;
