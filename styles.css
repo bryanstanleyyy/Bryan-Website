@@ -63,6 +63,50 @@ body {
     animation: gradientShift 15s ease infinite;
 }
 
+/* Light Mode Text Overrides - Keep text readable on green backgrounds */
+[data-theme="light"] header,
+[data-theme="light"] header h1,
+[data-theme="light"] header nav a,
+[data-theme="light"] footer,
+[data-theme="light"] footer p,
+[data-theme="light"] footer a {
+    color: #ffffff !important;
+}
+
+/* Light Mode Card Borders - Softer, no green glow */
+[data-theme="light"] .profile-card:hover,
+[data-theme="light"] .education-card:hover,
+[data-theme="light"] .experience-card:hover,
+[data-theme="light"] .project-card:hover,
+[data-theme="light"] .cert-card:hover,
+[data-theme="light"] .contact-card:hover,
+[data-theme="light"] .skill-category:hover {
+    border-color: var(--primary-green);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Light Mode Navigation Links */
+[data-theme="light"] nav ul li a {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+[data-theme="light"] nav ul li a:hover,
+[data-theme="light"] nav ul li a:focus {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Light Mode Tags with Green Backgrounds - White Text */
+[data-theme="light"] .skill-tag.primary,
+[data-theme="light"] .tech,
+[data-theme="light"] .interest-tags .tag,
+[data-theme="light"] .focus-tag,
+[data-theme="light"] .timeline,
+[data-theme="light"] .cert-date {
+    color: #ffffff !important;
+}
+
 /* Header Styles */
 header {
     background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
