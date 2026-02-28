@@ -1,77 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎇</text></svg>">
-    <title>Bryan Jones | 404</title>
-    <script>
-        // Prevent flash of wrong theme
-        (function() {
-            const theme = localStorage.getItem('theme') ||
-                          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-            if (theme === 'light') {
-                document.documentElement.setAttribute('data-theme', 'light');
-            }
-        })();
-    </script>
-    <link rel="stylesheet" href="/styles.css">
-    <style>
-        .redirect-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
-            padding: 2rem;
-        }
-        .redirect-message {
-            max-width: 600px;
-        }
-        .loader-spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid #f3f3f3;
-            border-top: 5px solid #4CAF50;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 2rem auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
-    <script>
-        (function() {
-            const path = window.location.pathname;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <title>Bryan Jones | 404</title>
 
-            // Map of old .html paths to new directory paths
-            const redirectMap = {
-                '/profile.html': '/profile/',
-                '/skills.html': '/skills/',
-                '/education.html': '/education/',
-                '/experience.html': '/experience/',
-                '/projects.html': '/projects/',
-                '/certifications.html': '/certifications/',
-                '/contact.html': '/contact/'
-            };
+  <script>
+    (function () {
+      const saved = localStorage.getItem('theme');
+      const system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', saved || system);
+    })();
+  </script>
 
-            // Check if this is a known .html redirect
-            if (redirectMap[path]) {
-                window.location.replace(redirectMap[path]);
-            }
-        })();
-    </script>
+  <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    .notfound {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 2rem;
+      gap: 24px;
+    }
+    .notfound-code {
+      font-family: var(--font-mono);
+      font-size: clamp(5rem, 15vw, 10rem);
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      opacity: 0.15;
+      letter-spacing: -0.04em;
+    }
+    .notfound-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      margin-top: -40px;
+    }
+    .notfound-sub {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .redirect-note {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-faint);
+    }
+  </style>
+
+  <script>
+    setTimeout(function () {
+      window.location.replace('/');
+    }, 4000);
+  </script>
 </head>
 <body>
-    <div class="redirect-container">
-        <div class="redirect-message">
-            <h1>Page Not Found</h1>
-            <div class="loader-spinner"></div>
-            <p>If you're not redirected automatically, please visit the <a href="/">homepage</a>.</p>
-        </div>
-    </div>
+  <div class="notfound">
+    <div class="notfound-code">404</div>
+    <h1 class="notfound-title">Page Not Found</h1>
+    <p class="notfound-sub">// This path doesn't exist</p>
+    <a href="/" class="btn-primary">Go Home</a>
+    <p class="redirect-note">Redirecting to homepage in 4 seconds…</p>
+  </div>
 </body>
 </html>

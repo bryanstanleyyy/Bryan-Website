@@ -1,97 +1,1009 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌟</text></svg>">
-    <title>Bryan Jones</title>
-    <script>
-        // Prevent flash of wrong theme
-        (function() {
-            const theme = localStorage.getItem('theme') ||
-                          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-            if (theme === 'light') {
-                document.documentElement.setAttribute('data-theme', 'light');
-            }
-        })();
-    </script>
-    <link rel="stylesheet" href="/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bryan Jones — Software Engineer, AI Enthusiast, Full Stack Developer. MS/BS Computer Science at George Mason University.">
+  <title>Bryan Jones</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.85em%22 font-size=%2280%22 font-family=%22monospace%22 fill=%22%2300ff88%22>&gt;_</text></svg>">
+
+  <!-- Prevent flash of wrong theme -->
+  <script>
+    (function () {
+      const saved = localStorage.getItem('theme');
+      const system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      const theme = saved || system;
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <!-- Page Loader -->
-    <div id="page-loader">
-        <div class="loader-spinner"></div>
+
+  <!-- ==========================================
+       PAGE LOADER
+  =========================================== -->
+  <div id="page-loader">
+    <div class="loader-ring"></div>
+  </div>
+
+  <!-- ==========================================
+       SCROLL PROGRESS
+  =========================================== -->
+  <div id="scroll-progress"></div>
+
+  <!-- ==========================================
+       NAVIGATION
+  =========================================== -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo"><span class="logo-path">~/</span>bryan</a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="nav-controls">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+          <span class="theme-icon sun-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></span>
+          <span class="theme-icon moon-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+        </button>
+        <button class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
     </div>
 
-    <header>
-        <h1>Hi! I am Bryan Jones!</h1>
-        <nav role="navigation" aria-label="Main navigation">
-            <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+  </nav>
 
-            <!-- Theme Toggle Button -->
-            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
-                <span class="theme-icon sun-icon" aria-hidden="true">☀</span>
-                <span class="theme-icon moon-icon" aria-hidden="true">🌙</span>
-            </button>
+  <!-- Mobile Menu Overlay (direct child of body, outside navbar stacking context) -->
+  <div class="mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <button class="mobile-menu-close" aria-label="Close menu">✕</button>
+    <nav class="mobile-nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
 
-            <ul>
-                <li><a href="/" aria-current="page">Home</a></li>
-                <li><a href="/profile/">Profile</a></li>
-                <li><a href="/skills/">Skills</a></li>
-                <li><a href="/education/">Education</a></li>
-                <li><a href="/experience/">Experience</a></li>
-                <li><a href="/projects/">Projects</a></li>
-                <li><a href="/certifications/">Certifications</a></li>
-                <li><a href="/contact/">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="hero-section">
-            <div class="photo-container">
-                <img src="/bryan-photo.jpg" alt="Bryan Jones" class="profile-photo">
-            </div>
-            <div class="intro-content">
-                <h2 class="welcome-message">Welcome!</h2>
-                <p class="intro-text">My name is Bryan Jones and I'm pursuing both an M.S. and B.S. in Computer Science at George Mason University. I'm passionate about software engineering, cybersecurity, and artificial intelligence. Explore my journey, projects, and skills as I build my career in technology!</p>
-                <div class="quick-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">5+</span>
-                        <span class="stat-label">Internships</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">8+</span>
-                        <span class="stat-label">Certifications</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">6+</span>
-                        <span class="stat-label">Projects</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <div class="footer-content">
-            <div class="copyright">© 2025 Bryan Jones</div>
-            <div class="social-links">
-                <a href="https://github.com/bryanstanleyyy" class="social-link" aria-label="GitHub" title="GitHub" target="_blank">
-                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                </a>
-                <a href="https://www.linkedin.com/in/bryanstanley05/" class="social-link" aria-label="LinkedIn" title="LinkedIn" target="_blank">
-                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                </a>
-                <a href="mailto:bryansjones04@gmail.com" class="social-link" aria-label="Email" title="Email">
-                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                </a>
-            </div>
+  <main>
+
+    <!-- ==========================================
+         HERO
+    =========================================== -->
+    <section id="hero">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+      <div class="hero-content">
+        <div class="hero-photo reveal-hidden">
+          <img
+            src="/bryan-photo.jpg"
+            alt="Bryan Jones"
+            class="hero-photo-img"
+            width="180"
+            height="180"
+          >
         </div>
-    </footer>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" aria-label="Back to top"></button>
+        <div class="hero-text">
+          <span class="hero-greeting reveal-hidden">// Hello, World!</span>
 
-    <!-- Scripts -->
-    <script src="/animations.js"></script>
+          <h1 class="hero-name glitch reveal-hidden" data-text="Bryan Jones">Bryan Jones</h1>
+
+          <p class="hero-subtitle reveal-hidden">
+            <span class="hero-subtitle-prefix">&gt;&nbsp;</span>
+            <span id="typewriter"></span>
+            <span class="cursor" aria-hidden="true"></span>
+          </p>
+
+          <div class="hero-stats reveal-hidden">
+            <div class="hero-stat">
+              <div class="hero-stat-value">
+                <span class="stat-number" data-target="5">0</span><span>+</span>
+              </div>
+              <span class="hero-stat-label">Internships</span>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-value">
+                <span class="stat-number" data-target="8">0</span><span>+</span>
+              </div>
+              <span class="hero-stat-label">Certifications</span>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-value">
+                <span class="stat-number" data-target="6">0</span><span>+</span>
+              </div>
+              <span class="hero-stat-label">Projects</span>
+            </div>
+          </div>
+
+          <div class="hero-cta reveal-hidden">
+            <a href="#projects" class="btn-primary">View Projects</a>
+            <a href="#contact" class="btn-secondary">Contact Me</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         ABOUT
+    =========================================== -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header reveal-hidden">
+          <span class="section-label">// 01</span>
+          <h2>About Me</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text reveal-hidden">
+            <p>
+              Hi, I'm Bryan Jones, a hardworking and enthusiastic computer science student pursuing both an M.S. and B.S. in Computer Science at George Mason University through the Bachelor's to Accelerated Master's program.
+            </p>
+            <p>
+              I am passionate about programming, problem-solving, and exploring advanced topics like cybersecurity and artificial intelligence. Currently, I'm gaining hands-on experience through multiple internship roles in software engineering, data analysis, and cybersecurity mentoring, applying my technical skills to real-world challenges while building a career in software engineering.
+            </p>
+            <p>
+              My experience spans multiple areas including full-stack development with .NET and JavaScript, computational modeling and data analysis, cybersecurity mentoring, AI research, and technical support. I've had the privilege of working with organizations like Availity, Innovative Reasoning LLC, 22nd Century Technologies, MIT, CodePath, and various other tech companies, gaining diverse perspectives on the industry.
+            </p>
+            <p>
+              In my spare time, I enjoy swimming, playing soccer, basketball, and chess, as well as working on tech-related projects and participating in hackathons like PatriotHacks and HackOverflow.
+            </p>
+          </div>
+
+          <div class="about-sidebar reveal-hidden">
+            <div class="interest-block">
+              <h3>// Areas of Interest</h3>
+              <div class="interest-tags">
+                <span class="interest-tag">Software Engineering</span>
+                <span class="interest-tag">Cybersecurity</span>
+                <span class="interest-tag">Artificial Intelligence</span>
+                <span class="interest-tag">Data Science</span>
+                <span class="interest-tag">Machine Learning</span>
+                <span class="interest-tag">Cloud Computing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SKILLS
+    =========================================== -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header reveal-hidden">
+          <span class="section-label">// 02</span>
+          <h2>Technical Skills</h2>
+        </div>
+
+        <div class="terminal reveal-hidden">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="terminal-title">bryan@portfolio ~ skills.sh</span>
+          </div>
+          <div class="terminal-body">
+            <div>
+              <div class="skill-category-name">Programming Languages</div>
+              <div class="skill-tags">
+                <span class="skill-tag primary">Python</span>
+                <span class="skill-tag primary">Java</span>
+                <span class="skill-tag primary">C</span>
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">.NET</span>
+                <span class="skill-tag">R</span>
+                <span class="skill-tag">Assembly</span>
+              </div>
+            </div>
+            <div>
+              <div class="skill-category-name">Web Development</div>
+              <div class="skill-tags">
+                <span class="skill-tag primary">HTML</span>
+                <span class="skill-tag primary">CSS</span>
+                <span class="skill-tag primary">JavaScript</span>
+                <span class="skill-tag primary">TypeScript</span>
+                <span class="skill-tag primary">React</span>
+                <span class="skill-tag">Flask</span>
+                <span class="skill-tag">JavaFX</span>
+              </div>
+            </div>
+            <div>
+              <div class="skill-category-name">Databases</div>
+              <div class="skill-tags">
+                <span class="skill-tag primary">Oracle SQL</span>
+                <span class="skill-tag primary">MySQL</span>
+                <span class="skill-tag primary">PostgreSQL</span>
+                <span class="skill-tag">SQLite</span>
+              </div>
+            </div>
+            <div>
+              <div class="skill-category-name">Development Tools</div>
+              <div class="skill-tags">
+                <span class="skill-tag primary">Git</span>
+                <span class="skill-tag primary">GitHub</span>
+                <span class="skill-tag primary">VSCode</span>
+                <span class="skill-tag primary">Visual Studio</span>
+                <span class="skill-tag">Azure DevOps</span>
+                <span class="skill-tag">Maven</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">NetBeans</span>
+                <span class="skill-tag">Eclipse</span>
+                <span class="skill-tag">Android Studio</span>
+              </div>
+            </div>
+            <div>
+              <div class="skill-category-name">Cloud &amp; Data Platforms</div>
+              <div class="skill-tags">
+                <span class="skill-tag primary">Azure Cloud</span>
+                <span class="skill-tag primary">Google Colab</span>
+                <span class="skill-tag">Kaggle</span>
+                <span class="skill-tag">Excel</span>
+              </div>
+            </div>
+            <div>
+              <div class="skill-category-name">Cybersecurity Tools</div>
+              <div class="skill-tags">
+                <span class="skill-tag">Wireshark</span>
+                <span class="skill-tag">Splunk</span>
+                <span class="skill-tag">Catalyst</span>
+              </div>
+            </div>
+            <div>
+              <div class="skill-category-name">Operating Systems</div>
+              <div class="skill-tags">
+                <span class="skill-tag primary">Unix</span>
+                <span class="skill-tag">Linux</span>
+              </div>
+            </div>
+            <div>
+              <div class="skill-category-name">Software &amp; Productivity</div>
+              <div class="skill-tags">
+                <span class="skill-tag primary">Office 365</span>
+                <span class="skill-tag">Unity</span>
+                <span class="skill-tag">Slack</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="spec-grid reveal-hidden">
+          <div class="spec-card">
+            <h4>Data Science &amp; Analytics</h4>
+            <p>Experience with data analysis, visualization, and machine learning for predictive modeling and business insights.</p>
+          </div>
+          <div class="spec-card">
+            <h4>Cybersecurity</h4>
+            <p>Knowledge of network security, vulnerability assessment, incident response, and SOC operations.</p>
+          </div>
+          <div class="spec-card">
+            <h4>Artificial Intelligence</h4>
+            <p>Experience with AI/ML models, bias research, generative AI, and prompt engineering.</p>
+          </div>
+          <div class="spec-card">
+            <h4>Software Engineering</h4>
+            <p>Full-stack development, database design, systems programming, and software architecture.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         EDUCATION
+    =========================================== -->
+    <section id="education" class="section">
+      <div class="container">
+        <div class="section-header reveal-hidden">
+          <span class="section-label">// 03</span>
+          <h2>Education</h2>
+        </div>
+
+        <div class="timeline">
+          <!-- GMU MS -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card current">
+              <div class="timeline-card-header">
+                <h3>George Mason University</h3>
+                <span class="timeline-date">May 2025 – May 2027</span>
+              </div>
+              <p class="edu-degree">M.S. in Computer Science (Bachelor's to Accelerated Master's)</p>
+              <div class="coursework">
+                <h4>// Relevant Coursework</h4>
+                <div class="coursework-tags">
+                  <span class="coursework-tag">Analysis of Algorithms</span>
+                  <span class="coursework-tag">Computer Communications &amp; Networking</span>
+                  <span class="coursework-tag">Introduction to Artificial Intelligence</span>
+                  <span class="coursework-tag">Computer Graphics</span>
+                  <span class="coursework-tag">Software Engineering for WWW</span>
+                  <span class="coursework-tag">Object-Oriented Software Spec &amp; Construction</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- GMU BS -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card current">
+              <div class="timeline-card-header">
+                <h3>George Mason University</h3>
+                <span class="timeline-date">Jan 2024 – May 2026</span>
+              </div>
+              <p class="edu-degree">B.S. in Computer Science</p>
+              <span class="edu-gpa">GPA: 3.66</span>
+              <div class="coursework">
+                <h4>// Relevant Coursework</h4>
+                <div class="coursework-tags">
+                  <span class="coursework-tag">Data Structures</span>
+                  <span class="coursework-tag">Analysis of Algorithms</span>
+                  <span class="coursework-tag">Computer Communications &amp; Networking</span>
+                  <span class="coursework-tag">Computer Systems Architecture</span>
+                  <span class="coursework-tag">Introduction to AI</span>
+                  <span class="coursework-tag">Systems Programming</span>
+                  <span class="coursework-tag">Low-Level Programming</span>
+                  <span class="coursework-tag">Database Concepts</span>
+                  <span class="coursework-tag">Software Engineering</span>
+                  <span class="coursework-tag">Formal Methods and Models</span>
+                  <span class="coursework-tag">Probability &amp; Statistics</span>
+                  <span class="coursework-tag">Game Design</span>
+                  <span class="coursework-tag">Ethics &amp; Law for Computing</span>
+                  <span class="coursework-tag">Operating Systems</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- NOVA -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-card-header">
+                <h3>Northern Virginia Community College</h3>
+                <span class="timeline-date">May 2022 – Dec 2023</span>
+              </div>
+              <p class="edu-degree">A.S. in Computer Science</p>
+              <span class="edu-gpa">GPA: 3.87</span>
+              <div class="coursework">
+                <h4>// Relevant Coursework</h4>
+                <div class="coursework-tags">
+                  <span class="coursework-tag">Object-Oriented Programming</span>
+                  <span class="coursework-tag">Data Structures &amp; Analysis of Algorithms</span>
+                  <span class="coursework-tag">Discrete Structures</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Extracurriculars -->
+        <div class="extracurriculars reveal-hidden">
+          <h3>// Extracurricular Activities</h3>
+          <div class="activity-grid">
+            <div class="activity-card">
+              <h4>GMU Computer Science Club</h4>
+              <p>Participate in coding challenges, software development workshops, peer learning sessions, and stay updated on emerging technologies and industry trends.</p>
+            </div>
+            <div class="activity-card">
+              <h4>Hackathons</h4>
+              <p>Active participant in competitive programming events:</p>
+              <ul>
+                <li>HackOverflow 2024</li>
+                <li>PatriotHacks 2024</li>
+                <li>PatriotHacks 2023</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         EXPERIENCE
+    =========================================== -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-header reveal-hidden">
+          <span class="section-label">// 04</span>
+          <h2>Experience</h2>
+        </div>
+
+        <div class="timeline">
+          <!-- Availity -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card current">
+              <div class="timeline-card-header">
+                <h3>Software Engineering Intern</h3>
+                <span class="timeline-date">Sept 2025 – May 2026</span>
+              </div>
+              <p class="timeline-company"><strong>Availity</strong> &nbsp;·&nbsp; Jacksonville, Florida</p>
+              <ul>
+                <li>Develop, test, and deploy software applications using .NET backend and JavaScript frontend in an agile development environment with Azure DevOps.</li>
+                <li>Work on assigned tickets and features for Availity's healthcare engagement platform using Visual Studio and Azure cloud services.</li>
+                <li>Gain hands-on experience with Azure cloud platform, DevOps CI/CD pipelines, and healthcare standards including HIPAA and EDI.</li>
+                <li>Collaborate with cross-functional Product and QA teams to deliver high-quality features through code reviews and sprint ceremonies.</li>
+              </ul>
+              <div class="badge-row">
+                <span class="badge">.NET</span>
+                <span class="badge">JavaScript</span>
+                <span class="badge">Azure Cloud</span>
+                <span class="badge">Healthcare IT</span>
+                <span class="badge">Agile/DevOps</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Innovative Reasoning -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card current">
+              <div class="timeline-card-header">
+                <h3>Computational Modeling Data Analyst Intern</h3>
+                <span class="timeline-date">June 2025 – May 2026</span>
+              </div>
+              <p class="timeline-company"><strong>Innovative Reasoning LLC</strong> &nbsp;·&nbsp; Stafford, Virginia</p>
+              <ul>
+                <li>Perform data analysis, simulation modeling, and risk assessment for Marine Corps Combat Development &amp; Integration.</li>
+                <li>Develop computational models and perform statistical analysis to inform military strategic planning and operational decision-making.</li>
+                <li>Create interactive dashboards and data visualizations to present analytical findings to senior military leadership and stakeholders.</li>
+              </ul>
+              <div class="badge-row">
+                <span class="badge">Data Analysis</span>
+                <span class="badge">Simulation Modeling</span>
+                <span class="badge">Statistical Analysis</span>
+                <span class="badge">Data Visualization</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 22nd Century -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-card-header">
+                <h3>Summer Intern</h3>
+                <span class="timeline-date">June 2025 – July 2025</span>
+              </div>
+              <p class="timeline-company"><strong>22nd Century Technologies, Inc.</strong> &nbsp;·&nbsp; McLean, Virginia</p>
+              <ul>
+                <li>Gained strategic insights from industry experts on cutting-edge technologies and business operations across multiple specialized fields.</li>
+                <li>Led development of innovative product/service solutions through collaborative cross-functional team project.</li>
+                <li>Delivered high-impact presentation of strategic recommendations to executive leadership team.</li>
+              </ul>
+              <div class="badge-row">
+                <span class="badge">Strategic Planning</span>
+                <span class="badge">Product Development</span>
+                <span class="badge">Team Leadership</span>
+                <span class="badge">Executive Presentations</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CodePath -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-card-header">
+                <h3>Tech Fellow — CYB102: Intermediate Cybersecurity</h3>
+                <span class="timeline-date">May 2025 – Aug 2025</span>
+              </div>
+              <p class="timeline-company"><strong>CodePath</strong> &nbsp;·&nbsp; San Francisco, California</p>
+              <ul>
+                <li>Mentored 30+ students in intermediate cybersecurity topics including network security, vulnerability assessment, and incident response.</li>
+                <li>Provided technical support and career guidance to students, improving course completion rates and skill development.</li>
+                <li>Facilitated weekly office hours and review sessions to reinforce security concepts and assist with project troubleshooting.</li>
+              </ul>
+              <div class="badge-row">
+                <span class="badge">Cybersecurity</span>
+                <span class="badge">Mentoring</span>
+                <span class="badge">Network Security</span>
+                <span class="badge">Vulnerability Assessment</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- MIT -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-card-header">
+                <h3>Research Assistant</h3>
+                <span class="timeline-date">July 2024 – Aug 2024</span>
+              </div>
+              <p class="timeline-company"><strong>Massachusetts Institute of Technology (MIT)</strong> &nbsp;·&nbsp; Cambridge, Massachusetts</p>
+              <ul>
+                <li>Contributed to LLM research on "AI Bias" for evaluating the role and efficiency of AI-ML models in medical diagnosis.</li>
+                <li>Analyzed the impact of language diversity and query formulation on the effectiveness of AI in medical diagnostics.</li>
+                <li>Collaborated with a multidisciplinary team to identify and mitigate biases in AI-ML models, improving accuracy and fairness in healthcare.</li>
+              </ul>
+              <div class="badge-row">
+                <span class="badge">AI Research</span>
+                <span class="badge">Machine Learning</span>
+                <span class="badge">Healthcare AI</span>
+                <span class="badge">Bias Mitigation</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PWCS -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-card-header">
+                <h3>Technical Support Specialist Intern</h3>
+                <span class="timeline-date">Mar 2024 – May 2024</span>
+              </div>
+              <p class="timeline-company"><strong>Prince William County Schools</strong> &nbsp;·&nbsp; Gainesville, Virginia</p>
+              <ul>
+                <li>Assisted students, teachers, and staff on-site with hardware and software issues at one or more PWCS locations.</li>
+                <li>Gained hands-on experience in IT support and contributed to the efficient operation of the school's technology infrastructure.</li>
+              </ul>
+              <div class="badge-row">
+                <span class="badge">IT Support</span>
+                <span class="badge">Hardware Troubleshooting</span>
+                <span class="badge">Software Support</span>
+                <span class="badge">Customer Service</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- MEBS -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-card-header">
+                <h3>Administrative Assistant</h3>
+                <span class="timeline-date">Aug 2022 – Dec 2023</span>
+              </div>
+              <p class="timeline-company"><strong>MEBS Global Reach</strong> &nbsp;·&nbsp; Chantilly, Virginia</p>
+              <ul>
+                <li>Maintained positive customer relationships and always provided excellent customer assistance.</li>
+                <li>Ensured all communications are consistent with the company's mission and values.</li>
+                <li>Responsible for day-to-day warehouse management.</li>
+              </ul>
+              <div class="badge-row">
+                <span class="badge">Customer Relations</span>
+                <span class="badge">Warehouse Management</span>
+                <span class="badge">Administrative Tasks</span>
+                <span class="badge">Communication</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         PROJECTS
+    =========================================== -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header reveal-hidden">
+          <span class="section-label">// 05</span>
+          <h2>Projects</h2>
+        </div>
+
+        <div class="projects-grid reveal-hidden">
+          <!-- Whiskey.ai -->
+          <div class="project-card featured">
+            <div class="project-name">Whiskey.ai</div>
+            <div class="tech-stack">
+              <span class="tech-pill">TypeScript</span>
+              <span class="tech-pill">Next.js</span>
+              <span class="tech-pill">Groq API</span>
+            </div>
+            <p class="project-description">
+              Full-stack conversational AI web application featuring a pug-themed personality chatbot powered by Llama 3.3 via Groq API. Implements real-time web search integration for current events detection, conversation history management with Zustand, mood-based animated UI responses, and PWA support for mobile installation.
+            </p>
+            <ul class="project-features">
+              <li>Pug-themed personality chatbot powered by Llama 3.3</li>
+              <li>Real-time web search integration for current events</li>
+              <li>Conversation history management with Zustand</li>
+              <li>Mood-based animated UI responses</li>
+              <li>PWA support for mobile installation</li>
+            </ul>
+            <div class="project-tags">
+              <span class="project-tag">Conversational AI</span>
+              <span class="project-tag">Full-Stack</span>
+              <span class="project-tag">Web Search</span>
+              <span class="project-tag">PWA</span>
+            </div>
+          </div>
+
+          <!-- Warehouse Capacity Planner -->
+          <div class="project-card featured">
+            <div class="project-name">Warehouse Capacity Planner</div>
+            <div class="tech-stack">
+              <span class="tech-pill">TypeScript</span>
+              <span class="tech-pill">React</span>
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">Flask</span>
+              <span class="tech-pill">PostgreSQL</span>
+              <span class="tech-pill">Docker</span>
+            </div>
+            <p class="project-description">
+              Full-stack web application for warehouse space optimization featuring a multi-constraint allocation algorithm, Excel data import/export, interactive Chart.js visualizations, and production deployment with nginx. Implements height-first optimization considering floor area, ceiling height, floor strength, climate control, and space utilization factors.
+            </p>
+            <ul class="project-features">
+              <li>Multi-constraint allocation algorithm</li>
+              <li>Excel data import/export functionality</li>
+              <li>Interactive Chart.js visualizations</li>
+              <li>Production deployment with nginx and Docker</li>
+            </ul>
+            <div class="project-tags">
+              <span class="project-tag">Full-Stack</span>
+              <span class="project-tag">Optimization</span>
+              <span class="project-tag">Data Visualization</span>
+              <span class="project-tag">Production Deploy</span>
+            </div>
+          </div>
+
+          <!-- Smart Project Allocation -->
+          <div class="project-card featured">
+            <div class="project-name">Smart Project Allocation System</div>
+            <div class="tech-stack">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">Flask</span>
+              <span class="tech-pill">SQLite</span>
+            </div>
+            <p class="project-description">
+              Intelligently matches employees to projects based on skills and availability, featuring employee/project management, workload optimization, and automated team assignment recommendations.
+            </p>
+            <ul class="project-features">
+              <li>Intelligent employee-to-project matching</li>
+              <li>Skills-based allocation algorithms</li>
+              <li>Workload optimization and balancing</li>
+              <li>Automated team assignment recommendations</li>
+            </ul>
+            <div class="project-tags">
+              <span class="project-tag">Machine Learning</span>
+              <span class="project-tag">Web App</span>
+              <span class="project-tag">Database Design</span>
+              <span class="project-tag">Resource Mgmt</span>
+            </div>
+          </div>
+
+          <!-- News Topic Analyzer -->
+          <div class="project-card">
+            <div class="project-name">News Topic Analyzer</div>
+            <div class="tech-stack">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">Google Gemini API</span>
+              <span class="tech-pill">NewsAPI</span>
+            </div>
+            <p class="project-description">
+              Collects news articles on topics you choose and uses AI to create easy-to-read summaries, identify key points, and show whether coverage is positive or negative through simple charts. Completed as part of Google Gen AI Intensive Course Kaggle capstone project.
+            </p>
+            <ul class="project-features">
+              <li>Automated news collection and analysis</li>
+              <li>AI-powered sentiment analysis</li>
+              <li>Data visualization and reporting</li>
+              <li>Real-time topic monitoring</li>
+            </ul>
+            <div class="project-tags">
+              <span class="project-tag">AI/ML</span>
+              <span class="project-tag">Data Analysis</span>
+              <span class="project-tag">API Integration</span>
+              <span class="project-tag">NLP</span>
+            </div>
+          </div>
+
+          <!-- GPA Calculator -->
+          <div class="project-card">
+            <div class="project-name">GPA Calculator</div>
+            <div class="tech-stack">
+              <span class="tech-pill">Java</span>
+            </div>
+            <p class="project-description">
+              Java-based application that allows users to manage their academic courses and calculate their cumulative GPA on a 4.0 scale with an intuitive interface.
+            </p>
+            <ul class="project-features">
+              <li>Course management system</li>
+              <li>GPA calculation algorithms</li>
+              <li>Data persistence</li>
+              <li>User-friendly interface</li>
+            </ul>
+            <div class="project-tags">
+              <span class="project-tag">Desktop App</span>
+              <span class="project-tag">Data Management</span>
+              <span class="project-tag">Academic Tools</span>
+            </div>
+          </div>
+
+          <!-- Personal Website -->
+          <div class="project-card">
+            <div class="project-name">Personal Website</div>
+            <div class="tech-stack">
+              <span class="tech-pill">HTML</span>
+              <span class="tech-pill">CSS</span>
+              <span class="tech-pill">JavaScript</span>
+            </div>
+            <p class="project-description">
+              This portfolio site — a personal website to showcase my professional profile, skills, education, work experience, and projects with a modern, responsive hacker-themed design.
+            </p>
+            <ul class="project-features">
+              <li>Responsive single-page design</li>
+              <li>Canvas particle animation</li>
+              <li>Dark/light mode toggle</li>
+              <li>Smooth scroll navigation</li>
+            </ul>
+            <div class="project-tags">
+              <span class="project-tag">Web Dev</span>
+              <span class="project-tag">Portfolio</span>
+              <span class="project-tag">Responsive</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CERTIFICATIONS
+    =========================================== -->
+    <section id="certifications" class="section">
+      <div class="container">
+        <div class="section-header reveal-hidden">
+          <span class="section-label">// 06</span>
+          <h2>Certifications</h2>
+        </div>
+
+        <div class="certs-grid reveal-hidden">
+          <!-- AWS -->
+          <div class="cert-card">
+            <div class="cert-title">AWS Educate Introduction to Cloud 101 &amp; Introduction to Generative AI</div>
+            <div class="cert-meta">
+              <span class="cert-issuer">AWS Educate</span>
+              <span class="cert-date">July 2025</span>
+            </div>
+            <ul class="cert-details">
+              <li>Completed AWS Cloud Computing and Generative AI certifications with hands-on experience in core AWS services and AI technologies.</li>
+              <li>Demonstrated proficiency in cloud infrastructure and AI application development through virtual labs and practical assessments.</li>
+              <li>Gained foundational expertise in cloud architecture, security, and AI/ML concepts including prompt engineering and responsible AI practices.</li>
+            </ul>
+            <div class="cert-tags">
+              <span class="cert-tag">Cloud Computing</span>
+              <span class="cert-tag">AWS</span>
+              <span class="cert-tag">Generative AI</span>
+              <span class="cert-tag">Cloud Security</span>
+            </div>
+          </div>
+
+          <!-- CodePath -->
+          <div class="cert-card">
+            <div class="cert-title">CYB102: Intermediate Cybersecurity (Honors)</div>
+            <div class="cert-meta">
+              <span class="cert-issuer">CodePath</span>
+              <span class="cert-date">May 2025</span>
+            </div>
+            <ul class="cert-details">
+              <li>Studied Blue Team defense strategies, including SOC operations and endpoint security.</li>
+              <li>Gained experience with SIEM tools, network monitoring, and vulnerability detection.</li>
+              <li>Learned incident response techniques and threat intelligence using the ATT&amp;CK framework.</li>
+            </ul>
+            <div class="cert-tags">
+              <span class="cert-tag">Cybersecurity</span>
+              <span class="cert-tag">SOC Operations</span>
+              <span class="cert-tag">SIEM</span>
+              <span class="cert-tag">Incident Response</span>
+            </div>
+          </div>
+
+          <!-- Google -->
+          <div class="cert-card">
+            <div class="cert-title">Google Gen AI Intensive Course</div>
+            <div class="cert-meta">
+              <span class="cert-issuer">Google</span>
+              <span class="cert-date">April 2025</span>
+            </div>
+            <ul class="cert-details">
+              <li>Explored foundational models, prompt engineering, embeddings, and vector databases.</li>
+              <li>Learned to build AI agents and apply MLOps practices for Generative AI using Vertex AI.</li>
+              <li>Completed a Kaggle capstone project (News Topic Analyzer) to apply Gen AI concepts in a real-world scenario.</li>
+            </ul>
+            <div class="cert-tags">
+              <span class="cert-tag">Generative AI</span>
+              <span class="cert-tag">Machine Learning</span>
+              <span class="cert-tag">Vertex AI</span>
+              <span class="cert-tag">MLOps</span>
+            </div>
+          </div>
+
+          <!-- HP -->
+          <div class="cert-card">
+            <div class="cert-title">HP Future Ready AI MasterClass</div>
+            <div class="cert-meta">
+              <span class="cert-issuer">HP</span>
+              <span class="cert-date">April 2025</span>
+            </div>
+            <ul class="cert-details">
+              <li>Completed foundation-level AI training covering fundamental concepts and industry applications across various sectors.</li>
+              <li>Explored HP's AI narrative, portfolio offerings, and comprehensive value proposition in the artificial intelligence marketplace.</li>
+              <li>Learned how to leverage HP Amplify Data Insights to identify growth opportunities and enhance business outcomes for partners.</li>
+            </ul>
+            <div class="cert-tags">
+              <span class="cert-tag">Artificial Intelligence</span>
+              <span class="cert-tag">Business AI</span>
+              <span class="cert-tag">Data Insights</span>
+              <span class="cert-tag">Industry Applications</span>
+            </div>
+          </div>
+
+          <!-- TDSP -->
+          <div class="cert-card">
+            <div class="cert-title">
+              <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:6d013bb1-6c37-4648-bd13-32cb49247079" target="_blank" rel="noopener">
+                Transportation Data Science Project (TDSP)
+              </a>
+            </div>
+            <div class="cert-meta">
+              <span class="cert-issuer">NEBDHub &amp; NSDC</span>
+              <span class="cert-date">February 2025</span>
+            </div>
+            <ul class="cert-details">
+              <li>Analyzed NYC OpenData transportation data to create data-driven insights for road safety.</li>
+              <li>Gained skills in Python, data cleaning, time series and geospatial analysis, and data visualization.</li>
+              <li>Developed analytical models and data stories to support real-world decision-making.</li>
+            </ul>
+            <div class="cert-tags">
+              <span class="cert-tag">Data Science</span>
+              <span class="cert-tag">Python</span>
+              <span class="cert-tag">Geospatial Analysis</span>
+              <span class="cert-tag">Data Visualization</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="cert-summary reveal-hidden">
+          <h3>// Certification Summary</h3>
+          <div class="summary-stats">
+            <div class="summary-stat">
+              <span class="stat-num">8+</span>
+              <span class="stat-lbl">Total Certifications</span>
+            </div>
+            <div class="summary-stat">
+              <span class="stat-num">5</span>
+              <span class="stat-lbl">Technology Areas</span>
+            </div>
+            <div class="summary-stat">
+              <span class="stat-num">2025</span>
+              <span class="stat-lbl">Most Recent Year</span>
+            </div>
+          </div>
+          <div class="focus-areas">
+            <h4>// Key Focus Areas</h4>
+            <div class="focus-tags">
+              <span class="focus-tag">Cloud Computing</span>
+              <span class="focus-tag">Artificial Intelligence</span>
+              <span class="focus-tag">Cybersecurity</span>
+              <span class="focus-tag">Data Science</span>
+              <span class="focus-tag">Machine Learning</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CONTACT
+    =========================================== -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header reveal-hidden">
+          <span class="section-label">// 07</span>
+          <h2>Let's Connect</h2>
+        </div>
+
+        <p class="contact-intro reveal-hidden">
+          I'm always interested in discussing new opportunities, innovative projects, and potential collaborations in software engineering, cybersecurity, and artificial intelligence.
+        </p>
+
+        <div class="contact-grid reveal-hidden">
+          <a href="mailto:bryansjones04@gmail.com" class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </div>
+            <h3>Email</h3>
+            <p>bryansjones04@gmail.com</p>
+            <span class="contact-note">Best for professional inquiries</span>
+          </a>
+
+          <a href="tel:703-843-4833" class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            </div>
+            <h3>Phone</h3>
+            <p>703-843-4833</p>
+            <span class="contact-note">Available Mon–Fri</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/bryanstanley05/" target="_blank" rel="noopener" class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <h3>LinkedIn</h3>
+            <p>linkedin.com/in/bryanstanley05</p>
+            <span class="contact-note">Professional networking</span>
+          </a>
+
+          <a href="https://github.com/bryanstanleyyy" target="_blank" rel="noopener" class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </div>
+            <h3>GitHub</h3>
+            <p>github.com/bryanstanleyyy</p>
+            <span class="contact-note">View code &amp; projects</span>
+          </a>
+        </div>
+
+        <!-- Availability -->
+        <div class="availability-status reveal-hidden">
+          <h3>// Current Status</h3>
+          <div class="status-row">
+            <div class="status-dot"></div>
+            <div class="status-info">
+              <h4>Available for Opportunities</h4>
+              <p>Actively seeking internships and full-time positions in software engineering, data science, and cybersecurity.<br>Expected graduation: May 2026 (B.S.) / May 2027 (M.S.)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="contact-cta reveal-hidden">
+          <h3>Ready to Collaborate?</h3>
+          <p>Let's build something great together. Reach out and I'll get back to you soon.</p>
+          <div class="cta-buttons">
+            <a href="mailto:bryansjones04@gmail.com" class="btn-primary">Send Email</a>
+            <a href="https://www.linkedin.com/in/bryanstanley05/" target="_blank" rel="noopener" class="btn-secondary">Connect on LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       FOOTER
+  =========================================== -->
+  <footer>
+    <div class="footer-content">
+      <span class="footer-copy">© 2026 Bryan Jones</span>
+      <div class="footer-links">
+        <a href="https://github.com/bryanstanleyyy" class="footer-link" aria-label="GitHub" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/bryanstanley05/" class="footer-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="mailto:bryansjones04@gmail.com" class="footer-link" aria-label="Email">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="/animations.js"></script>
 </body>
 </html>
