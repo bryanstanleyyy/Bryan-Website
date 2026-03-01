@@ -77,9 +77,44 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  cursor: none;
 }
 
+body * { cursor: none !important; }
+
 body.menu-open { overflow: hidden; }
+
+/* Restore cursor on touch devices */
+.touch-device,
+.touch-device * {
+  cursor: auto !important;
+}
+
+/* CRT scanline overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+}
+
+[data-theme="light"] body::before {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.012) 2px,
+    rgba(0, 0, 0, 0.012) 4px
+  );
+}
 
 a { text-decoration: none; color: inherit; }
 
@@ -116,6 +151,33 @@ img { max-width: 100%; display: block; }
   animation: spin 0.8s linear infinite;
 }
 
+.loader-boot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.boot-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.boot-line {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  letter-spacing: 0.14em;
+  opacity: 0;
+  animation: bootLineFade 0.4s ease forwards;
+}
+
+.boot-line:nth-child(1) { animation-delay: 0.2s; }
+.boot-line:nth-child(2) { animation-delay: 0.6s; }
+.boot-line:nth-child(3) { animation-delay: 1.0s; }
+
 /* =============================================
    SCROLL PROGRESS BAR
    ============================================= */
@@ -124,10 +186,16 @@ img { max-width: 100%; display: block; }
   top: 0;
   left: 0;
   height: 2px;
-  background: var(--accent);
+  background: repeating-linear-gradient(
+    90deg,
+    var(--accent) 0px,
+    var(--accent) 10px,
+    transparent 10px,
+    transparent 13px
+  );
   width: 0%;
   z-index: 1001;
-  transition: width 0.1s linear;
+  transition: none;
   box-shadow: 0 0 8px var(--accent-glow);
 }
 
@@ -403,6 +471,17 @@ body.menu-open .mobile-menu {
   transform: translateY(0);
 }
 
+/* Content sits above the canvas z:0 and scanline z:2 */
+main {
+  position: relative;
+  z-index: 1;
+}
+
+footer {
+  position: relative;
+  z-index: 1;
+}
+
 /* =============================================
    HERO SECTION
    ============================================= */
@@ -414,12 +493,30 @@ body.menu-open .mobile-menu {
   overflow: hidden;
 }
 
-#hero-canvas {
+/* Radial vignette — deepens the matrix rain at edges */
+#hero::after {
+  content: '';
   position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 35%, rgba(5, 5, 8, 0.6) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme="light"] #hero::after {
+  background: radial-gradient(ellipse at center, transparent 35%, rgba(242, 242, 247, 0.45) 100%);
+}
+
+/* =============================================
+   MATRIX RAIN CANVAS (full-page background)
+   ============================================= */
+#matrix-canvas {
+  position: fixed;
   inset: 0;
   width: 100%;
   height: 100%;
   z-index: 0;
+  pointer-events: none;
 }
 
 .hero-content {
@@ -516,6 +613,17 @@ body.menu-open .mobile-menu {
   clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
   transform: translateX(3px);
   animation: glitchBottom 0.2s steps(2) forwards;
+}
+
+/* Section heading glitch — more subtle than hero name */
+.section-header h2.glitch.glitching::before {
+  clip-path: polygon(0 12%, 100% 12%, 100% 36%, 0 36%);
+  transform: translateX(-2px);
+}
+
+.section-header h2.glitch.glitching::after {
+  clip-path: polygon(0 64%, 100% 64%, 100% 82%, 0 82%);
+  transform: translateX(2px);
 }
 
 /* Typewriter */
@@ -1603,19 +1711,62 @@ footer {
 }
 
 /* =============================================
-   CURSOR TRAIL
+   MAGNETIC CURSOR
    ============================================= */
-.cursor-dot {
+#cursor-outer {
   position: fixed;
-  width: 4px;
-  height: 4px;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  left: -100px;
+  top: -100px;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              height 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              background 0.25s ease,
+              border-color 0.25s ease,
+              opacity 0.3s ease;
+  opacity: 0;
+  will-change: transform;
+}
+
+#cursor-dot {
+  position: fixed;
+  width: 5px;
+  height: 5px;
   background: var(--accent);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9998;
+  left: -100px;
+  top: -100px;
   transform: translate(-50%, -50%);
-  opacity: 0.7;
-  animation: trailFade 0.6s ease forwards;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  will-change: transform;
+}
+
+body.cursor-hover #cursor-outer {
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 255, 136, 0.1);
+}
+
+[data-theme="light"] body.cursor-hover #cursor-outer {
+  background: rgba(0, 122, 66, 0.1);
+}
+
+body.cursor-clicking #cursor-outer,
+body.cursor-clicking #cursor-dot {
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+.touch-device #cursor-outer,
+.touch-device #cursor-dot {
+  display: none;
 }
 
 /* =============================================
@@ -1654,9 +1805,9 @@ footer {
   to   { opacity: 1; }
 }
 
-@keyframes trailFade {
-  0%   { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
-  100% { opacity: 0;   transform: translate(-50%, -50%) scale(0); }
+@keyframes bootLineFade {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 0.65; transform: translateX(0); }
 }
 
 @keyframes statusPulse {

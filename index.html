@@ -23,11 +23,25 @@
 </head>
 <body>
 
+  <!-- Full-page matrix rain canvas (behind everything) -->
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+
+  <!-- Custom cursor elements -->
+  <div id="cursor-outer" aria-hidden="true"></div>
+  <div id="cursor-dot" aria-hidden="true"></div>
+
   <!-- ==========================================
        PAGE LOADER
   =========================================== -->
   <div id="page-loader">
-    <div class="loader-ring"></div>
+    <div class="loader-boot">
+      <div class="loader-ring"></div>
+      <div class="boot-text">
+        <span class="boot-line">INITIALIZING SYSTEM...</span>
+        <span class="boot-line">LOADING MODULES</span>
+        <span class="boot-line">ESTABLISHING CONNECTION</span>
+      </div>
+    </div>
   </div>
 
   <!-- ==========================================
@@ -40,7 +54,7 @@
   =========================================== -->
   <nav id="navbar" role="navigation" aria-label="Main navigation">
     <div class="nav-container">
-      <a href="#hero" class="nav-logo"><span class="logo-path">~/</span>bryan</a>
+      <a href="#hero" class="nav-logo magnetic"><span class="logo-path">~/</span>bryan</a>
 
       <div class="nav-links">
         <a href="#about">About</a>
@@ -83,8 +97,6 @@
          HERO
     =========================================== -->
     <section id="hero">
-      <canvas id="hero-canvas" aria-hidden="true"></canvas>
-
       <div class="hero-content">
         <div class="hero-photo reveal-hidden">
           <img
@@ -129,8 +141,8 @@
           </div>
 
           <div class="hero-cta reveal-hidden">
-            <a href="#projects" class="btn-primary">View Projects</a>
-            <a href="#contact" class="btn-secondary">Contact Me</a>
+            <a href="#projects" class="btn-primary magnetic">View Projects</a>
+            <a href="#contact" class="btn-secondary magnetic">Contact Me</a>
           </div>
         </div>
       </div>
@@ -144,7 +156,7 @@
       <div class="container">
         <div class="section-header reveal-hidden">
           <span class="section-label">// 01</span>
-          <h2>About Me</h2>
+          <h2 class="glitch" data-text="About Me">About Me</h2>
         </div>
 
         <div class="about-grid">
@@ -187,7 +199,7 @@
       <div class="container">
         <div class="section-header reveal-hidden">
           <span class="section-label">// 02</span>
-          <h2>Technical Skills</h2>
+          <h2 class="glitch" data-text="Technical Skills">Technical Skills</h2>
         </div>
 
         <div class="terminal reveal-hidden">
@@ -309,7 +321,7 @@
       <div class="container">
         <div class="section-header reveal-hidden">
           <span class="section-label">// 03</span>
-          <h2>Education</h2>
+          <h2 class="glitch" data-text="Education">Education</h2>
         </div>
 
         <div class="timeline">
@@ -419,7 +431,7 @@
       <div class="container">
         <div class="section-header reveal-hidden">
           <span class="section-label">// 04</span>
-          <h2>Experience</h2>
+          <h2 class="glitch" data-text="Experience">Experience</h2>
         </div>
 
         <div class="timeline">
@@ -595,7 +607,7 @@
       <div class="container">
         <div class="section-header reveal-hidden">
           <span class="section-label">// 05</span>
-          <h2>Projects</h2>
+          <h2 class="glitch" data-text="Projects">Projects</h2>
         </div>
 
         <div class="projects-grid reveal-hidden">
@@ -759,7 +771,7 @@
       <div class="container">
         <div class="section-header reveal-hidden">
           <span class="section-label">// 06</span>
-          <h2>Certifications</h2>
+          <h2 class="glitch" data-text="Certifications">Certifications</h2>
         </div>
 
         <div class="certs-grid reveal-hidden">
@@ -906,7 +918,7 @@
       <div class="container">
         <div class="section-header reveal-hidden">
           <span class="section-label">// 07</span>
-          <h2>Let's Connect</h2>
+          <h2 class="glitch" data-text="Let's Connect">Let's Connect</h2>
         </div>
 
         <p class="contact-intro reveal-hidden">
@@ -968,8 +980,8 @@
           <h3>Ready to Collaborate?</h3>
           <p>Let's build something great together. Reach out and I'll get back to you soon.</p>
           <div class="cta-buttons">
-            <a href="mailto:bryansjones04@gmail.com" class="btn-primary">Send Email</a>
-            <a href="https://www.linkedin.com/in/bryanstanley05/" target="_blank" rel="noopener" class="btn-secondary">Connect on LinkedIn</a>
+            <a href="mailto:bryansjones04@gmail.com" class="btn-primary magnetic">Send Email</a>
+            <a href="https://www.linkedin.com/in/bryanstanley05/" target="_blank" rel="noopener" class="btn-secondary magnetic">Connect on LinkedIn</a>
           </div>
         </div>
       </div>
