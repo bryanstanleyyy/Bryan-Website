@@ -355,16 +355,17 @@ class GlitchEffect {
     if (!this.elements.length) return;
     this.heroEl = document.querySelector('.hero-name');
     this.setupIntersectionTriggers();
-    this.scheduleHeroGlitch();
+    this.scheduleGlitch(this.heroEl, 400);
   }
 
   setupIntersectionTriggers() {
-    // Section headings glitch once when scrolled into view
+    // Section headings glitch once when scrolled into view, then repeat periodically
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting && entry.target !== this.heroEl) {
-          this.triggerGlitch(entry.target, 600);
+          this.triggerGlitch(entry.target, 400);
           observer.unobserve(entry.target);
+          this.scheduleGlitch(entry.target, 400);
         }
       });
     }, { threshold: 0.4 });
@@ -374,12 +375,12 @@ class GlitchEffect {
     });
   }
 
-  scheduleHeroGlitch() {
-    if (!this.heroEl) return;
+  scheduleGlitch(el, duration) {
+    if (!el) return;
     const delay = 3000 + Math.random() * 4000;
     setTimeout(() => {
-      this.triggerGlitch(this.heroEl, 400);
-      this.scheduleHeroGlitch();
+      this.triggerGlitch(el, duration);
+      this.scheduleGlitch(el, duration);
     }, delay);
   }
 
