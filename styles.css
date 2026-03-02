@@ -1728,6 +1728,7 @@ footer {
               height 0.25s cubic-bezier(0.4, 0, 0.2, 1),
               background 0.25s ease,
               border-color 0.25s ease,
+              border-width 0.25s ease,
               opacity 0.3s ease;
   opacity: 0;
   will-change: transform;
@@ -1753,6 +1754,23 @@ body.cursor-hover #cursor-outer {
   width: 60px;
   height: 60px;
   background: rgba(0, 255, 136, 0.1);
+  border-width: 2px;
+}
+
+body.cursor-hover #cursor-outer::after {
+  content: '⊕';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 22px;
+  color: var(--secondary);
+  line-height: 1;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+body.cursor-hover #cursor-dot {
+  opacity: 0 !important;
 }
 
 [data-theme="light"] body.cursor-hover #cursor-outer {

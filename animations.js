@@ -93,12 +93,12 @@ class NavController {
   }
 
   init() {
-    this.links.forEach(link => {
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
       link.addEventListener('click', (e) => {
-        e.preventDefault();
         const href = link.getAttribute('href');
         const target = document.querySelector(href);
         if (target) {
+          e.preventDefault();
           const offset = document.getElementById('navbar')?.offsetHeight || 70;
           const top = target.getBoundingClientRect().top + window.scrollY - offset;
           window.scrollTo({ top, behavior: 'smooth' });
@@ -610,13 +610,13 @@ class MagneticCursor {
 
     // Hover state via event delegation
     document.addEventListener('mouseover', (e) => {
-      if (e.target.closest('a, button, .project-card, .cert-card, .spec-card, .contact-card')) {
+      if (e.target.closest('a, button')) {
         document.body.classList.add('cursor-hover');
       }
     });
 
     document.addEventListener('mouseout', (e) => {
-      if (e.target.closest('a, button, .project-card, .cert-card, .spec-card, .contact-card')) {
+      if (e.target.closest('a, button')) {
         document.body.classList.remove('cursor-hover');
         this.magnetX = 0;
         this.magnetY = 0;
