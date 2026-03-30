@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1200" />
+  <title>OG Image — Bryan Jones</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: #050508;
+      font-family: 'Space Grotesk', sans-serif;
+      color: #ffffff;
+    }
+
+    .card {
+      width: 1200px;
+      height: 630px;
+      background: #050508;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 0 80px;
+      overflow: hidden;
+    }
+
+    /* Top neon green accent bar */
+    .accent-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #00ff88, #00d4ff, transparent);
+    }
+
+    /* Left accent line */
+    .accent-left {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(180deg, #00ff88, transparent 80%);
+    }
+
+    /* Grid dots background */
+    .grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle, rgba(0, 255, 136, 0.08) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    /* Glow blob */
+    .glow {
+      position: absolute;
+      right: 200px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(0, 255, 136, 0.07) 0%, rgba(0, 212, 255, 0.04) 40%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Content */
+    .content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+    }
+
+    .label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      color: #00ff88;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    .label::before {
+      content: '> ';
+      opacity: 0.6;
+    }
+
+    .name {
+      font-size: 80px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      margin-bottom: 16px;
+    }
+
+    .title {
+      font-size: 36px;
+      font-weight: 600;
+      color: #00ff88;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .university {
+      font-size: 20px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: 40px;
+      letter-spacing: 0.01em;
+    }
+
+    .url {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 16px;
+      color: #00d4ff;
+      letter-spacing: 0.05em;
+      opacity: 0.85;
+    }
+
+    /* Right decorative element */
+    .deco {
+      position: absolute;
+      right: 60px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      opacity: 0.25;
+    }
+
+    .deco-row {
+      display: flex;
+      gap: 6px;
+    }
+
+    .deco-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #00ff88;
+    }
+
+    .deco-dot.cyan { background: #00d4ff; }
+    .deco-dot.dim { opacity: 0.4; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="accent-bar"></div>
+    <div class="accent-left"></div>
+    <div class="grid-bg"></div>
+    <div class="glow"></div>
+
+    <div class="content">
+      <div class="label">portfolio</div>
+      <div class="name">Bryan Jones</div>
+      <div class="title">Software Engineer</div>
+      <div class="university">M.S. Computer Science · George Mason University</div>
+      <div class="url">bryansjones.com</div>
+    </div>
+
+    <!-- Decorative dot grid -->
+    <div class="deco">
+      <script>
+        const rows = 12, cols = 8;
+        for (let r = 0; r < rows; r++) {
+          document.write('<div class="deco-row">');
+          for (let c = 0; c < cols; c++) {
+            const t = (r + c) % 3 === 0 ? 'cyan' : (r + c) % 5 === 0 ? 'dim' : '';
+            document.write(`<div class="deco-dot ${t}"></div>`);
+          }
+          document.write('</div>');
+        }
+      </script>
+    </div>
+  </div>
+</body>
+</html>
